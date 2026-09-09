@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>林间漫步 · A Walk in the Woods</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  :root{
+    color-scheme:light dark;
+    --paper:#f2eade; --paper-raised:#fbf6ed; --paper-sunk:#eae0d0;
+    --ink:#2a2018; --ink-soft:#665847; --ink-faint:#9c8b73;
+    --rule:#dccfb8; --rule-soft:#e9dfcd;
+    --gold:#8f6c2c; --gold-soft:#b18e4a;
+    --hl:rgba(143,108,44,.075); --shade:rgba(70,52,28,.10);
+    --serif:"Source Serif 4",Georgia,"Iowan Old Style","Times New Roman",serif;
+    --cjk:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+    /* 字体按字符逐个回退：拉丁字母命中衬线体，汉字落到后面的中文字体 */
+    --mix:"Source Serif 4",Georgia,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+      --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+      --rule:#332b20; --rule-soft:#241f17;
+      --gold:#c99c4e; --gold-soft:#dbb066;
+      --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+    --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+    --rule:#332b20; --rule-soft:#241f17;
+    --gold:#c99c4e; --gold-soft:#dbb066;
+    --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif);
+    font-size:clamp(15.5px,.42vw + 14.2px,17.5px); line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%; height:auto}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 clamp(18px,4vw,48px)}
+
+  /* ---------- 顶栏 ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .bar{display:flex; align-items:center; justify-content:space-between; gap:1rem; height:46px}
+  .brand{
+    font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-faint); text-decoration:none; white-space:nowrap;
+    overflow:hidden; text-overflow:ellipsis;
+  }
+  .brand:hover{color:var(--gold)}
+  .tools{display:flex; gap:.4rem; flex:none}
+  .tools button{
+    font:inherit; font-size:.75rem; font-family:var(--cjk);
+    padding:.28em .8em; border-radius:999px; cursor:pointer;
+    color:var(--ink-soft); background:transparent;
+    border:1px solid var(--rule); transition:.15s;
+  }
+  .tools button:hover{color:var(--gold); border-color:var(--gold-soft)}
+
+  /* ---------- 章首 ---------- */
+  header.chapter{text-align:center; padding:clamp(2.6rem,7vw,4.6rem) 0 1.6rem}
+  .series{
+    font-size:.68rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:1.4rem;
+  }
+  .title-en{
+    font-size:clamp(1.7rem,4.4vw,2.7rem); font-weight:600;
+    line-height:1.18; letter-spacing:-.01em; margin:0;
+  }
+  .title-zh{
+    font-family:var(--cjk); font-weight:500;
+    font-size:clamp(1rem,2.2vw,1.24rem); color:var(--ink-soft);
+    margin-top:.7rem; letter-spacing:.04em;
+  }
+  header.chapter::after{
+    content:""; display:block; width:44px; height:1px;
+    background:var(--gold-soft); opacity:.6; margin:1.8rem auto 0;
+  }
+
+  figure{margin:0}
+  /* --nw 是图片原生宽度，由生成脚本写入，用来防止小图被撑大 */
+  figure.illus{margin:0 auto 2.6rem; max-width:min(100%,var(--nw,100%))}
+  figure.illus img{width:100%; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+
+  /* ---------- 开场白 ---------- */
+  .intro{
+    margin:0 0 2.2rem; padding-bottom:1.6rem;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .intro .col{color:var(--ink-soft); font-size:.92em}
+  .intro .col.en p{font-style:italic}
+
+  /* ---------- 双栏对照 ---------- */
+  .row{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(26px,3.6vw,54px);
+    position:relative; padding:.9rem 0 .9rem clamp(1.9rem,3.2vw,2.9rem);
+    border-radius:3px; transition:background .12s;
+    scroll-margin-top:70px;
+  }
+  main .row:hover{background:var(--hl)}
+  main .row:target{background:var(--hl); box-shadow:inset 3px 0 0 var(--gold-soft)}
+  .pn{
+    position:absolute; left:0; top:1.05rem;
+    width:clamp(1.3rem,2.2vw,2rem); text-align:right;
+    font-size:.7rem; font-variant-numeric:tabular-nums;
+    color:var(--ink-faint); text-decoration:none; opacity:.55; transition:.15s;
+  }
+  .row:hover .pn{opacity:1; color:var(--gold)}
+  .col p{margin:0 0 .78em}
+  .col p:last-child{margin-bottom:0}
+  .col.en{hyphens:auto}
+  .col.zh{
+    font-family:var(--mix); font-size:.93em; line-height:1.95;
+    text-align:justify; text-justify:inter-ideograph;
+  }
+  /* 中文没有斜体。原文的 em 混着引文、出处、强调三种用法，
+     统一加装饰必然在其中一种上出错，所以只去掉伪斜体，不另作区分。 */
+  .col.zh em,.notes em{font-style:normal}
+  main .row + .row{border-top:1px solid var(--rule-soft)}
+
+  .full{margin:1.8rem 0; text-align:center}
+  figure.story-img{display:inline-block; max-width:min(100%,560px,var(--nw,560px))}
+  figure.story-img img{width:100%; border-radius:2px}
+
+  /* ---------- 窄屏自动单栏 ---------- */
+  @media (max-width:820px){
+    .row{grid-template-columns:1fr !important; gap:.5rem}
+    .col.en{color:var(--ink-soft); font-size:.9em; line-height:1.7}
+    .col.zh{border-left:2px solid var(--rule); padding-left:1.05rem}
+    .brand{font-size:.62rem; letter-spacing:.1em}
+  }
+
+  /* ---------- 脚注 ---------- */
+  .fnmark{font-size:.62em; line-height:0; vertical-align:super}
+  .fnmark a{color:var(--gold); text-decoration:none; padding:0 .1em}
+  .fnmark a:hover{text-decoration:underline}
+  .fnback{
+    margin-left:.55em; font-size:.72em; color:var(--ink-faint);
+    text-decoration:none; vertical-align:middle;
+  }
+  .fnback:hover{color:var(--gold)}
+
+  /* ---------- 译者按 ---------- */
+  .notes{
+    margin:4rem auto 0; max-width:44rem;
+    padding-top:2rem; border-top:1px solid var(--rule);
+    font-family:var(--mix);
+  }
+  .notes-title{
+    font-size:.72rem; letter-spacing:.22em; font-weight:500;
+    color:var(--ink-faint); text-align:center; margin:0 0 2rem;
+  }
+  .notes .zh{font-size:.9em; line-height:1.95; color:var(--ink-soft)}
+  .notes p{margin:0 0 .9em}
+  .note-h,.note-h3{
+    font-family:var(--mix); color:var(--ink); font-weight:600;
+    scroll-margin-top:70px;
+  }
+  .note-h{font-size:1.05em; margin:2.2rem 0 .8rem}
+  .note-h3{font-size:.98em; margin:1.9rem 0 .7rem}
+  .notes .zh > :first-child{margin-top:0}
+  .notes [id]:target{
+    background:var(--hl); box-shadow:-.5rem 0 0 var(--hl),.5rem 0 0 var(--hl);
+    border-radius:2px;
+  }
+  .notes ol,.notes ul{margin:.4rem 0 .9em 1.4rem; padding:0}
+  .notes li{margin:0 0 .35em}
+  .note-hr{border:none; border-top:1px solid var(--rule-soft); margin:1.8rem 0}
+  /* 译者按的图横竖混杂，尺寸从 382 宽到 2268 都有。
+     横图统一到列宽、竖图统一到同一高度，两类各自看齐而不变形。 */
+  figure.note-img{margin:1.6rem auto; text-align:center}
+  figure.note-img img{border-radius:3px; box-shadow:0 1px 10px var(--shade)}
+  /* 容许最多 1.12 倍放大，好让宽度只差几个百分点的图也能对齐列宽 */
+  figure.note-img.landscape{max-width:min(100%,calc(var(--nw,100%) * 1.12))}
+  figure.note-img.landscape img{width:100%}
+  figure.note-img.portrait img{max-height:480px; width:auto; max-width:100%}
+  blockquote{
+    margin:1rem 0; padding:.2rem 0 .2rem 1.1rem;
+    border-left:2px solid var(--gold-soft); color:var(--ink-soft);
+  }
+  a{color:var(--gold)}
+
+  footer.foot{
+    margin:4rem 0 0; padding:1.6rem 0 3rem;
+    border-top:1px solid var(--rule-soft);
+    font-family:var(--cjk); font-size:.72rem;
+    color:var(--ink-faint); text-align:center;
+  }
+  footer.foot a{color:var(--ink-faint); text-decoration:none}
+  footer.foot a:hover{color:var(--gold)}
+
+  @media print{
+    .topbar,footer.foot{display:none}
+    body{background:#fff; color:#000; font-size:10.5pt}
+    .row{break-inside:avoid}
+  }
+</style>
+<script>
+  (function(){
+    try{
+      var t=localStorage.getItem("flc-theme");
+      if(t){document.documentElement.setAttribute("data-theme",t);}
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+  <div class="topbar"><div class="wrap bar">
+    <a class="brand" href="../../../../index.html">Franz Lohner's Chronicle · 目录</a>
+    <div class="tools">
+      <button id="btn-theme" type="button">夜间</button>
+    </div>
+  </div></div>
+
+  <div class="wrap">
+    <header class="chapter">
+      <div class="series">Franz Lohner's Chronicle · 弗兰兹·洛纳的编年史</div>
+      <h1 class="title-en">A Walk in the Woods</h1>
+      <div class="title-zh">林间漫步</div>
+    </header>
+    <figure class="illus landscape" style="--nw:1920px"><img src="../assets/Franz_Lohner_Chronicle_5.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <section class="intro"><div class="row"><div class="col en" lang="en"><p><em>An absent-minded man of mysteries, Franz Lohner relies on his bulging journal to keep track of occurrences, intrigues and arguments around Taal's Horn Keep. Sometimes his notes are even useful, believe it or not. The Franz Lohner Chronicles are extracts from that journal.</em></p></div><div class="col zh" lang="zh-CN"><p><em>神秘且健忘的弗兰兹·洛纳，靠着他那本鼓鼓囊囊的日记来记录塔尔之角周围发生的事情、阴谋和争论。信不信由你，有时他的笔记还真有点用。《弗兰兹·洛纳编年史》就是摘自这本日记的内容。</em></p></div></div></section>
+    <main>
+    <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>Well, I finally did it: I got Kerillian to open up a bit about her past. I mean, not all the way, and she had a funny look in her eye, but it’s a start, right? And it’s not as though her eyes don’t look funny all the time.</p></div><div class="col zh" lang="zh-CN"><p>终于做到了！凯瑞莲总算愿意谈谈她的过去了。当然，也没全说，她眼神似乎透着一股古怪，但万事开头难嘛，对吧？再说了，她那眼神什么时候不古怪了？</p></div></div>
+<div class="row" id="p2"><a class="pn" href="#p2">2</a><div class="col en" lang="en"><p>Seems Athel Loren’s a bit of a melting pot. Most bloodlines stretch back to the times before the Sundering. You know, before there was dark elves and high elves, and there was just, well, elves. Or as Kerillian puts it, ‘pure’ elves, untainted by that big old civil war the rest of the pointy-ears are always embroiled in. But over the years, the forest’s also become a refuge for outcasts from Ulthuan and Naggaroth, and though they’re sworn to leave old ties behind, for some it ain’t that easy. Leads to some … well, let’s call them ‘suspect’ choices.</p></div><div class="col zh" lang="zh-CN"><p>看来艾索洛伦还真有点大熔炉的意思。大多数精灵的血脉都能追溯到大决裂以前。就是那会儿还没分什么黑暗精灵、高等精灵，只有——嗯，精灵。</p><p>照凯瑞莲的说法，他们是“纯粹”的精灵，不是后来那群成天陷在那场陈年内战里的尖耳朵们可以比拟的。可这么多年下来，森林也成了奥苏安和纳迦罗斯流亡者的避难所。虽说他们都发誓要斩断旧日牵绊，但知易行难，于是有些人就做出了一些……呃，姑且叫“可疑”的选择吧。</p></div></div>
+<div class="row" id="p3"><a class="pn" href="#p3">3</a><div class="col en" lang="en"><p>Turns out, our merry lass stumbled on one of these suspect choices right as it was being made. A mage walking parts of Athel Loren no mage should be walking, if you take my meaning. And it wasn’t just him alone. Whole bunch of them there were, midway through a ritual dedicated to Hekarti.</p></div><div class="col zh" lang="zh-CN"><p>这不，咱们的“快乐姑娘”<sup class="fnmark"><a href="#%E5%BF%AB%E4%B9%90%E5%A7%91%E5%A8%98" id="fnref-快乐姑娘" aria-label="脚注 ①">①</a></sup>就刚好撞上了人家在做“可疑”的抉择：一个法师走到了艾索洛伦里他不该去的地方，懂我意思吧？他不是一个人！那里聚着一大帮人，祭拜赫卡提<sup class="fnmark"><a href="#%E8%B5%AB%E5%8D%A1%E6%8F%90" id="fnref-赫卡提" aria-label="脚注 ②">②</a></sup>的仪式正搞到一半。</p></div></div>
+<div class="row" id="p4"><a class="pn" href="#p4">4</a><div class="col en" lang="en"><p>Now, elf gods are a mixed bunch, but Hekarti definitely sits on the bleaker side of the ledger. She’s the mistress of all that’s corrupting and terrible in the Winds of Magic, so it follows that those who worship her ain’t exactly looking for the wherewithal to bring peace and solace to this world of ours.</p></div><div class="col zh" lang="zh-CN"><p>说起来，精灵的神也是三教九流，什么货色都有，而赫卡提绝对得记在阴暗的那一档。魔法之风里那些腐化人心、骇人听闻的玩意儿，都归她管。</p><p>可想而知，那些信奉她的人绝不是为了用她的赐福给咱们这个世界带来安宁和慰藉。</p></div></div>
+<div class="row" id="p5"><a class="pn" href="#p5">5</a><div class="col en" lang="en"><p>I’ll spare you some of the details I wish Kerillian had spared me, but let’s just say this was not a nice ritual. Seems this mage – Etrian Dunderhead, though I suspect Kerillian may have editorialised his surname – was petitioning Hekarti for sorcerous mastery, and offering forest spirits as collateral. Sadly for him, it all goes to a dog’s breakfast when Kerillian makes her entrance.</p></div><div class="col zh" lang="zh-CN"><p>我就不用那些仪式细节折磨你们了，真希望凯瑞莲当时也能这样放我一马。</p><p>总之，那就不是什么正经仪式。</p><p>据说这个叫埃特里安·榆木脑袋的法师——我严重怀疑凯瑞莲把这货的姓给改了。</p><p>这位榆木脑袋当时正以森林精魄作为交换，向赫卡提祈求高深巫术。结果凯瑞莲一登场，整个仪式让她闹了个鸡飞狗跳。</p></div></div>
+<div class="row" id="p6"><a class="pn" href="#p6">6</a><div class="col en" lang="en"><p>To hear our lass tell it, Etrian’s accomplices scarper at first sight of her. The thing about waywatchers is you can never be sure that the one you see is the only one what can see <em>you</em>, and with this lot being involved in some very mucky business, they weren’t planning on waiting to discover the truth. Etrian’s made of sterner stuff, or maybe he’s more afraid of Hekarti than Kerillian’s arrows? More fool him, as it turns out. Kerillian leaves him dead among the moss and goes about her business, job done and a righteous fire burning within.</p></div><div class="col zh" lang="zh-CN"><p>按咱们“快乐姑娘”的说法，埃特里安那帮人一见到她就撒丫子跑了。毕竟，当你看到一个巡林客的时候，可能是你只能看到一个巡林客。加上这帮人做贼心虚，谁也没胆子等个明白，除了有种的埃特里安，或者说，比起凯瑞莲的箭，他更怕赫卡提？结果他只是更蠢而已。凯瑞莲怀着凛然的正气宰了他，随后事了拂衣去，留下一具倒在苔藓里的尸体。</p></div></div>
+<div class="row" id="p7"><a class="pn" href="#p7">7</a><div class="col en" lang="en"><p>Only problem is, Etrian’s a popular chap, and his mates raise hell at the next council of kings. Accusations of murder are levelled, and our Kerillian has no witnesses to prove her side, and plenty arranged in opposition. She’s cast out, and hasn’t been home since.</p></div><div class="col zh" lang="zh-CN"><p>唯一的问题是，埃特里安人缘挺好。等下回诸王议会一开，他那伙朋友就闹翻了天。他们指控她谋杀，而咱们的凯瑞莲孤立无援，对面全是埃特里安的证人。于是她被驱逐了，至今都没回过艾索洛伦。</p></div></div>
+<div class="row" id="p8"><a class="pn" href="#p8">8</a><div class="col en" lang="en"><p>So that’s her tale … but I don’t know that it’s the truth. Not sure why I doubt her. I mean, apart from the fact that it’s Kerillian, and Kerillian’s an elf. Maybe it’s the way she was watching me all the time I was speaking, as if she was using my expression for a guide as to what she should say next? Could be.</p></div><div class="col zh" lang="zh-CN"><p>她讲的就是这么个故事……至于保不保真我就不知道了。其实我也说不清为什么我老怀疑她。</p><p>我琢磨着，第一，她是凯瑞莲，而凯瑞莲是个精灵。第二，许是她在我说话的时候，一直用那古怪的眼神盯着我看，好像在拿我的反应来盘算她下一句该怎么说？唉，说不清楚。</p></div></div>
+<div class="row" id="p9"><a class="pn" href="#p9">9</a><div class="col en" lang="en"><p>Still, I reckon there’s some truth there. Or at least a little bit.</p></div><div class="col zh" lang="zh-CN"><p>话又说回来了，我觉得这里头还是有几句真话的，多少有那么点儿……</p></div></div>
+<div class="row" id="p10"><a class="pn" href="#p10">10</a><div class="col en" lang="en"><p>Maybe.</p></div><div class="col zh" lang="zh-CN"><p>……吧。</p></div></div>
+<div class="row" id="p11"><a class="pn" href="#p11">11</a><div class="col en" lang="en"><p>I hate elves.</p></div><div class="col zh" lang="zh-CN"><p>我讨厌精灵。</p></div></div>
+<div class="full"><figure class="story-img landscape" style="--nw:480px"><img src="../assets/decoration_1.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure></div>
+    </main>
+    <section class="notes"><div class="zh"><h2 id="译者按" class="note-h">译者按</h2>
+<h3 id="快乐姑娘" class="note-h3">快乐姑娘<a class="fnback" href="#fnref-快乐姑娘" title="回到正文">↩</a></h3>
+<p>“快乐姑娘”是洛纳在阴阳凯瑞莲啊家人们！！凯瑞莲常年戴着面具，还沉默寡言……懂的吧？</p>
+<h3 id="赫卡提" class="note-h3">赫卡提<a class="fnback" href="#fnref-赫卡提" title="回到正文">↩</a></h3>
+<p>赫卡提（Hekarti）：精灵的召唤与黑魔法女神。</p>
+</div></section>
+    <footer class="foot">
+      Franz Lohner's Chronicle &middot; 同人翻译，原文版权归 Fatshark 所有
+      &nbsp;|&nbsp; <a href="../../../../index.html">返回目录</a><br>
+      页面由 <a href="https://github.com/Alexu0317-FATHER/translation-workbench" target="_blank" rel="noopener">Translation Workbench</a> 生成
+    </footer>
+  </div>
+
+<script>
+  (function(){
+    var root=document.documentElement;
+    var btnTheme=document.getElementById("btn-theme");
+
+    function store(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+
+    function currentTheme(){
+      var set=root.getAttribute("data-theme");
+      if(set) return set;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+    }
+    function paintTheme(){
+      var dark=currentTheme()==="dark";
+      btnTheme.textContent=dark?"日间":"夜间";
+      btnTheme.setAttribute("aria-pressed",String(dark));
+    }
+
+    btnTheme.addEventListener("click",function(){
+      var next=currentTheme()==="dark"?"light":"dark";
+      root.setAttribute("data-theme",next);
+      store("flc-theme",next);
+      paintTheme();
+    });
+
+    paintTheme();
+  })();
+</script>
+</body></html>
