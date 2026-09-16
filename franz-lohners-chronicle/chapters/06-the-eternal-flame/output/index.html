@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>永恒之焰 · The Eternal Flame</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  :root{
+    color-scheme:light dark;
+    --paper:#f2eade; --paper-raised:#fbf6ed; --paper-sunk:#eae0d0;
+    --ink:#2a2018; --ink-soft:#665847; --ink-faint:#9c8b73;
+    --rule:#dccfb8; --rule-soft:#e9dfcd;
+    --gold:#8f6c2c; --gold-soft:#b18e4a;
+    --hl:rgba(143,108,44,.075); --shade:rgba(70,52,28,.10);
+    --serif:"Source Serif 4",Georgia,"Iowan Old Style","Times New Roman",serif;
+    --cjk:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+    /* 字体按字符逐个回退：拉丁字母命中衬线体，汉字落到后面的中文字体 */
+    --mix:"Source Serif 4",Georgia,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+      --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+      --rule:#332b20; --rule-soft:#241f17;
+      --gold:#c99c4e; --gold-soft:#dbb066;
+      --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+    --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+    --rule:#332b20; --rule-soft:#241f17;
+    --gold:#c99c4e; --gold-soft:#dbb066;
+    --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif);
+    font-size:clamp(15.5px,.42vw + 14.2px,17.5px); line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%; height:auto}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 clamp(18px,4vw,48px)}
+
+  /* ---------- 顶栏 ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .bar{display:flex; align-items:center; justify-content:space-between; gap:1rem; height:46px}
+  .brand{
+    font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-faint); text-decoration:none; white-space:nowrap;
+    overflow:hidden; text-overflow:ellipsis;
+  }
+  .brand:hover{color:var(--gold)}
+  .tools{display:flex; gap:.4rem; flex:none}
+  .tools button{
+    font:inherit; font-size:.75rem; font-family:var(--cjk);
+    padding:.28em .8em; border-radius:999px; cursor:pointer;
+    color:var(--ink-soft); background:transparent;
+    border:1px solid var(--rule); transition:.15s;
+  }
+  .tools button:hover{color:var(--gold); border-color:var(--gold-soft)}
+
+  /* ---------- 章首 ---------- */
+  header.chapter{text-align:center; padding:clamp(2.6rem,7vw,4.6rem) 0 1.6rem}
+  .series{
+    font-size:.68rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:1.4rem;
+  }
+  .title-en{
+    font-size:clamp(1.7rem,4.4vw,2.7rem); font-weight:600;
+    line-height:1.18; letter-spacing:-.01em; margin:0;
+  }
+  .title-zh{
+    font-family:var(--cjk); font-weight:500;
+    font-size:clamp(1rem,2.2vw,1.24rem); color:var(--ink-soft);
+    margin-top:.7rem; letter-spacing:.04em;
+  }
+  header.chapter::after{
+    content:""; display:block; width:44px; height:1px;
+    background:var(--gold-soft); opacity:.6; margin:1.8rem auto 0;
+  }
+
+  figure{margin:0}
+  /* --nw 是图片原生宽度，由生成脚本写入，用来防止小图被撑大 */
+  figure.illus{margin:0 auto 2.6rem; max-width:min(100%,var(--nw,100%))}
+  figure.illus img{width:100%; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+
+  /* ---------- 开场白 ---------- */
+  .intro{
+    margin:0 0 2.2rem; padding-bottom:1.6rem;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .intro .col{color:var(--ink-soft); font-size:.92em}
+  .intro .col.en p{font-style:italic}
+
+  /* ---------- 双栏对照 ---------- */
+  .row{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(26px,3.6vw,54px);
+    position:relative; padding:.9rem 0 .9rem clamp(1.9rem,3.2vw,2.9rem);
+    border-radius:3px; transition:background .12s;
+    scroll-margin-top:70px;
+  }
+  main .row:hover{background:var(--hl)}
+  main .row:target{background:var(--hl); box-shadow:inset 3px 0 0 var(--gold-soft)}
+  .pn{
+    position:absolute; left:0; top:1.05rem;
+    width:clamp(1.3rem,2.2vw,2rem); text-align:right;
+    font-size:.7rem; font-variant-numeric:tabular-nums;
+    color:var(--ink-faint); text-decoration:none; opacity:.55; transition:.15s;
+  }
+  .row:hover .pn{opacity:1; color:var(--gold)}
+  .col p{margin:0 0 .78em}
+  .col p:last-child{margin-bottom:0}
+  .col.en{hyphens:auto}
+  .col.zh{
+    font-family:var(--mix); font-size:.93em; line-height:1.95;
+    text-align:justify; text-justify:inter-ideograph;
+  }
+  /* 中文没有斜体。原文的 em 混着引文、出处、强调三种用法，
+     统一加装饰必然在其中一种上出错，所以只去掉伪斜体，不另作区分。 */
+  .col.zh em,.notes em{font-style:normal}
+  main .row + .row{border-top:1px solid var(--rule-soft)}
+
+  .full{margin:1.8rem 0; text-align:center}
+  figure.story-img{display:inline-block; max-width:min(100%,560px,var(--nw,560px))}
+  figure.story-img img{width:100%; border-radius:2px}
+
+  /* ---------- 窄屏自动单栏 ---------- */
+  @media (max-width:820px){
+    .row{grid-template-columns:1fr !important; gap:.5rem}
+    .col.en{color:var(--ink-soft); font-size:.9em; line-height:1.7}
+    .col.zh{border-left:2px solid var(--rule); padding-left:1.05rem}
+    .brand{font-size:.62rem; letter-spacing:.1em}
+  }
+
+  /* ---------- 脚注 ---------- */
+  .fnmark{font-size:.62em; line-height:0; vertical-align:super}
+  .fnmark a{color:var(--gold); text-decoration:none; padding:0 .1em}
+  .fnmark a:hover{text-decoration:underline}
+  .fnback{
+    margin-left:.55em; font-size:.72em; color:var(--ink-faint);
+    text-decoration:none; vertical-align:middle;
+  }
+  .fnback:hover{color:var(--gold)}
+
+  /* ---------- 译者按 ---------- */
+  .notes{
+    margin:4rem auto 0; max-width:44rem;
+    padding-top:2rem; border-top:1px solid var(--rule);
+    font-family:var(--mix);
+  }
+  .notes-title{
+    font-size:.72rem; letter-spacing:.22em; font-weight:500;
+    color:var(--ink-faint); text-align:center; margin:0 0 2rem;
+  }
+  .notes .zh{font-size:.9em; line-height:1.95; color:var(--ink-soft)}
+  .notes p{margin:0 0 .9em}
+  .note-h,.note-h3{
+    font-family:var(--mix); color:var(--ink); font-weight:600;
+    scroll-margin-top:70px;
+  }
+  .note-h{font-size:1.05em; margin:2.2rem 0 .8rem}
+  .note-h3{font-size:.98em; margin:1.9rem 0 .7rem}
+  .notes .zh > :first-child{margin-top:0}
+  .notes [id]:target{
+    background:var(--hl); box-shadow:-.5rem 0 0 var(--hl),.5rem 0 0 var(--hl);
+    border-radius:2px;
+  }
+  .notes ol,.notes ul{margin:.4rem 0 .9em 1.4rem; padding:0}
+  .notes li{margin:0 0 .35em}
+  .note-hr{border:none; border-top:1px solid var(--rule-soft); margin:1.8rem 0}
+  /* 译者按的图横竖混杂，尺寸从 382 宽到 2268 都有。
+     横图统一到列宽、竖图统一到同一高度，两类各自看齐而不变形。 */
+  figure.note-img{margin:1.6rem auto; text-align:center}
+  figure.note-img img{border-radius:3px; box-shadow:0 1px 10px var(--shade)}
+  /* 容许最多 1.12 倍放大，好让宽度只差几个百分点的图也能对齐列宽 */
+  figure.note-img.landscape{max-width:min(100%,calc(var(--nw,100%) * 1.12))}
+  figure.note-img.landscape img{width:100%}
+  figure.note-img.portrait img{max-height:480px; width:auto; max-width:100%}
+  blockquote{
+    margin:1rem 0; padding:.2rem 0 .2rem 1.1rem;
+    border-left:2px solid var(--gold-soft); color:var(--ink-soft);
+  }
+  a{color:var(--gold)}
+
+  footer.foot{
+    margin:4rem 0 0; padding:1.6rem 0 3rem;
+    border-top:1px solid var(--rule-soft);
+    font-family:var(--cjk); font-size:.72rem;
+    color:var(--ink-faint); text-align:center;
+  }
+  footer.foot a{color:var(--ink-faint); text-decoration:none}
+  footer.foot a:hover{color:var(--gold)}
+
+  @media print{
+    .topbar,footer.foot{display:none}
+    body{background:#fff; color:#000; font-size:10.5pt}
+    .row{break-inside:avoid}
+  }
+</style>
+<script>
+  (function(){
+    try{
+      var t=localStorage.getItem("flc-theme");
+      if(t){document.documentElement.setAttribute("data-theme",t);}
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+  <div class="topbar"><div class="wrap bar">
+    <a class="brand" href="../../../../index.html">Franz Lohner's Chronicle · 目录</a>
+    <div class="tools">
+      <button id="btn-theme" type="button">夜间</button>
+    </div>
+  </div></div>
+
+  <div class="wrap">
+    <header class="chapter">
+      <div class="series">Franz Lohner's Chronicle · 弗兰兹·洛纳的编年史</div>
+      <h1 class="title-en">The Eternal Flame</h1>
+      <div class="title-zh">永恒之焰</div>
+    </header>
+    <figure class="illus landscape" style="--nw:1920px"><img src="../assets/Franz_Lohner_Chronicle_6.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <section class="intro"><div class="row"><div class="col en" lang="en"><p><em>An absent-minded man of mysteries, Franz Lohner relies on his bulging journal to keep track of occurrences, intrigues and arguments around Taal's Horn Keep. Sometimes his notes are even useful, believe it or not. The Franz Lohner Chronicles are extracts from that journal.</em></p></div><div class="col zh" lang="zh-CN"><p><em>神秘且健忘的弗兰兹·洛纳，靠着他那本鼓鼓囊囊的日记来记录塔尔之角周围发生的事情、阴谋和争论。信不信由你，有时他的笔记还真有点用。《弗兰兹·洛纳编年史》就是摘自这本日记的内容。</em></p></div></div></section>
+    <main>
+    <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>Would you believe it, I managed to get Saltzpyre talking about Ulric? The God of Wolves and Winter’s always a touchy subject with Sigmarites, what with there being bad blood between the two churches.</p></div><div class="col zh" lang="zh-CN"><p>你敢信？我居然让萨尔茨皮雷开口聊起尤里克了。这位狼与寒冬之神，对西格玛信徒来说向来是个碰不得的话题，毕竟两家教会积怨不浅。</p></div></div>
+<div class="row" id="p2"><a class="pn" href="#p2">2</a><div class="col en" lang="en"><p>You see, Sigmar is commonly held to have been a worshipper of Ulric, back when he was just a mortal man with a hammer and not the godly cornerstone of civilisation, bless his name. That being the case, there are plenty of Ulricans who claim that this jolly little Empire of ours actually belongs to Ulric, and not Sigmar, but Sigmar belonged to Ulric.</p></div><div class="col zh" lang="zh-CN"><p>要知道，西格玛当年也是信尤里克的，都这么说的嘛。</p><p>那时候他还只是个抡锤子的凡人，没成为那位撑起文明的大神呢。</p><p>哦，对了，赞美西格玛！</p><p>就因为这事儿，不少尤里克信徒就说了，咱们这个可爱的小帝国，其实该归尤里克，不该归西格玛，毕竟西格玛自己当年都归尤里克呢。</p></div></div>
+<div class="row" id="p3"><a class="pn" href="#p3">3</a><div class="col en" lang="en"><p>All stuff and nonsense as far as I’m concerned. The Empire’s literally on fire, and folk are squabbling over which holy rune gets scratched into the ashes? That’s what comes of the devout being promised a paradisical afterlife. They tend to forget about the perils of the here and now.</p></div><div class="col zh" lang="zh-CN"><p>要我说，这帮信死后能升天的家伙全他妈扯淡！</p><p>帝国都烧起来了，还搁这儿争该划哪家的圣符，再这么耗下去，到时候只能到灰里划！</p></div></div>
+<div class="row" id="p4"><a class="pn" href="#p4">4</a><div class="col en" lang="en"><p>Our Saltzpyre, being the learned fellow he is, was musing aloud about the Flame of Ulric, which burns merrily away in the city of Middenheim. Supposedly, it was called into being when Ulric stuck his axe on the Fauschlag – yon mountain Middenheim was built upon. But then again, *supposedly *Middenheim’s never been successfully invaded, and I don’t reckon that’s one hundred percent truthful.</p></div><div class="col zh" lang="zh-CN"><p>还得是咱们萨尔茨皮雷这样的文化人，聊着聊着他就琢磨上了尤里克圣火的事儿——就是在米登海姆城里烧得正欢的那团火。</p><p>据说啊，当年尤里克把斧头往浮士卡拉格山上一插，这火就冒出来了。米登海姆就建在那座山上。</p><p>又据说啊，米登海姆从未失守过。</p><p>都是据说。</p></div></div>
+<div class="row" id="p5"><a class="pn" href="#p5">5</a><div class="col en" lang="en"><p>Anyway, this Eternal Flame’s been burning for millennia, and no one seems to know why. Not been put to much in the way of pertinent use either, unless you want to count crowd-pleasing ceremonies of making supposed heretics take the trial of walking through the flames. Saltzpyre’s got to wondering if the Eternal Flame might maybe, somehow, give us an edge in our never-ending labours. I mean, Ulric’s black-armoured bod hasn’t been see stalking the mortal world for time out of mind, but maybe he’s left us a bit of power we can wield in his name?</p></div><div class="col zh" lang="zh-CN"><p>反正，这是一团谁也说不清怎么能烧上几千年的永恒之焰。</p><p>也没见它派上什么正经用场，除非你觉得围观那些所谓的异端接受穿越火焰的试炼也算。</p><p>而萨尔茨皮雷琢磨的是：咱们这没完没了的苦差事，兴许……可能……没准能靠永恒之焰占点便宜？</p><p>至于怎么个用法，还不好说。</p><p>我的意思是，都不知有多少年没人见过身披黑甲的尤里克在凡间溜达了，可没准他留了那么一丢丢力量，好让咱们借他的名头使使呢？</p></div></div>
+<div class="row" id="p6"><a class="pn" href="#p6">6</a><div class="col en" lang="en"><p>I suppose it’s possible, but I don’t see the Ar-Ulric letting us anywhere near the bloody thing. Emil Valgeir’s a stubborn old sod, even by Middenheimer standards, and if he gets wind that it was Saltzpyre’s idea, he’ll be even more resistant, what with church rivalry being a thing. On the other hand, No one seems to know quite where Valgeir is right now, so maybe we can take a bit of a look.</p></div><div class="col zh" lang="zh-CN"><p>我看行！</p><p>不过……尤里克大祭司会让咱们靠近那破玩意儿？</p><p>我看悬。埃米尔·瓦格尔那个老顽固，就算搁在米登海姆人里，也算倔得出奇的。</p><p>他要是听说这是萨尔茨皮雷的主意，那就更别想了，毕竟两家教会还较着劲呢。</p><p>不过换个角度想，现在好像谁也说不准瓦格尔在哪儿，那咱们也许能去瞧上一眼。</p></div></div>
+<div class="row" id="p7"><a class="pn" href="#p7">7</a><div class="col en" lang="en"><p>On the other, other hand, finding the Eternal Flame’s source likely means braving the depths of the Fauschlag, and there’s all manner of terrible things down there. I’ve even seen some legends claim that when the end of the world finally comes, it’ll start with the Fauschlag. Not sure I believe it. When the world ends, it’ll end everywhere, right? Stands to reason.</p></div><div class="col zh" lang="zh-CN"><p>再换个角度……再换一个……</p><p>要找到永恒之焰的源头，那多半得冒死钻进浮士卡拉格山深处……那底下可是什么妖魔鬼怪都有！</p><p>甚至一些传说里写着，“若世界将倾，自浮士卡拉格山始”。</p><p>我寻思不能吧？如果世界都要完蛋了，那不该是到处一块儿完蛋吗？是这个理儿吧？</p></div></div>
+<div class="row" id="p8"><a class="pn" href="#p8">8</a><div class="col en" lang="en"><p>Maybe I should send one of the lads up to Middenheim? I’ll have a ponder.</p></div><div class="col zh" lang="zh-CN"><p>要不派个小伙子去趟米登海姆？</p><p>容我再捋捋……</p></div></div>
+<div class="full"><figure class="story-img landscape" style="--nw:480px"><img src="../assets/decoration_1.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure></div>
+    </main>
+    
+    <footer class="foot">
+      Franz Lohner's Chronicle &middot; 同人翻译，原文版权归 Fatshark 所有
+      &nbsp;|&nbsp; <a href="../../../../index.html">返回目录</a><br>
+      页面由 <a href="https://github.com/Alexu0317-FATHER/translation-workbench" target="_blank" rel="noopener">Translation Workbench</a> 生成
+    </footer>
+  </div>
+
+<script>
+  (function(){
+    var root=document.documentElement;
+    var btnTheme=document.getElementById("btn-theme");
+
+    function store(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+
+    function currentTheme(){
+      var set=root.getAttribute("data-theme");
+      if(set) return set;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+    }
+    function paintTheme(){
+      var dark=currentTheme()==="dark";
+      btnTheme.textContent=dark?"日间":"夜间";
+      btnTheme.setAttribute("aria-pressed",String(dark));
+    }
+
+    btnTheme.addEventListener("click",function(){
+      var next=currentTheme()==="dark"?"light":"dark";
+      root.setAttribute("data-theme",next);
+      store("flc-theme",next);
+      paintTheme();
+    });
+
+    paintTheme();
+  })();
+</script>
+</body></html>
