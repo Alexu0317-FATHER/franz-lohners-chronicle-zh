@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>战锤：末世鼠疫2 · 金辉壁垒 | 《弗兰兹·洛纳的编年史》中英对照翻译</title>
+<meta name="description" content="假面之夜刚过，巴丁竟撺掇克鲁伯自封假面之王当众做媒，幕后操盘却另有其人，图的东西说出来你都不信。更邪门的是，塔尔之角里还来了位不能对人讲的老熟人，老洛纳跟她聊了一宿，脖子上的青筋跳了一夜……">
+<meta name="keywords" content="Vermintide 2, Warhammer Fantasy, 战锤末世鼠疫, 官网小说, 中英对照, bilingual, 双语翻译">
+<link rel="canonical" href="https://alexu0317-father.github.io/franz-lohners-chronicle-zh/franz-lohners-chronicle/chapters/12-the-auric-bastion/output/index.html">
+<script>
+  if (location.hostname === "alexu0317-father.github.io") {
+    var ga = document.createElement("script");
+    ga.async = true;
+    ga.src = "https://www.googletagmanager.com/gtag/js?id=G-YWGH1EXEL5";
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag("js", new Date());
+    gtag("config", "G-YWGH1EXEL5");
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  :root{
+    color-scheme:light dark;
+    --paper:#f2eade; --paper-raised:#fbf6ed; --paper-sunk:#eae0d0;
+    --ink:#2a2018; --ink-soft:#665847; --ink-faint:#9c8b73;
+    --rule:#dccfb8; --rule-soft:#e9dfcd;
+    --gold:#8f6c2c; --gold-soft:#b18e4a;
+    --hl:rgba(143,108,44,.075); --shade:rgba(70,52,28,.10);
+    --serif:"Source Serif 4",Georgia,"Iowan Old Style","Times New Roman",serif;
+    --cjk:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+    /* 字体按字符逐个回退：拉丁字母命中衬线体，汉字落到后面的中文字体 */
+    --mix:"Source Serif 4",Georgia,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+      --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+      --rule:#332b20; --rule-soft:#241f17;
+      --gold:#c99c4e; --gold-soft:#dbb066;
+      --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+    --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+    --rule:#332b20; --rule-soft:#241f17;
+    --gold:#c99c4e; --gold-soft:#dbb066;
+    --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif);
+    font-size:clamp(15.5px,.42vw + 14.2px,17.5px); line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%; height:auto}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 clamp(18px,4vw,48px)}
+
+  /* ---------- 顶栏 ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .bar{display:flex; align-items:center; justify-content:space-between; gap:1rem; height:46px}
+  .brand{
+    font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-faint); text-decoration:none; white-space:nowrap;
+    overflow:hidden; text-overflow:ellipsis;
+  }
+  .brand:hover{color:var(--gold)}
+  .tools{display:flex; gap:.4rem; flex:none}
+  .tools button{
+    font:inherit; font-size:.75rem; font-family:var(--cjk);
+    padding:.28em .8em; border-radius:999px; cursor:pointer;
+    color:var(--ink-soft); background:transparent;
+    border:1px solid var(--rule); transition:.15s;
+  }
+  .tools button:hover{color:var(--gold); border-color:var(--gold-soft)}
+
+  /* ---------- 章首 ---------- */
+  header.chapter{text-align:center; padding:clamp(2.6rem,7vw,4.6rem) 0 1.6rem}
+  .series{
+    font-size:.68rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:1.4rem;
+  }
+  .title-en{
+    font-size:clamp(1.7rem,4.4vw,2.7rem); font-weight:600;
+    line-height:1.18; letter-spacing:-.01em; margin:0;
+  }
+  .title-zh{
+    font-family:var(--cjk); font-weight:500;
+    font-size:clamp(1rem,2.2vw,1.24rem); color:var(--ink-soft);
+    margin-top:.7rem; letter-spacing:.04em;
+  }
+  header.chapter::after{
+    content:""; display:block; width:44px; height:1px;
+    background:var(--gold-soft); opacity:.6; margin:1.8rem auto 0;
+  }
+
+  figure{margin:0}
+  /* --nw 是图片原生宽度，由生成脚本写入，用来防止小图被撑大 */
+  figure.illus{margin:0 auto 2.6rem; max-width:min(100%,var(--nw,100%))}
+  figure.illus img{width:100%; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+
+  /* ---------- 开场白 ---------- */
+  .intro{
+    margin:0 0 2.2rem; padding-bottom:1.6rem;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .intro .col{color:var(--ink-soft); font-size:.92em}
+  .intro .col.en p{font-style:italic}
+
+  /* ---------- 双栏对照 ---------- */
+  .row{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(26px,3.6vw,54px);
+    position:relative; padding:.9rem 0 .9rem clamp(1.9rem,3.2vw,2.9rem);
+    border-radius:3px; transition:background .12s;
+    scroll-margin-top:70px;
+  }
+  main .row:hover{background:var(--hl)}
+  main .row:target{background:var(--hl); box-shadow:inset 3px 0 0 var(--gold-soft)}
+  .pn{
+    position:absolute; left:0; top:1.05rem;
+    width:clamp(1.3rem,2.2vw,2rem); text-align:right;
+    font-size:.7rem; font-variant-numeric:tabular-nums;
+    color:var(--ink-faint); text-decoration:none; opacity:.55; transition:.15s;
+  }
+  .row:hover .pn{opacity:1; color:var(--gold)}
+  .col p{margin:0 0 .78em}
+  .col p:last-child{margin-bottom:0}
+  .col.en{hyphens:auto}
+  .col.zh{
+    font-family:var(--mix); font-size:.93em; line-height:1.95;
+    text-align:justify; text-justify:inter-ideograph;
+  }
+  /* 中文没有斜体。原文的 em 混着引文、出处、强调三种用法，
+     统一加装饰必然在其中一种上出错，所以只去掉伪斜体，不另作区分。 */
+  .col.zh em,.notes em{font-style:normal}
+  main .row + .row{border-top:1px solid var(--rule-soft)}
+
+  .full{margin:1.8rem 0; text-align:center}
+  figure.story-img{display:inline-block; max-width:min(100%,560px,var(--nw,560px))}
+  figure.story-img img{width:100%; border-radius:2px}
+
+  /* ---------- 窄屏自动单栏 ---------- */
+  @media (max-width:820px){
+    .row{grid-template-columns:1fr !important; gap:.5rem}
+    .col.en{color:var(--ink-soft); font-size:.9em; line-height:1.7}
+    .col.zh{border-left:2px solid var(--rule); padding-left:1.05rem}
+    .brand{font-size:.62rem; letter-spacing:.1em}
+  }
+
+  /* ---------- 脚注 ---------- */
+  .fnmark{font-size:.62em; line-height:0; vertical-align:super}
+  .fnmark a{color:var(--gold); text-decoration:none; padding:0 .1em}
+  .fnmark a:hover{text-decoration:underline}
+  .fnback{
+    margin-left:.55em; font-size:.72em; color:var(--ink-faint);
+    text-decoration:none; vertical-align:middle;
+  }
+  .fnback:hover{color:var(--gold)}
+
+  /* ---------- 译者按 ---------- */
+  /* 不画上边框：正文以装饰图收尾的章节会与图叠成两道分界，
+     靠这里的留白和居中的小标题分界就够。 */
+  .notes{
+    margin:4rem auto 0; max-width:44rem;
+    padding-top:2rem;
+    font-family:var(--mix);
+  }
+  .notes-title{
+    font-size:.72rem; letter-spacing:.22em; font-weight:500;
+    color:var(--ink-faint); text-align:center; margin:0 0 2rem;
+  }
+  .notes .zh{font-size:.9em; line-height:1.95; color:var(--ink-soft)}
+  .notes p{margin:0 0 .9em}
+  .note-h,.note-h3{
+    font-family:var(--mix); color:var(--ink); font-weight:600;
+    scroll-margin-top:70px;
+  }
+  .note-h{font-size:1.05em; margin:2.2rem 0 .8rem}
+  .note-h3{font-size:.98em; margin:1.9rem 0 .7rem}
+  .notes .zh > :first-child{margin-top:0}
+  .notes [id]:target{
+    background:var(--hl); box-shadow:-.5rem 0 0 var(--hl),.5rem 0 0 var(--hl);
+    border-radius:2px;
+  }
+  .notes ol,.notes ul{margin:.4rem 0 .9em 1.4rem; padding:0}
+  .notes li{margin:0 0 .35em}
+  .note-hr{border:none; border-top:1px solid var(--rule-soft); margin:1.8rem 0}
+  /* 译者按的图横竖混杂，尺寸从 382 宽到 2268 都有。
+     横图统一到列宽、竖图统一到同一高度，两类各自看齐而不变形。 */
+  figure.note-img{margin:1.6rem auto; text-align:center}
+  figure.note-img img{border-radius:3px; box-shadow:0 1px 10px var(--shade)}
+  /* 容许最多 1.12 倍放大，好让宽度只差几个百分点的图也能对齐列宽 */
+  figure.note-img.landscape{max-width:min(100%,calc(var(--nw,100%) * 1.12))}
+  figure.note-img.landscape img{width:100%}
+  figure.note-img.portrait img{max-height:480px; width:auto; max-width:100%}
+  blockquote{
+    margin:1rem 0; padding:.2rem 0 .2rem 1.1rem;
+    border-left:2px solid var(--gold-soft); color:var(--ink-soft);
+  }
+  a{color:var(--gold)}
+
+  footer.foot{
+    margin:4rem 0 0; padding:1.6rem 0 3rem;
+    border-top:1px solid var(--rule-soft);
+    font-family:var(--cjk); font-size:.72rem;
+    color:var(--ink-faint); text-align:center;
+  }
+  footer.foot a{color:var(--ink-faint); text-decoration:none}
+  footer.foot a:hover{color:var(--gold)}
+
+  @media print{
+    .topbar,footer.foot{display:none}
+    body{background:#fff; color:#000; font-size:10.5pt}
+    .row{break-inside:avoid}
+  }
+</style>
+<script>
+  (function(){
+    try{
+      var t=localStorage.getItem("flc-theme");
+      if(t){document.documentElement.setAttribute("data-theme",t);}
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+  <div class="topbar"><div class="wrap bar">
+    <a class="brand" href="../../../../index.html">Franz Lohner's Chronicle · 目录</a>
+    <div class="tools">
+      <button id="btn-theme" type="button">夜间</button>
+    </div>
+  </div></div>
+
+  <div class="wrap">
+    <header class="chapter">
+      <div class="series">Franz Lohner's Chronicle · 弗兰兹·洛纳的编年史</div>
+      <h1 class="title-en">The Auric Bastion</h1>
+      <div class="title-zh">金辉壁垒</div>
+    </header>
+    <figure class="illus landscape" style="--nw:1920px"><img src="../assets/Franz_Lohner_Chronicle_8.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <section class="intro"><div class="row"><div class="col en" lang="en"><p><em>An absent-minded man of mysteries, Franz Lohner relies on his bulging journal to keep track of occurrences, intrigues and arguments around Taal's Horn Keep. Sometimes his notes are even useful, believe it or not. The Franz Lohner Chronicles are extracts from that journal.</em></p></div><div class="col zh" lang="zh-CN"><p><em>神秘且健忘的弗兰兹·洛纳，靠着他那本鼓鼓囊囊的日记来记录塔尔之角周围发生的事情、阴谋和争论。信不信由你，有时他的笔记还真有点用。《弗兰兹·洛纳编年史》就是摘自这本日记的内容。</em></p></div></div></section>
+    <main>
+    <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>Well, that’s the Night of Masks over and done with, and not a moment too soon. Wasn’t Kerillian’s fault, if you can believe that. In fact, she and that silvered mask of hers never showed their faces. So I hear, she spent the whole night out by a broken waystone a couple of leagues away, mask in place and whispering to herself. One of the lads had the temerity to follow her, and came back white as a sheet. Unperforated, so he got off light.</p></div><div class="col zh" lang="zh-CN"><p>假面之夜总算过完了，早他妈该过完了。信不信由你，这次假面之夜就没凯瑞莲什么事儿。</p><p>说起来，她和她那张银色假面压根就没在假面之夜露面。</p><p>听说那晚她人在几里格之外的一块破路标石边上，戴着她的面具跟自己叨咕了一宿。</p><p>有个小伙子胆子也是肥嘟嘟的，居然跟了过去。回来的时候也只是脸吓得跟张白纸似的，身上没被射成筛子，运气挺不错的。</p></div></div>
+<div class="row" id="p2"><a class="pn" href="#p2">2</a><div class="col en" lang="en"><p>Anyway, about the Night of Masks. Things were going fine right up until the point Kruber, drunk three-quarters of the way out of his skull, clambered up onto the Sigmarite Temple’s steps, proclaimed “I’m the Bloody King of Masks, ain’t I?” and promptly took it upon himself to play at matchmaker. All went a bit disorderly at that point, even before he started … well, ‘singing’ doesn’t quite fit, but it paints a picture.</p></div><div class="col zh" lang="zh-CN"><p>还有，假面之夜那天晚上本来一切都挺顺当，直到喝得五迷三道的克鲁伯闪亮登场：这货手脚并用地爬上西格玛神庙的台阶，对着下面一声吼“老子就是他妈假面之王！谁赞成？谁反对？！”吼完就自封媒人<sup class="fnmark"><a href="#%E5%AA%92%E4%BA%BA" id="fnref-媒人" aria-label="脚注 ①">①</a></sup>。</p><p>打那会儿起，场面就有点乱了，这还是在他开……呃……“唱”这个字儿不妥，那货的嗓子不配，反正你大概能脑补出那画面。</p></div></div>
+<div class="row" id="p3"><a class="pn" href="#p3">3</a><div class="col en" lang="en"><p>All Bardin’s idea, apparently, who in turn had it put in his head by Catrinne, who’d rather been hoping Saltzpyre might show his face down in the village so Kruber could give him an obliging nudge in her direction. All for nothing, in the end, as Kruber passed out rather quickly.</p></div><div class="col zh" lang="zh-CN"><p>用屁股想都知道，克鲁伯整这出是让巴丁给忽悠了。</p><p>但巴丁也不会出这馊主意，一定是卡特妮妮指使巴丁干的。</p><p>而卡特妮妮的计划又是什么呢？她本来盼着萨尔茨皮雷能下村里来露个面，到时候耍酒疯的克鲁伯顺势把萨尔茨皮雷往她这边一推……</p><p>可惜大个子很快就喝断片儿了，精心的策划也全白搭了。</p></div></div>
+<div class="row" id="p4"><a class="pn" href="#p4">4</a><div class="col en" lang="en"><p>But it’s not all bad. Speaking of our resident pointy-eared reprobate, she seems to have given up stashing mysterious charms about the place. Or leastways, she’s hiding them better. I’ve stopped having those recurring dreams about the snakes. Been replaced by crows, for some reason, but I don’t mind that so much, even if some old hag’s cackling in the background the whole time. Sounds like a cross between my old mother and Olesya, and if that’s not a thought best left unexamined, I don’t know what is.</p></div><div class="col zh" lang="zh-CN"><p>不过也不全是坏事。说起咱们家那位尖耳朵的祸害，她好像不再往犄角旮旯里塞那些神秘护身符了——要不就是藏得更隐蔽了。</p><p>反正最近我倒是不再反复梦见那些蛇了，只是不知道为啥，蛇又换成了乌鸦。</p><p>乌鸦本来也没什么，就是梦里一直听到个老太婆在那儿嘎嘎笑，那声音听着像我老妈跟奥蕾丝雅掺一块儿……打住，可不敢细想了。</p></div></div>
+<div class="row" id="p5"><a class="pn" href="#p5">5</a><div class="col en" lang="en"><p>Losing my thread again. Where was I? Oh yes, Saltzpyre.</p></div><div class="col zh" lang="zh-CN"><p>又跑题了。我刚说到哪儿来着？哦对，萨尔茨皮雷。</p></div></div>
+<div class="row" id="p6"><a class="pn" href="#p6">6</a><div class="col en" lang="en"><p>Yeah, so poor old Catrinne’s efforts came to nothing. And it’s not as if Saltzpyre was ever going to drop by the masquerade, not with things being the way they are. I mean, a year ago, sure. He’d have been stalking between the fires, nose twitching for heresy, and hectoring all and sundry for their cavorting with unseemly foreign customs – fun enough in its own way, if you’re a sociopath. But for weeks now he’s spent every moment of spare time locked into this research project. He’s been looking paler than ever – if that’s possible – and barely eating enough to keep a mouse alive.</p></div><div class="col zh" lang="zh-CN"><p>是啊，可怜的卡特妮妮白忙活一场。再说了，就现在这大环境，萨尔茨皮雷根本就不可能来这假面舞会。</p><p>我的意思是，这要搁一年前，他必来——他一准抽着鼻子在篝火之间四处嗅着异端的味道，逮着谁训谁，骂他们跟那些不三不四的外国习俗厮混。</p><p>我跟你讲，你要是多少带点反社会人格的话，光看这一出就挺有意思。</p><p>但这几周以来，他一有空就扎进那个研究项目里，饭都顾不上吃。好吧，他吃的那点东西，连只耗子都养不活。以至于脸色比以往更苍白了，要是他那张脸还能更苍白的话。</p></div></div>
+<div class="row" id="p7"><a class="pn" href="#p7">7</a><div class="col en" lang="en"><p>Reckoning enough was enough, I finally asked him if I could have a word.</p></div><div class="col zh" lang="zh-CN"><p>我寻思他这么玩命不行啊，差不多得了，所以最后还是去找他聊了聊。</p></div></div>
+<div class="row" id="p8"><a class="pn" href="#p8">8</a><div class="col en" lang="en"><p>Turns out that Balthasar Gelt – Supreme Patriarch of the Colleges of Magic, and walking cautionary tale as to why one should handle black powder and fulminating chemicals with extreme caution – has taken it upon himself to create a great big bloody wall between Kislev and the Empire.</p></div><div class="col zh" lang="zh-CN"><p>敢情是因为拜尔沙泽·盖尔特<sup class="fnmark"><a href="#%E7%9B%96%E5%B0%94%E7%89%B9%E5%85%B6%E4%BA%BA" id="fnref-盖尔特其人" aria-label="脚注 ②">②</a></sup>，咱们帝国魔法学院首席大导师，那位时刻提醒人们处理黑火药和烈性药剂时为啥得万分小心的反面教材，他打算在基斯里夫和帝国之间建他妈一条宏伟、巨大的长城。</p></div></div>
+<div class="row" id="p9"><a class="pn" href="#p9">9</a><div class="col en" lang="en"><p>The Auric Bastion, he’s calling it. Well, I imagine someone else figured out a marketable name. Gelt’s more the sort to label it ‘Magical Wall to Contain Marauding Northlanders, Iteration Three, Variant 16f, Trial Version’, which don’t exactly roll off the tongue. It’s a remarkable feat, either way.</p></div><div class="col zh" lang="zh-CN"><p>“金辉壁垒”<sup class="fnmark"><a href="#%E5%A3%81%E5%9E%92%E6%98%AF%E6%80%8E%E4%B9%88%E7%AB%8B%E8%B5%B7%E6%9D%A5%E7%9A%84" id="fnref-壁垒是怎么立起来的" aria-label="脚注 ③">③</a></sup>，这是他给这条长城取的名字。好吧，我猜这名字是懂营销的人替他想的。因为盖尔特那种人，只会贴标签似的取名，诸如“用于遏制劫掠成性之北方蛮族的魔法墙，第三迭代，变体16f，试用版”这种念起来就拗口的玩意。</p><p>但甭管叫啥名儿吧，事情本身就已经够牛逼了。</p></div></div>
+<div class="row" id="p10"><a class="pn" href="#p10">10</a><div class="col en" lang="en"><p>What makes it even more remarkable is that he’s not done it using magic alone, but faith and all. I mean, I heard rumours that he’d done something similar in Sylvania to keep the vampires locked in and out of trouble, but this is another scale entirely. Miles and miles of shimmering golden … something … sealing the invading northlanders back behind the border.</p></div><div class="col zh" lang="zh-CN"><p>而且更牛逼的是，这东西他不光使了魔法，连信仰之力什么的都搭进去了。</p><p>我的意思是，听说他之前还在希尔瓦尼亚干过类似的事：用魔法把吸血鬼圈在里头，省得他们出来惹祸。</p><p>但这回完全是另一个量级了：延绵万里的……闪着金光……呃……挡住北佬入侵的玩意儿。</p></div></div>
+<div class="row" id="p11"><a class="pn" href="#p11">11</a><div class="col en" lang="en"><p>Victor was muttering about it something fierce, warning that using that much magic’s bound to turn Gelt a little funny. Or funnier, I should say. Gold Wizards are always a little odd. It’s that obsession with changing one thing into another. In my business, you work with what you’ve got and make the most of it. Victor’s also furious that the Empire’s pretty much upped and abandoned their long time allies to the north, and I can’t say I don’t agree. Reckon Olesya won’t be any happier, what with them being her people.</p></div><div class="col zh" lang="zh-CN"><p>维克多琢磨的就是这事儿，他嘟囔着说这么大规模的使用魔法，准把盖尔特弄疯，或者说是更疯才对。</p><p>有一说一，黄金学院那帮法师确实就这尿性，非得把一样东西变成另一样东西。干我这行都是手头有啥就用啥，物尽其用就行了。</p><p>说到后面他都气得不行了，说帝国居然把北边处了多年的盟友说卖就卖了。唉，谁说不是呢。估计奥蕾丝雅也不好受，那边可是她的同胞。</p></div></div>
+<div class="row" id="p12"><a class="pn" href="#p12">12</a><div class="col en" lang="en"><p>By strange coincidence, it turns out this innovative idea wasn’t Gelt’s alone, but rather that of a mutual acquaintance. Would you believe she stopped by the keep a couple of days back, when the gang were out performing a bit of derring-do, and we had a good natter. She’s still the same. Dark sense of humour. Fleeting glances at my jugular, followed up by contrition. And never looking a day older, of course. Still, she sounded different. As if the world’s a bad joke she’s sick of hearing. Never thought I’d see it, if I’m honest, but it was nice to see her – even if I’m not allowed to tell anyone she was here.</p></div><div class="col zh" lang="zh-CN"><p>说来也巧，这个点子与其说是盖尔特自己的，还不如说是我们都认识的一位熟人的。</p><p>说出来你都不信，前几天她还顺道来了趟城堡，那会儿家里这五个人正出门当英雄去了，我俩好好唠了一通。</p><p>她还是老样子，还是那股子黑色幽默，眼神还是时不时往我脖子上那根静脉瞟，瞟完又一脸愧疚。</p><p>当然了，还是一天都没见老。</p><p>不过，她说话的味儿变了。像是这世道成了个她早就听腻了的烂笑话。老实说，我没想过会看到她这副样子，可见着她终归还是高兴的，哪怕我不能跟任何人讲她来过。</p></div></div>
+<div class="full"><figure class="story-img landscape" style="--nw:1672px"><img src="../assets/meeting_with_Franz.png" alt="" width="1672" height="941" loading="lazy" decoding="async"></figure></div>
+<div class="row" id="p13"><a class="pn" href="#p13">13</a><div class="col en" lang="en"><p>But this Auric Bastion? That’s gonna be trouble before we’re done. Feels like an escalation, if you know what I mean, and that never ends well. What with the Twin-Tailed Comet being back, I guess you could say I’m not exactly hopeful for what comes next.</p></div><div class="col zh" lang="zh-CN"><p>那金辉壁垒呢？</p><p>在尘埃落定之前，这玩意就得惹出大麻烦。</p><p>因为感觉就是在搞豪赌啊，你懂我意思吧？</p><p>这种事从来就没什么好下场。</p><p>再赶上双尾彗星又回来了……你细品，反正我是说不上有多乐观。</p></div></div>
+<div class="full"><figure class="story-img landscape" style="--nw:480px"><img src="../assets/decoration_1.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure></div>
+    </main>
+    <section class="notes"><div class="zh"><h2 id="译者按" class="note-h">译者按</h2>
+<h3 id="媒人" class="note-h3">媒人<a class="fnback" href="#fnref-媒人" title="回到正文">↩</a></h3>
+<p>假面之夜是埃斯塔利亚传来的习俗，那天思春的小年轻们戴着面具扮成别人、出双入对围着篝火跳舞求偶。</p>
+<h3 id="盖尔特其人" class="note-h3">盖尔特其人<a class="fnback" href="#fnref-盖尔特其人" title="回到正文">↩</a></h3>
+<p>拜尔沙泽·盖尔特（Balthasar Gelt），这个帝国魔法学院首席大导师，是靠每八年一次仪式决斗打上去的，挑战者赢了就接任，拿沃兰之杖当信物。</p>
+<figure class="note-img portrait" style="--nw:564px"><img src="../assets/Balthasar_Gelt_Art.webp" alt="" width="564" height="865" loading="lazy" decoding="async"></figure>
+<p>文中说“ <em>那位时刻提醒人们处理黑火药和烈性药剂时为啥得万分小心的反面教材</em> ” 是在阴阳盖尔特这张金属脸，暗讽他当年一门心思搞点石成金，实验室炸过一回。从那以后就没人再见过他的脸。</p>
+<p>至于面具底下是什么，一种说法是他的皮肤真变成了金子，另一种说法是他被毁了容，反正真相只有他自己知道。</p>
+<h3 id="壁垒是怎么立起来的" class="note-h3">壁垒是怎么立起来的<a class="fnback" href="#fnref-壁垒是怎么立起来的" title="回到正文">↩</a></h3>
+<figure class="note-img landscape" style="--nw:1003px"><img src="../assets/Auric_Bastion.webp" alt="" width="1003" height="434" loading="lazy" decoding="async"></figure>
+<p>如图所示，金辉壁垒（The Auric Bastion）不是堡垒，而是一条塔楼之间用魔法和信仰之力连接起来的长城。</p>
+<p>文中提到盖尔特在西尔瓦尼亚也用这类魔法把吸血鬼困住过，所以金辉壁垒其实是技术升级版。</p>
+<p>文末提到那位 <strong>大家都认识的熟人</strong> 就是提供这种技术支持的人。所以实际上并非盖尔特自己的点子，跟巴丁一样，他也只是站在台面上的人，而计划的背后，同样是一位女士，她在《布鲁亨多夫的老男爵》中也有出场。</p>
+</div></section>
+    <footer class="foot">
+      Franz Lohner's Chronicle &middot; 同人翻译，原文版权归 Fatshark 所有
+      &nbsp;|&nbsp; <a href="../../../../index.html">返回目录</a><br>
+      页面由 <a href="https://github.com/Alexu0317-FATHER/translation-workbench" target="_blank" rel="noopener">Translation Workbench</a> 生成
+    </footer>
+  </div>
+
+<script>
+  (function(){
+    var root=document.documentElement;
+    var btnTheme=document.getElementById("btn-theme");
+
+    function store(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+
+    function currentTheme(){
+      var set=root.getAttribute("data-theme");
+      if(set) return set;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+    }
+    function paintTheme(){
+      var dark=currentTheme()==="dark";
+      btnTheme.textContent=dark?"日间":"夜间";
+      btnTheme.setAttribute("aria-pressed",String(dark));
+    }
+
+    btnTheme.addEventListener("click",function(){
+      var next=currentTheme()==="dark"?"light":"dark";
+      root.setAttribute("data-theme",next);
+      store("flc-theme",next);
+      paintTheme();
+    });
+
+    paintTheme();
+  })();
+</script>
+</body></html>

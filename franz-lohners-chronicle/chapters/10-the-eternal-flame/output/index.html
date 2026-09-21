@@ -170,9 +170,11 @@
   .fnback:hover{color:var(--gold)}
 
   /* ---------- 译者按 ---------- */
+  /* 不画上边框：正文以装饰图收尾的章节会与图叠成两道分界，
+     靠这里的留白和居中的小标题分界就够。 */
   .notes{
     margin:4rem auto 0; max-width:44rem;
-    padding-top:2rem; border-top:1px solid var(--rule);
+    padding-top:2rem;
     font-family:var(--mix);
   }
   .notes-title{
