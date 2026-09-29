@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>战锤：末世鼠疫2 · 马库斯·德·曼德洛特 | 《弗兰兹·洛纳的编年史》中英对照翻译</title>
+<meta name="description" content="克鲁伯摇身一变竟成了圣杯骑士，不仅如此，他祖上居然是巴托尼亚的屠龙英雄，如果事情没有变成后来那样，也许他如今已经是帕拉翁的领主了……">
+<meta name="keywords" content="Vermintide 2, Warhammer Fantasy, 战锤末世鼠疫, 官网小说, 中英对照, bilingual, 双语翻译">
+<link rel="canonical" href="https://alexu0317-father.github.io/franz-lohners-chronicle-zh/franz-lohners-chronicle/chapters/01-markus-de-mandelot/output/index.html">
+<script>
+  if (location.hostname === "alexu0317-father.github.io") {
+    var ga = document.createElement("script");
+    ga.async = true;
+    ga.src = "https://www.googletagmanager.com/gtag/js?id=G-YWGH1EXEL5";
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag("js", new Date());
+    gtag("config", "G-YWGH1EXEL5");
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  :root{
+    color-scheme:light dark;
+    --paper:#f2eade; --paper-raised:#fbf6ed; --paper-sunk:#eae0d0;
+    --ink:#2a2018; --ink-soft:#665847; --ink-faint:#9c8b73;
+    --rule:#dccfb8; --rule-soft:#e9dfcd;
+    --gold:#8f6c2c; --gold-soft:#b18e4a;
+    --hl:rgba(143,108,44,.075); --shade:rgba(70,52,28,.10);
+    --serif:"Source Serif 4",Georgia,"Iowan Old Style","Times New Roman",serif;
+    --cjk:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+    /* 字体按字符逐个回退：拉丁字母命中衬线体，汉字落到后面的中文字体 */
+    --mix:"Source Serif 4",Georgia,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+      --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+      --rule:#332b20; --rule-soft:#241f17;
+      --gold:#c99c4e; --gold-soft:#dbb066;
+      --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+    --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+    --rule:#332b20; --rule-soft:#241f17;
+    --gold:#c99c4e; --gold-soft:#dbb066;
+    --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif);
+    font-size:clamp(15.5px,.42vw + 14.2px,17.5px); line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%; height:auto}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 clamp(18px,4vw,48px)}
+
+  /* ---------- 顶栏 ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .bar{display:flex; align-items:center; justify-content:space-between; gap:1rem; height:46px}
+  .brand{
+    font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-faint); text-decoration:none; white-space:nowrap;
+    overflow:hidden; text-overflow:ellipsis;
+  }
+  .brand:hover{color:var(--gold)}
+  .tools{display:flex; gap:.4rem; flex:none}
+  .tools button{
+    font:inherit; font-size:.75rem; font-family:var(--cjk);
+    padding:.28em .8em; border-radius:999px; cursor:pointer;
+    color:var(--ink-soft); background:transparent;
+    border:1px solid var(--rule); transition:.15s;
+  }
+  .tools button:hover{color:var(--gold); border-color:var(--gold-soft)}
+
+  /* ---------- 章首 ---------- */
+  header.chapter{text-align:center; padding:clamp(2.6rem,7vw,4.6rem) 0 1.6rem}
+  .series{
+    font-size:.68rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:1.4rem;
+  }
+  .title-en{
+    font-size:clamp(1.7rem,4.4vw,2.7rem); font-weight:600;
+    line-height:1.18; letter-spacing:-.01em; margin:0;
+  }
+  .title-zh{
+    font-family:var(--cjk); font-weight:500;
+    font-size:clamp(1rem,2.2vw,1.24rem); color:var(--ink-soft);
+    margin-top:.7rem; letter-spacing:.04em;
+  }
+  header.chapter::after{
+    content:""; display:block; width:44px; height:1px;
+    background:var(--gold-soft); opacity:.6; margin:1.8rem auto 0;
+  }
+
+  figure{margin:0}
+  /* --nw 是图片原生宽度，由生成脚本写入，用来防止小图被撑大 */
+  figure.illus{margin:0 auto 2.6rem; max-width:min(100%,var(--nw,100%))}
+  figure.illus img{width:100%; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+
+  /* ---------- 开场白 ---------- */
+  .intro{
+    margin:0 0 2.2rem; padding-bottom:1.6rem;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .intro .col{color:var(--ink-soft); font-size:.92em}
+  .intro .col.en p{font-style:italic}
+
+  /* ---------- 双栏对照 ---------- */
+  .row{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(26px,3.6vw,54px);
+    position:relative; padding:.9rem 0 .9rem clamp(1.9rem,3.2vw,2.9rem);
+    border-radius:3px; transition:background .12s;
+    scroll-margin-top:70px;
+  }
+  main .row:hover{background:var(--hl)}
+  main .row:target{background:var(--hl); box-shadow:inset 3px 0 0 var(--gold-soft)}
+  .pn{
+    position:absolute; left:0; top:1.05rem;
+    width:clamp(1.3rem,2.2vw,2rem); text-align:right;
+    font-size:.7rem; font-variant-numeric:tabular-nums;
+    color:var(--ink-faint); text-decoration:none; opacity:.55; transition:.15s;
+  }
+  .row:hover .pn{opacity:1; color:var(--gold)}
+  .col p{margin:0 0 .78em}
+  .col p:last-child{margin-bottom:0}
+  .col.en{hyphens:auto}
+  .col.zh{
+    font-family:var(--mix); font-size:.93em; line-height:1.95;
+    text-align:justify; text-justify:inter-ideograph;
+  }
+  /* 中文没有斜体。原文的 em 混着引文、出处、强调三种用法，
+     统一加装饰必然在其中一种上出错，所以只去掉伪斜体，不另作区分。 */
+  .col.zh em,.notes em{font-style:normal}
+  main .row + .row{border-top:1px solid var(--rule-soft)}
+
+  .full{margin:1.8rem 0; text-align:center}
+  figure.story-img{display:inline-block; max-width:min(100%,560px,var(--nw,560px))}
+  figure.story-img img{width:100%; border-radius:2px}
+
+  /* ---------- 窄屏自动单栏 ---------- */
+  @media (max-width:820px){
+    .row{grid-template-columns:1fr !important; gap:.5rem}
+    .col.en{color:var(--ink-soft); font-size:.9em; line-height:1.7}
+    .col.zh{border-left:2px solid var(--rule); padding-left:1.05rem}
+    .brand{font-size:.62rem; letter-spacing:.1em}
+  }
+
+  /* ---------- 脚注 ---------- */
+  .fnmark{font-size:.62em; line-height:0; vertical-align:super}
+  .fnmark a{color:var(--gold); text-decoration:none; padding:0 .1em}
+  .fnmark a:hover{text-decoration:underline}
+  .fnback{
+    margin-left:.55em; font-size:.72em; color:var(--ink-faint);
+    text-decoration:none; vertical-align:middle;
+  }
+  .fnback:hover{color:var(--gold)}
+
+  /* ---------- 译者按 ---------- */
+  /* 不画上边框：正文以装饰图收尾的章节会与图叠成两道分界，
+     靠这里的留白和居中的小标题分界就够。 */
+  .notes{
+    margin:4rem auto 0; max-width:44rem;
+    padding-top:2rem;
+    font-family:var(--mix);
+  }
+  .notes-title{
+    font-size:.72rem; letter-spacing:.22em; font-weight:500;
+    color:var(--ink-faint); text-align:center; margin:0 0 2rem;
+  }
+  .notes .zh{font-size:.9em; line-height:1.95; color:var(--ink-soft)}
+  .notes p{margin:0 0 .9em}
+  .note-h,.note-h3{
+    font-family:var(--mix); color:var(--ink); font-weight:600;
+    scroll-margin-top:70px;
+  }
+  .note-h{font-size:1.05em; margin:2.2rem 0 .8rem}
+  .note-h3{font-size:.98em; margin:1.9rem 0 .7rem}
+  .notes .zh > :first-child{margin-top:0}
+  .notes [id]:target{
+    background:var(--hl); box-shadow:-.5rem 0 0 var(--hl),.5rem 0 0 var(--hl);
+    border-radius:2px;
+  }
+  .notes ol,.notes ul{margin:.4rem 0 .9em 1.4rem; padding:0}
+  .notes li{margin:0 0 .35em}
+  .note-hr{border:none; border-top:1px solid var(--rule-soft); margin:1.8rem 0}
+  /* 译者按的图横竖混杂，尺寸从 382 宽到 2268 都有。
+     横图统一到列宽、竖图统一到同一高度，两类各自看齐而不变形。 */
+  figure.note-img{margin:1.6rem auto; text-align:center}
+  figure.note-img img{border-radius:3px; box-shadow:0 1px 10px var(--shade)}
+  /* 容许最多 1.12 倍放大，好让宽度只差几个百分点的图也能对齐列宽 */
+  figure.note-img.landscape{max-width:min(100%,calc(var(--nw,100%) * 1.12))}
+  figure.note-img.landscape img{width:100%}
+  figure.note-img.portrait img{max-height:480px; width:auto; max-width:100%}
+  blockquote{
+    margin:1rem 0; padding:.2rem 0 .2rem 1.1rem;
+    border-left:2px solid var(--gold-soft); color:var(--ink-soft);
+  }
+  a{color:var(--gold)}
+
+  footer.foot{
+    margin:4rem 0 0; padding:1.6rem 0 3rem;
+    border-top:1px solid var(--rule-soft);
+    font-family:var(--cjk); font-size:.72rem;
+    color:var(--ink-faint); text-align:center;
+  }
+  footer.foot a{color:var(--ink-faint); text-decoration:none}
+  footer.foot a:hover{color:var(--gold)}
+
+  @media print{
+    .topbar,footer.foot{display:none}
+    body{background:#fff; color:#000; font-size:10.5pt}
+    .row{break-inside:avoid}
+  }
+</style>
+<script>
+  (function(){
+    try{
+      var t=localStorage.getItem("flc-theme");
+      if(t){document.documentElement.setAttribute("data-theme",t);}
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+  <div class="topbar"><div class="wrap bar">
+    <a class="brand" href="../../../../index.html">Franz Lohner's Chronicle · 目录</a>
+    <div class="tools">
+      <button id="btn-theme" type="button">夜间</button>
+    </div>
+  </div></div>
+
+  <div class="wrap">
+    <header class="chapter">
+      <div class="series">Franz Lohner's Chronicle · 弗兰兹·洛纳的编年史</div>
+      <h1 class="title-en">Markus de Mandelot</h1>
+      <div class="title-zh">马库斯·德·曼德洛特</div>
+    </header>
+    <figure class="illus landscape" style="--nw:1672px"><img src="../assets/Franz_Lohner_Chronicle_1.png" alt="" width="1672" height="941" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <section class="intro"><div class="row"><div class="col en" lang="en"><p><em>The idea that Markus Kruber (all-weather mercenary, poacher and occasional knight) has links to Bretonnia has taken plenty of folk by surprise. Not least Kruber himself, who keeps muttering into his tankard something fierce. Fortunately, Lohner’s done a bit of digging, and reckons he’s got a handle on the matter.</em></p></div><div class="col zh" lang="zh-CN"><p><em>马库斯·克鲁伯，那位啥活儿都接的佣兵、偷猎者以及蹭骑士头衔者<a href="#%E8%B9%AD%E6%9D%A5%E7%9A%84%E9%AA%91%E5%A3%AB%E5%A4%B4%E8%A1%94">①</a>，居然跟巴托尼亚能扯上关系，这让许多人都感到意外，包括正对着酒杯嘀嘀咕咕的家伙——马库斯本人。好在，洛纳一番打听后，自认已了然于胸。</em></p></div></div></section>
+    <main>
+    <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>So Kruber’s a Grail Knight, is he now? Can’t say I’m surprised. Well, a little bit surprised, but you don’t last long in my trade if you go around raising eyebrows at the slightest thing. Don’t worry. Let Uncle Franz set you straight.</p></div><div class="col zh" lang="zh-CN"><p>这么说，克鲁伯如今是圣杯骑士了？</p><p>没有，我哪会大吃一惊，小吃一惊确实有那么一点儿。毕竟我们这行，要是屁大点事儿都大惊小怪，那可干不了多久。别慌，听弗兰兹叔叔给你们说道说道。</p></div></div>
+<div class="row" id="p2"><a class="pn" href="#p2">2</a><div class="col en" lang="en"><p>Truth is, there’s a lot more trading of bloodlines back and forth across the border than you might think. Sure, those frog-courtin’ fancypants might hold pretty strange notions about warfare and religion, but when it comes down to it we’re all human. When your back’s against the wall, it’s a lot easier to go looking for help from your own kind – even if they do talk funny – than the likes of elves. No offence, Kerillian.</p></div><div class="col zh" lang="zh-CN"><p>要知道，边境地区的混血情况比你们以为的还要普遍。</p><p>是，那帮爱讲排场，喜欢跟青蛙亲嘴儿的家伙，对于战争和宗教的想法的确古怪，说话的口音也搞笑，但说一千道一万，大伙儿总归都是人类。</p><p>真被逼得走投无路了，找同类帮忙总比去求尖耳朵强吧？无意冒犯啊，凯瑞莲。</p></div></div>
+<div class="row" id="p3"><a class="pn" href="#p3">3</a><div class="col en" lang="en"><p>…well, maybe a little offence. You’ve earned it…</p></div><div class="col zh" lang="zh-CN"><p>……好吧，是有点冒犯，但你活该……</p></div></div>
+<div class="row" id="p4"><a class="pn" href="#p4">4</a><div class="col en" lang="en"><p>Anyway, same’s true of what you might call ‘local trouble’. Plenty of our scoundrels slip through Axe Bite Pass and make a new life for ‘emselves in Bretonnia when the law comes a-knockin’. And there’s plenty come the other way, too. There was a village up by Eilhart where every other family had a Bretonnian name – better than average bone structure too, come to think of it – descendants of some outcast baron’s servants, or so I heard.</p></div><div class="col zh" lang="zh-CN"><p>咳，扯远了。还有那种「在老家惹了事」的，也是一个道理。</p><p>咱们这边不少混账，一听见官差敲门，就溜过斧痕隘口，跑去巴托尼亚另起炉灶。反过来跑到这边的，也大有人在。</p><p>据说啊，艾尔哈特附近有个村子，村里差不多一半人都顶着巴托尼亚姓氏，是一群家仆们的后代，他们祖上服侍过某个被放逐的男爵。对了，我还听说，这些人长得都比一般人精致。</p></div></div>
+<div class="row" id="p5"><a class="pn" href="#p5">5</a><div class="col en" lang="en"><p>Not that our Kruber’s descended from peasantry, or even disgraced nobility. I’ve been asking around. I’ve got one or two mates across the border – never you mind who – and they reckon he’s the only living heir of one Foricarl de Mandelot.</p></div><div class="col zh" lang="zh-CN"><p>我调查过了，咱们克鲁伯既不是村民的后代，也不是什么罪臣之后。边境那头我有些熟人，是谁你们就别管了。他们认为，克鲁伯是一个叫福里卡洛·德·曼德洛特的人仅存的血脉。</p></div></div>
+<div class="row" id="p6"><a class="pn" href="#p6">6</a><div class="col en" lang="en"><p>Big old hero in his day, was old Foricarl. Saved Parravon from a dragon in righteous style. There were tapestries, and everything. Something of a hit with the damsels, so I hear. When he rode to tourney, you could barely see his lance for the weight of the ribbons of favour. Problem was, some of Foricarl’s knightly brethren didn’t hold quite the same esteem. Jealousy, you know.</p></div><div class="col zh" lang="zh-CN"><p>福里卡洛当年可是个响当当的大英雄。</p><p>要不是他挺身而出单杀了那条龙，整个帕拉翁怕是只剩残垣断壁了。他的事迹还被织成了价值连城的挂毯，一时风光无量。</p><p>据说姑娘们看他的眼神都拉丝了，骑枪上挂满了示爱的彩带，多亏他是骑着马去比武大赛，否则根本看不出那是杆骑枪。</p><p>问题是，有些骑士们可就没这么给他面子了。戏里怎么唱来着？「噢，当心啊大人，嫉妒是一个绿眼的妖魔。」<sup class="fnmark"><a href="#%E7%BB%BF%E7%9C%BC%E7%9A%84%E5%A6%96%E9%AD%94" id="fnref-绿眼的妖魔" aria-label="脚注 ②">②</a></sup></p></div></div>
+<div class="row" id="p7"><a class="pn" href="#p7">7</a><div class="col en" lang="en"><p>Worst afflicted by the green-eyed daemon was the Duke of Parravon’s son, Willibald. He wasn’t exactly a coward… but who wants to cheer on a killer of beastmen when there’s a genuine dragon-slayer holding court in Parravon’s best tavern? There was even talk of the king insisting the duchy of Parravon pass not to Willibald, but to Foricarl. That king hated dragons something fierce, on account of having lost a daughter, an arm and a good mess of pride to one some years before.</p></div><div class="col zh" lang="zh-CN"><p>被绿眼妖魔「附身」的，就是帕拉翁公爵的儿子维利巴尔德。</p><p>要说他是个胆小鬼，倒也不至于。</p><p>可是，当一个正牌屠龙英雄和野兽人屠夫<sup class="fnmark"><a href="#%E5%B8%95%E6%8B%89%E7%BF%81%E4%B8%8E%E9%87%8E%E5%85%BD%E4%BA%BA" id="fnref-帕拉翁与野兽人" aria-label="脚注 ③">③</a></sup>同时坐在帕拉翁最好的酒馆里，谁会撂下屠龙英雄去跟一个杀野兽人的干杯？</p><p>甚至有传言说，国王非要让福里卡洛继承帕拉翁公国，不给维利巴尔德。说是国王恨龙恨得要死，早些年，一条龙让他搭上了自己一条胳膊，还赔了一个女儿，外加好大一份脸面。</p></div></div>
+<div class="row" id="p8"><a class="pn" href="#p8">8</a><div class="col en" lang="en"><p>And then the old duke ups and dies in mysterious circumstances, and all evidence points to Foricarl, doesn’t it? Poor sod’s forced to flee the city or lose ‘is head. Willibald was found out in the end – that Fay Enchantress of theirs got herself involved. Turned ‘im into a frog. She likes doing that.</p></div><div class="col zh" lang="zh-CN"><p>紧接着，老公爵突然就死了，还死得不明不白。好巧不巧，证据全指向福里卡洛。可怜他只好逃出城，留下就得掉脑袋。</p><p>最后还是维利巴尔德露了馅，因为他们那位湖神仙女亲自出手了——把他变成了一只青蛙，她就好这一口。</p></div></div>
+<div class="row" id="p9"><a class="pn" href="#p9">9</a><div class="col en" lang="en"><p>…what do you mean, who’s the Fay Enchantress? I thought you’d travelled. I suppose you could say she’s the Lady of the Lake’s herald. Does all her dirty work. Bretonnians revere her, at least to her face. Don’t want to end up as frogs, I suppose…</p></div><div class="col zh" lang="zh-CN"><p>……什么叫「湖神仙女是谁」？我还以为你们有点见识呢。依我看，她算是湖之女神在凡间的代理人，啧，说穿了就是个白手套，但巴托尼亚人可尊敬她了。</p><p>我猜至少当着她的面是这样，保不齐就是怕被变成青蛙呗。</p></div></div>
+<div class="row" id="p10"><a class="pn" href="#p10">10</a><div class="col en" lang="en"><p>Anyway… When the truth comes out, everyone’s looking for Foricarl, only he’s nowhere to be found. And now we know why, don’t we? Despairing of ever proving his innocence, he came tripping across the border and continued the monster slaying business as a hermit in the Ubersreik Hills… though I guess he must have come out of hiding occasionally, seeing as he’s got a descendent shacked up in the keep with the rest of us.</p></div><div class="col zh" lang="zh-CN"><p>总之呢……真相大白之后，人们开始到处找福里卡洛，可到处都找不到他。</p><p>现在搞明白来龙去脉了吧？福里卡洛以为这辈子都洗不清冤屈了，就一溜烟越过边境，钻进厄贝斯雷克丘陵当起隐士，继续干他杀怪物的老本行……</p><p>当然，他应该还是偶尔会出来见见人，不然哪儿来的福里卡洛的后人跟我们窝在塔尔之角呢？</p></div></div>
+<div class="row" id="p11"><a class="pn" href="#p11">11</a><div class="col en" lang="en"><p>Time passes. Name dies out, and along comes our Markus.</p></div><div class="col zh" lang="zh-CN"><p>光阴那个似箭啊，岁月那个如梭，英雄的姓氏啊，它被人遗忘。再后来，就轮到咱们的马库斯出场了。</p></div></div>
+<div class="row" id="p12"><a class="pn" href="#p12">12</a><div class="col en" lang="en"><p>See? Simple. But that’s only half the story.</p></div><div class="col zh" lang="zh-CN"><p>瞧，多简单。不过，故事才讲了一半。</p></div></div>
+<div class="row" id="p13"><a class="pn" href="#p13">13</a><div class="col en" lang="en"><p>‘Grail Knight’ ain’t just a rank. It’s a holy station, earned in battle with some ghastly monstrosity, or a whole mess of ‘em. Supposedly the Lady of the Lake – assuming she’s real, I ain’t exactly a believer – sends visions to worthy candidates, guiding them on a righteous path of carnage. If they survive, she lets ‘em sup from the grail and blesses them with holy strength.</p></div><div class="col zh" lang="zh-CN"><p>「圣杯骑士」可不仅仅是个头衔，而是圣阶。</p><p>据说湖之女神会挑选够格的候选人，降下异象指引他们踏上正义的杀戮之道。</p><p>意思是你得去替她跟怪物玩儿命，可能还是一大群怪物，最后如果你是那个还能喘气儿的，她就会让你从圣杯里喝上一口，赐你一身神力，从此不再是凡人……就当有这么回事儿吧，反正我不是她的信徒。</p></div></div>
+<div class="row" id="p14"><a class="pn" href="#p14">14</a><div class="col en" lang="en"><p>That’s what happened to Kruber. He’s got the bloodline. He’s thrown down with plenty of ghastly monstrosities, sure as pumpkins is pumpkins. So more power to his elbow, says I. Especially if it gives us a bit more oomph when it comes to dealing with the Pactsworn. Like I said, when backs are against the wall, and all that.</p></div><div class="col zh" lang="zh-CN"><p>这不就是克鲁伯嘛：能成为候选人的血统，他有；至于杀怪，还用我说？</p><p>我是巴不得他越来越强，尤其当我们要面对誓约者那帮老鼠和北佬的时候。我刚不是说了吗？走投无路啊！</p></div></div>
+<div class="row" id="p15"><a class="pn" href="#p15">15</a><div class="col en" lang="en"><p>So yeah, I reckon we keep an eye on Kruber and see what develops. That means no accusations of heresy and witchcraft, Victor. He’s still our Markus, even if he does keep attempting that dreadful accent. The Lady of the Lake might not be our goddess, but a goddess she remains… and she hates Chaos something rotten, so the stories go. We’d be mad to put her pretty nose out of joint, don’t you think?</p></div><div class="col zh" lang="zh-CN"><p>所以呢，咱们留只眼睛看着克鲁伯就行。听到没？独眼龙<sup class="fnmark"><a href="#%E7%8B%AC%E7%9C%BC%E9%BE%99" id="fnref-独眼龙" aria-label="脚注 ④">④</a></sup>！</p><p>你给人扣异端的屎盆子那套不许使在他身上！他还是咱们的马库斯，哪怕他总想学巴托的口音。湖之女神咱们也许不信，可她终归是位女神……</p><p>而且，听说她恨混沌恨得牙痒痒。咱们要是惹恼了这位美人，那不是脑子有坑吗？</p></div></div>
+<div class="row" id="p16"><a class="pn" href="#p16">16</a><div class="col en" lang="en"><p>Then again, if she’s putting the ‘fluence on old Kruber, then I’ll be looking to the rest of you to make sure it doesn’t lead him into harm’s way. Risking your lives is my job, and I won’t have any sodden spirit muscling in on my territory, d’you hear?</p></div><div class="col zh" lang="zh-CN"><p>但话又说回来了，要是她真对老克施什么迷魂法，你们几个可得替我看着点，别让克鲁伯跳到她挖的坑里去。</p><p>拿你们的命去冒险，那是老子的工作！那个喂人喝洗脚水的湖怪别想抢我的饭碗，听见没有？</p></div></div>
+<div class="row" id="p17"><a class="pn" href="#p17">17</a><div class="col en" lang="en"><p>Good. Glad we had this chat. Best you keep it from Kruber. No sense ‘im getting upset, is there?</p></div><div class="col zh" lang="zh-CN"><p>好了，跟你们聊这么一通，舒坦多了。还有，最好别让克鲁伯知道这事儿，免得他心里不痛快，对吧？</p></div></div>
+<div class="full"><figure class="story-img landscape" style="--nw:480px"><img src="../assets/decoration_1.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure></div>
+    </main>
+    <section class="notes"><div class="zh"><h2 id="译者按" class="note-h">译者按</h2>
+<h3 id="蹭来的骑士头衔" class="note-h3">蹭来的骑士头衔</h3>
+<p>官方开发日志《Dev Blog - Markus Kruber》「步兵骑士」一节，提到过克鲁伯确实受封过帝国骑士，但这份荣誉不是他求来的：他怀疑是同伴把他的战功传到了骑士团团长耳中，随后才受封，接着又一路迅速晋升。所以说引言里挖苦是蹭来的骑士头衔。原文见<a href="https://www.vermintide.com/news/2018/12/7/dev-blog-markus-kruber">官方网站</a>。</p>
+<h3 id="绿眼的妖魔" class="note-h3">绿眼的妖魔<a class="fnback" href="#fnref-绿眼的妖魔" title="回到正文">↩</a></h3>
+<p>此处原文为：Jealousy, you know.</p>
+<p>但下一段说维利巴尔德被绿眼妖魔缠上，就是出自莎士比亚《奥赛罗》第三幕，伊阿古对奥赛罗说：「O, beware, my lord, of jealousy; It is the green-eyed monster which doth mock the meat it feeds on.」从此英语里就用「绿眼妖魔」指嫉妒。</p>
+<h3 id="帕拉翁与野兽人" class="note-h3">帕拉翁与野兽人<a class="fnback" href="#fnref-帕拉翁与野兽人" title="回到正文">↩</a></h3>
+<p>帕拉翁公国在灰色山脉中，境内多森林和山地，南边与木精灵的艾索洛伦接壤，邻近连通巴托尼亚与帝国的斧痕隘口（Axe Bite Pass）。翻过山就是帝国的瑞克领，厄贝斯雷克、博根哈芬这一带，正是末世鼠疫系列的舞台。</p>
+<p>野兽人是受混沌侵染、半人半兽的生物，盘踞在旧世界的森林深处，与木精灵的冲突大多发生在艾索洛伦边缘。所以在帕拉翁，「野兽人屠夫」是实打实的名号，只是跟屠龙比，还差了一截。</p>
+<figure class="note-img landscape" style="--nw:698px"><img src="../assets/局部截取_20260929_160410.png" alt="" width="698" height="643" loading="lazy" decoding="async"></figure>
+<h3 id="独眼龙" class="note-h3">独眼龙<a class="fnback" href="#fnref-独眼龙" title="回到正文">↩</a></h3>
+<p>指维克多·萨尔茨皮雷，塔尔之角的猎巫人，瞎了一只眼。</p>
+</div></section>
+    <footer class="foot">
+      Franz Lohner's Chronicle &middot; 同人翻译，原文版权归 Fatshark 所有
+      &nbsp;|&nbsp; <a href="../../../../index.html">返回目录</a><br>
+      页面由 <a href="https://github.com/Alexu0317-FATHER/translation-workbench" target="_blank" rel="noopener">Translation Workbench</a> 生成
+    </footer>
+  </div>
+
+<script>
+  (function(){
+    var root=document.documentElement;
+    var btnTheme=document.getElementById("btn-theme");
+
+    function store(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+
+    function currentTheme(){
+      var set=root.getAttribute("data-theme");
+      if(set) return set;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+    }
+    function paintTheme(){
+      var dark=currentTheme()==="dark";
+      btnTheme.textContent=dark?"日间":"夜间";
+      btnTheme.setAttribute("aria-pressed",String(dark));
+    }
+
+    btnTheme.addEventListener("click",function(){
+      var next=currentTheme()==="dark"?"light":"dark";
+      root.setAttribute("data-theme",next);
+      store("flc-theme",next);
+      paintTheme();
+    });
+
+    paintTheme();
+  })();
+</script>
+</body></html>
