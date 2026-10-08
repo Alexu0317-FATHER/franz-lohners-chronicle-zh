@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>战锤：末世鼠疫2 · 家事 | 《弗兰兹·洛纳的编年史》中英对照翻译</title>
+<meta name="description" content="巴丁最近把自己关在房里，连奥蕾丝雅的蜡烛都不吃了。老洛纳四下打听，牵出了他父亲和叔叔的一段家事。龙岩城堡那趟任务勾起的，或许正是他当年没走成的那条路……">
+<meta name="keywords" content="Vermintide 2, Warhammer Fantasy, 战锤末世鼠疫, 官网小说, 中英对照, bilingual, 双语翻译">
+<link rel="canonical" href="https://alexu0317-father.github.io/franz-lohners-chronicle-zh/franz-lohners-chronicle/chapters/02-family-matters/output/index.html">
+<script>
+  if (location.hostname === "alexu0317-father.github.io") {
+    var ga = document.createElement("script");
+    ga.async = true;
+    ga.src = "https://www.googletagmanager.com/gtag/js?id=G-YWGH1EXEL5";
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag("js", new Date());
+    gtag("config", "G-YWGH1EXEL5");
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  :root{
+    color-scheme:light dark;
+    --paper:#f2eade; --paper-raised:#fbf6ed; --paper-sunk:#eae0d0;
+    --ink:#2a2018; --ink-soft:#665847; --ink-faint:#9c8b73;
+    --rule:#dccfb8; --rule-soft:#e9dfcd;
+    --gold:#8f6c2c; --gold-soft:#b18e4a;
+    --hl:rgba(143,108,44,.075); --shade:rgba(70,52,28,.10);
+    --serif:"Source Serif 4",Georgia,"Iowan Old Style","Times New Roman",serif;
+    --cjk:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+    /* 字体按字符逐个回退：拉丁字母命中衬线体，汉字落到后面的中文字体 */
+    --mix:"Source Serif 4",Georgia,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+      --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+      --rule:#332b20; --rule-soft:#241f17;
+      --gold:#c99c4e; --gold-soft:#dbb066;
+      --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+    --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+    --rule:#332b20; --rule-soft:#241f17;
+    --gold:#c99c4e; --gold-soft:#dbb066;
+    --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif);
+    font-size:clamp(15.5px,.42vw + 14.2px,17.5px); line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%; height:auto}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 clamp(18px,4vw,48px)}
+
+  /* ---------- 顶栏 ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .bar{display:flex; align-items:center; justify-content:space-between; gap:1rem; height:46px}
+  .brand{
+    font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-faint); text-decoration:none; white-space:nowrap;
+    overflow:hidden; text-overflow:ellipsis;
+  }
+  .brand:hover{color:var(--gold)}
+  .tools{display:flex; gap:.4rem; flex:none}
+  .tools button{
+    font:inherit; font-size:.75rem; font-family:var(--cjk);
+    padding:.28em .8em; border-radius:999px; cursor:pointer;
+    color:var(--ink-soft); background:transparent;
+    border:1px solid var(--rule); transition:.15s;
+  }
+  .tools button:hover{color:var(--gold); border-color:var(--gold-soft)}
+
+  /* ---------- 章首 ---------- */
+  header.chapter{text-align:center; padding:clamp(2.6rem,7vw,4.6rem) 0 1.6rem}
+  .series{
+    font-size:.68rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:1.4rem;
+  }
+  .title-en{
+    font-size:clamp(1.7rem,4.4vw,2.7rem); font-weight:600;
+    line-height:1.18; letter-spacing:-.01em; margin:0;
+  }
+  .title-zh{
+    font-family:var(--cjk); font-weight:500;
+    font-size:clamp(1rem,2.2vw,1.24rem); color:var(--ink-soft);
+    margin-top:.7rem; letter-spacing:.04em;
+  }
+  header.chapter::after{
+    content:""; display:block; width:44px; height:1px;
+    background:var(--gold-soft); opacity:.6; margin:1.8rem auto 0;
+  }
+
+  figure{margin:0}
+  /* --nw 是图片原生宽度，由生成脚本写入，用来防止小图被撑大 */
+  figure.illus{margin:0 auto 2.6rem; max-width:min(100%,var(--nw,100%))}
+  figure.illus img{width:100%; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+
+  /* ---------- 开场白 ---------- */
+  .intro{
+    margin:0 0 2.2rem; padding-bottom:1.6rem;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .intro .col{color:var(--ink-soft); font-size:.92em}
+  .intro .col.en p{font-style:italic}
+
+  /* ---------- 双栏对照 ---------- */
+  .row{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(26px,3.6vw,54px);
+    position:relative; padding:.9rem 0 .9rem clamp(1.9rem,3.2vw,2.9rem);
+    border-radius:3px; transition:background .12s;
+    scroll-margin-top:70px;
+  }
+  main .row:hover{background:var(--hl)}
+  main .row:target{background:var(--hl); box-shadow:inset 3px 0 0 var(--gold-soft)}
+  .pn{
+    position:absolute; left:0; top:1.05rem;
+    width:clamp(1.3rem,2.2vw,2rem); text-align:right;
+    font-size:.7rem; font-variant-numeric:tabular-nums;
+    color:var(--ink-faint); text-decoration:none; opacity:.55; transition:.15s;
+  }
+  .row:hover .pn{opacity:1; color:var(--gold)}
+  .col p{margin:0 0 .78em}
+  .col p:last-child{margin-bottom:0}
+  .col.en{hyphens:auto}
+  .col.zh{
+    font-family:var(--mix); font-size:.93em; line-height:1.95;
+    text-align:justify; text-justify:inter-ideograph;
+  }
+  /* 中文没有斜体。原文的 em 混着引文、出处、强调三种用法，
+     统一加装饰必然在其中一种上出错，所以只去掉伪斜体，不另作区分。 */
+  .col.zh em,.notes em{font-style:normal}
+  main .row + .row{border-top:1px solid var(--rule-soft)}
+
+  .full{margin:1.8rem 0; text-align:center}
+  figure.story-img{display:inline-block; max-width:min(100%,560px,var(--nw,560px))}
+  figure.story-img img{width:100%; border-radius:2px}
+
+  /* ---------- 窄屏自动单栏 ---------- */
+  @media (max-width:820px){
+    .row{grid-template-columns:1fr !important; gap:.5rem}
+    .col.en{color:var(--ink-soft); font-size:.9em; line-height:1.7}
+    .col.zh{border-left:2px solid var(--rule); padding-left:1.05rem}
+    .brand{font-size:.62rem; letter-spacing:.1em}
+  }
+
+  /* ---------- 脚注 ---------- */
+  .fnmark{font-size:.62em; line-height:0; vertical-align:super}
+  .fnmark a{color:var(--gold); text-decoration:none; padding:0 .1em}
+  .fnmark a:hover{text-decoration:underline}
+  .fnback{
+    margin-left:.55em; font-size:.72em; color:var(--ink-faint);
+    text-decoration:none; vertical-align:middle;
+  }
+  .fnback:hover{color:var(--gold)}
+
+  /* ---------- 译者按 ---------- */
+  /* 不画上边框：正文以装饰图收尾的章节会与图叠成两道分界，
+     靠这里的留白和居中的小标题分界就够。 */
+  .notes{
+    margin:4rem auto 0; max-width:44rem;
+    padding-top:2rem;
+    font-family:var(--mix);
+  }
+  .notes-title{
+    font-size:.72rem; letter-spacing:.22em; font-weight:500;
+    color:var(--ink-faint); text-align:center; margin:0 0 2rem;
+  }
+  .notes .zh{font-size:.9em; line-height:1.95; color:var(--ink-soft)}
+  .notes p{margin:0 0 .9em}
+  .note-h,.note-h3{
+    font-family:var(--mix); color:var(--ink); font-weight:600;
+    scroll-margin-top:70px;
+  }
+  .note-h{font-size:1.05em; margin:2.2rem 0 .8rem}
+  .note-h3{font-size:.98em; margin:1.9rem 0 .7rem}
+  .notes .zh > :first-child{margin-top:0}
+  .notes [id]:target{
+    background:var(--hl); box-shadow:-.5rem 0 0 var(--hl),.5rem 0 0 var(--hl);
+    border-radius:2px;
+  }
+  .notes ol,.notes ul{margin:.4rem 0 .9em 1.4rem; padding:0}
+  .notes li{margin:0 0 .35em}
+  .note-hr{border:none; border-top:1px solid var(--rule-soft); margin:1.8rem 0}
+  /* 译者按的图横竖混杂，尺寸从 382 宽到 2268 都有。
+     横图统一到列宽、竖图统一到同一高度，两类各自看齐而不变形。 */
+  figure.note-img{margin:1.6rem auto; text-align:center}
+  figure.note-img img{border-radius:3px; box-shadow:0 1px 10px var(--shade)}
+  /* 容许最多 1.12 倍放大，好让宽度只差几个百分点的图也能对齐列宽 */
+  figure.note-img.landscape{max-width:min(100%,calc(var(--nw,100%) * 1.12))}
+  figure.note-img.landscape img{width:100%}
+  figure.note-img.portrait img{max-height:480px; width:auto; max-width:100%}
+  blockquote{
+    margin:1rem 0; padding:.2rem 0 .2rem 1.1rem;
+    border-left:2px solid var(--gold-soft); color:var(--ink-soft);
+  }
+  a{color:var(--gold)}
+
+  footer.foot{
+    margin:4rem 0 0; padding:1.6rem 0 3rem;
+    border-top:1px solid var(--rule-soft);
+    font-family:var(--cjk); font-size:.72rem;
+    color:var(--ink-faint); text-align:center;
+  }
+  footer.foot a{color:var(--ink-faint); text-decoration:none}
+  footer.foot a:hover{color:var(--gold)}
+
+  @media print{
+    .topbar,footer.foot{display:none}
+    body{background:#fff; color:#000; font-size:10.5pt}
+    .row{break-inside:avoid}
+  }
+</style>
+<script>
+  (function(){
+    try{
+      var t=localStorage.getItem("flc-theme");
+      if(t){document.documentElement.setAttribute("data-theme",t);}
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+  <div class="topbar"><div class="wrap bar">
+    <a class="brand" href="../../../../index.html">Franz Lohner's Chronicle · 目录</a>
+    <div class="tools">
+      <button id="btn-theme" type="button">夜间</button>
+    </div>
+  </div></div>
+
+  <div class="wrap">
+    <header class="chapter">
+      <div class="series">Franz Lohner's Chronicle · 弗兰兹·洛纳的编年史</div>
+      <h1 class="title-en">Family Matters</h1>
+      <div class="title-zh">家事</div>
+    </header>
+    <figure class="illus landscape" style="--nw:1920px"><img src="../assets/Franz_Lohner_Chronicle_2.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <section class="intro"><div class="row"><div class="col en" lang="en"><p><em>Something’s going on with Bardin. He’s not saying what. In fact, he’s not saying anything at all, which is unusual. Looks like we’ll have to turn to Lohner to find out what’s going on.</em></p></div><div class="col zh" lang="zh-CN"><p><em>最近感觉巴丁有点不对劲，问他又不吭声。事实上，他变得什么话也不说，这不正常。看来想知道出了什么事，只能去找洛纳了。</em></p></div></div></section>
+    <main>
+    <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>I bet you’ve all noticed that our stout, comradely dwarf – while stout as ever – ain’t exactly been as comradely of late. Locked himself up in his room. All kinds of weird banging and the like coming from within. Also been a bit, well, short with everyone, hasn’t he? And Olesya says he’s even stopped eating her candles. Not exactly the Bardin Gorreksson we’ve come to know and love. Well, I’ve done a bit of asking around, and I think I know why.</p></div><div class="col zh" lang="zh-CN"><p>我想你们都注意到了，咱们那位敦实又亲切的矮人……好吧，敦实还是那么敦实，只是最近没那么亲切了。他成天把自己关在房里，里头传出些稀奇古怪的敲打声，跟谁说话都……有点儿「惜字如金」。</p><p>奥蕾丝雅还说，他连她的蜡烛都不吃了<sup class="fnmark"><a href="#%E5%90%83%E8%9C%A1%E7%83%9B" id="fnref-吃蜡烛" aria-label="脚注 ①">①</a></sup>。这可不是咱们认识的那个可爱的巴丁·高瑞克什。</p><p>我四下打听了一通，便已了然于胸。</p></div></div>
+<div class="row" id="p2"><a class="pn" href="#p2">2</a><div class="col en" lang="en"><p>I don’t have to remind any of you that our recent trip to Castle Drachenfels, while a roaring success – and thanks for that – <em>stirred the pot</em>,* *shall we say? Old memories dredged up, and all that. Never mind how I know, I just know, all right? Let’s just say that Cousin Okri told me.</p></div><div class="col zh" lang="zh-CN"><p>前阵子你们去龙岩城堡的那趟任务，确实干得漂亮，值得称道。只是……故地重游，忆上心头<sup class="fnmark"><a href="#%E9%BE%99%E5%B2%A9%E5%9F%8E%E5%A0%A1%E9%87%8C%E7%9A%84%E5%A3%B0%E9%9F%B3" id="fnref-龙岩城堡里的声音" aria-label="脚注 ②">②</a></sup>，我没说错吧？</p><p>别问我怎么知道，问就是表亲奥克里告诉我的。</p></div></div>
+<div class="row" id="p3"><a class="pn" href="#p3">3</a><div class="col en" lang="en"><p>…you can put that sneer away, Kerillian. Okri’s real enough…</p></div><div class="col zh" lang="zh-CN"><p>……凯瑞莲，把那副冷笑收起来。奥克里可不是我编的……</p></div></div>
+<div class="row" id="p4"><a class="pn" href="#p4">4</a><div class="col en" lang="en"><p>Anyway, you’ve all been a bit off since you got back, and Bardin more than most. It’s all to do with family, as it happens. Turns out that Bardin’s uncle – one Drakki Dagsson – was something of an iconoclast back in Karak Norn. Obsessed with new-fangled inventions and mechanisms more than runes and good stonework, that sort of thing. Simple enough, you might think. Dwarfs are cunning buggers, we all know it. I marvel at their technology, truth be told.</p></div><div class="col zh" lang="zh-CN"><p>总之，你们回来之后都有点不对劲，巴丁尤其如此。说到底，这事跟家人有关。</p><p>原来巴丁有位叔叔，叫德拉基·达格森，在卡拉克·荒芜堡算是个标新立异的人物。比起符文和踏实的石匠手艺，他更醉心于那些新式发明和机关装置。</p><p>听着也没什么，对吧？谁都知道矮人这帮家伙脑子灵光，说真的，他们那套技术，我还挺佩服。</p></div></div>
+<div class="row" id="p5"><a class="pn" href="#p5">5</a><div class="col en" lang="en"><p>But dwarfs are also traditionalists, and some don’t take well to change.</p></div><div class="col zh" lang="zh-CN"><p>可矮人手再巧，到底还是认老规矩的，有的更是容不得半点变化。</p></div></div>
+<div class="row" id="p6"><a class="pn" href="#p6">6</a><div class="col en" lang="en"><p>Bardin’s old dad – Gorrek Dagsson – was as traditional as they come. Steam power? What’s wrong with a bit of good old dawi muscle? Cogwork? Use a block and tackle! Black powder? That’s just filthy muck, used by lazy beardlings in a hurry. In other words, the brothers Dagsson didn’t see eye to eye on much… Which was a pity, because Bardin worshipped his Uncle Drakki, and spent every hour he could learning everything the crazy old dwarf had to teach.</p></div><div class="col zh" lang="zh-CN"><p>巴丁的老爹高瑞克·达格森，就是守旧到了骨子里的那种。用他的话讲就是：蒸汽动力？你是质疑咱矮人的肌肉？齿轮机关？用滑轮组不就行了！黑火药？那就是脏东西，图快的懒雏须才用。</p><p>换句话说，达格森这兄弟俩几乎没一件事能想到一块儿去……可惜的是，巴丁偏偏把他叔叔德拉基当偶像，一有空就泡在这老疯子身边，一个敢教，一个敢学。</p></div></div>
+<div class="row" id="p7"><a class="pn" href="#p7">7</a><div class="col en" lang="en"><p>Can’t imagine Gorrek was too pleased when he found out. Much less when Bardin declared he was seeking an apprenticeship in the Engineer’s Guild instead of following his old dad into the clan throngs.</p></div><div class="col zh" lang="zh-CN"><p>高瑞克知道这事儿后，自然高兴不到哪儿去。更别提后来巴丁不打算跟着老爹进氏族战团，而是宣布自己要去工程师行会当学徒这个决定。</p></div></div>
+<div class="row" id="p8"><a class="pn" href="#p8">8</a><div class="col en" lang="en"><p>Now, I don’t know what happened exactly. Getting secrets out of a dwarf hold ain’t exactly easy at the best of times, and there’s a whiff of dishonour floating around the whole business.</p></div><div class="col zh" lang="zh-CN"><p>至于后来究竟出了什么事，我就不知道了。矮人要塞里的秘密，平日里就难打听，何况这整件事还透着一股不光彩的味道。</p></div></div>
+<div class="row" id="p9"><a class="pn" href="#p9">9</a><div class="col en" lang="en"><p>Turns out that at about the same time our Bardin was about to be apprenticed to Karak Norn’s Engineer’s Guild there was some kind of mining accident. Hundreds dead, and old man Gorrek among them. Drakki departed the hold the next day, head shaved and Slayer Oath on his lips – not a life he was cut out for, from what I hear. Certainly proved that way. According to the annals of Karak Norn, Drakki’s bones – and his steam-axe – lie mouldering in a troll lair somewhere on the slopes of Zarak Karn.</p></div><div class="col zh" lang="zh-CN"><p>只知道巴丁眼看就要去卡拉克·荒芜堡的工程师行会拜师，矿上却出了事故。</p><p>几百人没了命，高瑞克老爷子也在其中。第二天，德拉基就剃了头，嘴里念着屠夫誓言<sup class="fnmark"><a href="#%E5%B1%A0%E5%A4%AB%E8%AA%93%E8%A8%80" id="fnref-屠夫誓言" aria-label="脚注 ③">③</a></sup>，离开了要塞。</p><p>听说他并不适合走这条路，后来果然如此。按卡拉克·荒芜堡的记载，他的尸骨，还有那把蒸汽斧，至今仍在扎拉克·卡恩山里的某处巨魔巢穴中腐朽。</p></div></div>
+<div class="row" id="p10"><a class="pn" href="#p10">10</a><div class="col en" lang="en"><p>As we know, Bardin never made it to the Engineer’s Guild. Instead, he took up his father’s axe and served with distinction in the clan throngs, eventually earning a place among King Brokk’s ironbreakers. Even became a father himself, though I hear that young Mordin Bardinsson met a tragic end – don’t ask, because it’s not my story to tell – and soon after Hedda Bardinsdottir left Karak Norn for the salt air and steamships of Barak Varr. Took after the great uncle she never knew, it seems.</p></div><div class="col zh" lang="zh-CN"><p>巴丁最终没进工程师行会，这你们都知道。</p><p>他接过了父亲的斧子，在氏族战团里立下功劳，后来还成了布罗克·铁镐国王麾下的碎铁勇士。</p><p>连父亲这个身份，他也接了过来，只是我听说，他儿子小莫丁·巴丁森死得很惨。</p><p>别问了，这事轮不到我来讲<sup class="fnmark"><a href="#%E8%8E%AB%E4%B8%81%E7%9A%84%E4%B8%8B%E5%9C%BA" id="fnref-莫丁的下场" aria-label="脚注 ④">④</a></sup>。</p><p>那之后没多久，女儿赫达·巴丁斯多蒂尔就离开卡拉克·荒芜堡，去了有咸涩海风和蒸汽船的海门关。</p><p>看来她是随了那位素未谋面的叔祖父。</p></div></div>
+<div class="row" id="p11"><a class="pn" href="#p11">11</a><div class="col en" lang="en"><p>…as for his wife, for those who were wondering, the name Grelda Thrangsdottir strikes terror into the hearts of every greenskin who approaches the Karak Norn-Grimhold road. No idea if she and Bardin parted on good terms, exactly. Some matters are best left private…</p></div><div class="col zh" lang="zh-CN"><p>……至于他妻子，这么说吧：但凡敢靠近荒芜堡到格里姆要塞这一带的绿皮，听见格蕾尔达·特朗斯多蒂尔这个名字都要胆寒。</p><p>不过，他俩当初是怎么分的，我就不清楚了。有些家事，还是留给人家自己吧……</p></div></div>
+<div class="row" id="p12"><a class="pn" href="#p12">12</a><div class="col en" lang="en"><p>Anyway, what does this have to do with Bardin locking himself up, I hear you ask? Well, you’ve all had regrets stirred up by old Drachenfels, ain’t you? Bardin’s, I reckon, lie squarely on the road not taken – about how life might have worked out different had he stuck to his passions instead of honouring his father’s dry traditions. Might still have a family, instead of memories of the same.</p></div><div class="col zh" lang="zh-CN"><p>你们肯定要问：说了这么多，跟巴丁把自己关在房里有什么关系？</p><p>龙岩城堡那一趟，不是都勾起了你们各自的遗憾吗？我琢磨，巴丁惦记的就是当年那条未选择的路<sup class="fnmark"><a href="#%E6%9C%AA%E9%80%89%E6%8B%A9%E7%9A%84%E8%B7%AF" id="fnref-未选择的路" aria-label="脚注 ⑤">⑤</a></sup>：要是他一直追着自己的热爱走，而不是恪守他父亲那古板的传统，日子会不会不一样？或许也会有一个家，而不是只剩对家的回忆。</p></div></div>
+<div class="row" id="p13"><a class="pn" href="#p13">13</a><div class="col en" lang="en"><p>Past few weeks, Bardin’s had me running ragged, chasing down all manner of alloys and ores. Trading shillings we ain’t got with those penny-pinchers at Karak Ziflin. Fifty-two different types of cogs and gears, would you believe? High grade black powder that the Imperial Engineer’s School would kill to get a look at, much less get their charred and mangled hands on. Precision lenses. Tools whose names I didn’t know, and couldn’t begin to pronounce.</p></div><div class="col zh" lang="zh-CN"><p>这几个星期，巴丁可把我折腾惨了，叫我到处搜罗合金和矿石。还让我揣着咱们本就干瘪的钱袋，去跟卡拉克·微风堡那帮抠门鬼做买卖。</p><p>光各种规格的齿轮就要五十二种，你们敢信？</p><p>还有上等的黑火药，就是帝国工程学院那帮人为了看一眼都能跟你玩儿命的那种。你根本不敢想，他们为了让那双炸得焦黑的烂手能摸上一把这种火药，还能干出什么事。</p><p>还有精密镜片，和一些……工具，那些玩意儿我根本不认识，连名字都不会念。</p></div></div>
+<div class="row" id="p14"><a class="pn" href="#p14">14</a><div class="col en" lang="en"><p>For my money, all this toil is Bardin’s way of honouring his uncle Drakki, and maybe making some sort of amends with young Hedda. A confession, of sorts.</p></div><div class="col zh" lang="zh-CN"><p>我敢拿那只钱袋打赌，巴丁忙活这一通，一定是在向他叔叔德拉基致敬，或许也想对小赫达弥补些什么。我猜，算是一种忏悔？</p></div></div>
+<div class="row" id="p15"><a class="pn" href="#p15">15</a><div class="col en" lang="en"><p>…so that should please you, eh Victor? You’ve always been a big admirer of confessions…</p></div><div class="col zh" lang="zh-CN"><p>……这下你该满意了吧，维克多？你向来爱听人忏悔……</p></div></div>
+<div class="row" id="p16"><a class="pn" href="#p16">16</a><div class="col en" lang="en"><p>Either way, I reckon we’re in for a sight when he finally emerges from that room of his. In the meantime, I wouldn’t let on that I’ve told you even a speck of this. Shame’s a private matter for dwarfs. Drengbarazi you may be, but you’re still nardawi, and that matters more than it should. And certainly don’t tell Catrinne – she’ll want to immortalise the whole sorry saga in oils, and I can’t imagine Bardin taking kindly to that.</p></div><div class="col zh" lang="zh-CN"><p>不管怎么说，等巴丁肯从他那间屋子里出来，咱们准有好东西看。在那之前，你们可千万给我把嘴巴闭紧咯！我跟你们说过的一个字都别让他知道。</p><p>矮人有矮人的脸面，他们的家丑向来不能外扬。</p><p>就算他管你们叫「德伦巴拉齐」，说是他认下的生死弟兄，但在矮人语里，你们还是「纳尔达维」，终究是外人。而这一点，他们看得太重了。</p><p>还有，这些事儿尤其不能告诉卡特妮妮。她准要把这一整出糟心事画成油画传世，我看巴丁可不会领情。</p></div></div>
+<div class="row" id="p17"><a class="pn" href="#p17">17</a><div class="col en" lang="en"><p>As to the rest? Bardin Gorreksson will come out when he’s good and ready, and I reckon we’ll be in for a treat when he does…</p></div><div class="col zh" lang="zh-CN"><p>至于别的？等巴丁·高瑞克什自己准备好了自然会出来。我看啊，好戏就要上场了……</p></div></div>
+<div class="full"><figure class="story-img landscape" style="--nw:480px"><img src="../assets/decoration_1.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure></div>
+    </main>
+    <section class="notes"><div class="zh"><h2 id="译者按" class="note-h">译者按</h2>
+<h3 id="吃蜡烛" class="note-h3">吃蜡烛<a class="fnback" href="#fnref-吃蜡烛" title="回到正文">↩</a></h3>
+<p>没看错，巴丁是真吃蜡烛。这是官方编年史里反复出现的巴丁笑料。剧透一下，后续章节会提到他的干粮中有蜡烛残块，他自己说这东西既能点着照明，又能嚼了恢复力气，是矮人要塞巧思的范例；洛纳则把蜡烛跟煮巨魔、发酵奶酪并列，当作巴丁什么都吃的证据，还拿「告诉奥蕾丝雅是谁一直在吃她的蜡烛」要挟过他。</p>
+<h3 id="龙岩城堡里的声音" class="note-h3">龙岩城堡里的声音<a class="fnback" href="#fnref-龙岩城堡里的声音" title="回到正文">↩</a></h3>
+<p>就是游戏里「龙岩城堡的诅咒」剧情线，一共三关：故地重游、血与暗、巫师巢穴。</p>
+<p>从第二关「血与暗」开始，会有一个声音分别对五个人说话，专挑各自的旧事和愧疚下手，这些话只有角色自己能听见。对巴丁说的那几句里，提到了一场他没能赶上的屠杀，提到了他死去的儿子莫丁，还说他总是拿笑话和歌来淹没过去。</p>
+<p>所以洛纳是怎么知道的？他说是表亲奥克里告诉他的。呵呵，你猜为什么凯瑞莲要冷笑？</p>
+<h3 id="屠夫誓言" class="note-h3">屠夫誓言<a class="fnback" href="#fnref-屠夫誓言" title="回到正文">↩</a></h3>
+<p>矮人如果背上了自认洗不掉的耻辱，会剃掉头发，只留一道染成橙色的头冠，立下屠夫誓言，从此离开氏族，专找最凶的怪物去打，求一个光荣战死来赎罪。</p>
+<p>屠夫在矮人语里叫 Drengi，后文的「德伦巴拉齐」（Drengbarazi）和它是同一个词根，可以理解成「和屠夫结誓的人」。</p>
+<h3 id="莫丁的下场" class="note-h3">莫丁的下场<a class="fnback" href="#fnref-莫丁的下场" title="回到正文">↩</a></h3>
+<p>洛纳嘴上说轮不到他来讲，可他是知道的。</p>
+<p>游戏里 2020 年鼠年活动送过一幅能挂在要塞里的画，标题就叫《莫丁的下场》（Mordin's Fate）。</p>
+<p>洛纳给这幅画写的说明是：「Yes, well ... no one tell Bardin, eh? I'll have a quiet word myself.」嗯，这个嘛……谁都别告诉巴丁，行吗？我自己找他悄悄说。</p>
+<p>暗示其中一个是莫丁的头颅。</p>
+<figure class="note-img portrait" style="--nw:758px"><img src="../assets/mordins-fate.png" alt="" width="758" height="1024" loading="lazy" decoding="async"></figure>
+<h3 id="未选择的路" class="note-h3">未选择的路<a class="fnback" href="#fnref-未选择的路" title="回到正文">↩</a></h3>
+<p>原文是 the road not taken，出自美国诗人罗伯特·弗罗斯特的同名诗，1916 年收入诗集，中文通行译名《未选择的路》。诗里的人站在林中的岔路口，只能选一条走，多年以后仍惦记着没走的那一条。在英语里，这个说法早已成了「当初没选的那条人生路」的代称。</p>
+</div></section>
+    <footer class="foot">
+      Franz Lohner's Chronicle &middot; 同人翻译，原文版权归 Fatshark 所有
+      &nbsp;|&nbsp; <a href="../../../../index.html">返回目录</a><br>
+      页面由 <a href="https://github.com/Alexu0317-FATHER/translation-workbench" target="_blank" rel="noopener">Translation Workbench</a> 生成
+    </footer>
+  </div>
+
+<script>
+  (function(){
+    var root=document.documentElement;
+    var btnTheme=document.getElementById("btn-theme");
+
+    function store(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+
+    function currentTheme(){
+      var set=root.getAttribute("data-theme");
+      if(set) return set;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+    }
+    function paintTheme(){
+      var dark=currentTheme()==="dark";
+      btnTheme.textContent=dark?"日间":"夜间";
+      btnTheme.setAttribute("aria-pressed",String(dark));
+    }
+
+    btnTheme.addEventListener("click",function(){
+      var next=currentTheme()==="dark"?"light":"dark";
+      root.setAttribute("data-theme",next);
+      store("flc-theme",next);
+      paintTheme();
+    });
+
+    paintTheme();
+  })();
+</script>
+</body></html>
