@@ -225,6 +225,20 @@
     body{background:#fff; color:#000; font-size:10.5pt}
     .row{break-inside:avoid}
   }
+  figure.illus .vframe{position:relative; line-height:0}
+  figure.illus .vframe iframe{width:100%; aspect-ratio:16/9; border:0; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+  .vplay{position:absolute; inset:0; width:100%; margin:0; padding:0; border:0; background:transparent; cursor:pointer}
+  .vplay .vicon{position:absolute; left:50%; top:50%; width:84px; height:84px; margin:-42px 0 0 -42px; border-radius:50%;
+    background:rgba(20,14,8,.62); box-shadow:0 0 0 2px rgba(240,220,170,.75), 0 4px 22px rgba(0,0,0,.45); transition:transform .15s, background .15s}
+  .vplay .vicon::after{content:""; position:absolute; left:33px; top:25px; border-style:solid; border-width:17px 0 17px 27px;
+    border-color:transparent transparent transparent rgba(250,236,200,.95)}
+  .vplay:hover .vicon,.vplay:focus-visible .vicon{transform:scale(1.07); background:rgba(20,14,8,.78)}
+  .vplay:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+  .vcap{margin-top:.6rem; text-align:center; font-size:.82rem; line-height:1.5; color:var(--ink-faint)}
+  .vcap a{color:inherit}
+  .vcap a:hover{color:var(--gold)}
+  @media (max-width:560px){.vplay .vicon{transform:scale(.78)} .vplay:hover .vicon{transform:scale(.84)}}
+  @media print{.vplay,.vcap{display:none}}
 </style>
 <script>
   (function(){
@@ -249,7 +263,7 @@
       <h1 class="title-en">Markus de Mandelot</h1>
       <div class="title-zh">马库斯·德·曼德洛特</div>
     </header>
-    <figure class="illus landscape" style="--nw:1672px"><img src="../assets/Franz_Lohner_Chronicle_1.png" alt="" width="1672" height="941" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <figure class="illus video landscape" style="--nw:1672px"><div class="vframe"><img src="../assets/Franz_Lohner_Chronicle_1.png" alt="" width="1672" height="941" loading="lazy" decoding="async"><button class="vplay" type="button" data-yt="Amgk7ZXwOMI" aria-label="播放本章视频（YouTube）"><span class="vicon" aria-hidden="true"></span></button></div><figcaption class="vcap">点图播放本章的有声视频（YouTube） · <a href="https://www.bilibili.com/video/BV1QdHj6sEvv/" target="_blank" rel="noopener">在 B站看</a></figcaption></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
     <section class="intro"><div class="row"><div class="col en" lang="en"><p><em>The idea that Markus Kruber (all-weather mercenary, poacher and occasional knight) has links to Bretonnia has taken plenty of folk by surprise. Not least Kruber himself, who keeps muttering into his tankard something fierce. Fortunately, Lohner’s done a bit of digging, and reckons he’s got a handle on the matter.</em></p></div><div class="col zh" lang="zh-CN"><p><em>马库斯·克鲁伯，那位啥活儿都接的佣兵、偷猎者以及蹭骑士头衔者<a href="#%E8%B9%AD%E6%9D%A5%E7%9A%84%E9%AA%91%E5%A3%AB%E5%A4%B4%E8%A1%94">①</a>，居然跟巴托尼亚能扯上关系，这让许多人都感到意外，包括正对着酒杯嘀嘀咕咕的家伙——马库斯本人。好在，洛纳一番打听后，自认已了然于胸。</em></p></div></div></section>
     <main>
     <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>So Kruber’s a Grail Knight, is he now? Can’t say I’m surprised. Well, a little bit surprised, but you don’t last long in my trade if you go around raising eyebrows at the slightest thing. Don’t worry. Let Uncle Franz set you straight.</p></div><div class="col zh" lang="zh-CN"><p>这么说，克鲁伯如今是圣杯骑士了？</p><p>没有，我哪会大吃一惊，小吃一惊确实有那么一点儿。毕竟我们这行，要是屁大点事儿都大惊小怪，那可干不了多久。别慌，听弗兰兹叔叔给你们说道说道。</p></div></div>
@@ -317,6 +331,21 @@
     });
 
     paintTheme();
+  })();
+</script>
+<script>
+  (function(){
+    var b=document.querySelector(".vplay[data-yt]");
+    if(!b) return;
+    b.addEventListener("click",function(){
+      var f=document.createElement("iframe");
+      f.src="https://www.youtube-nocookie.com/embed/"+b.getAttribute("data-yt")+"?autoplay=1&rel=0";
+      f.title="本章视频";
+      f.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      f.allowFullscreen=true;
+      f.referrerPolicy="strict-origin-when-cross-origin";
+      b.parentNode.replaceChildren(f);
+    });
   })();
 </script>
 </body></html>
