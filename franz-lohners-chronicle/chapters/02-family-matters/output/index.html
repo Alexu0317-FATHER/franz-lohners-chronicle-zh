@@ -225,6 +225,20 @@
     body{background:#fff; color:#000; font-size:10.5pt}
     .row{break-inside:avoid}
   }
+  figure.illus .vframe{position:relative; line-height:0}
+  figure.illus .vframe iframe{width:100%; aspect-ratio:16/9; border:0; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+  .vplay{position:absolute; inset:0; width:100%; margin:0; padding:0; border:0; background:transparent; cursor:pointer}
+  .vplay .vicon{position:absolute; left:50%; top:50%; width:84px; height:84px; margin:-42px 0 0 -42px; border-radius:50%;
+    background:rgba(20,14,8,.62); box-shadow:0 0 0 2px rgba(240,220,170,.75), 0 4px 22px rgba(0,0,0,.45); transition:transform .15s, background .15s}
+  .vplay .vicon::after{content:""; position:absolute; left:33px; top:25px; border-style:solid; border-width:17px 0 17px 27px;
+    border-color:transparent transparent transparent rgba(250,236,200,.95)}
+  .vplay:hover .vicon,.vplay:focus-visible .vicon{transform:scale(1.07); background:rgba(20,14,8,.78)}
+  .vplay:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+  .vcap{margin-top:.6rem; text-align:center; font-size:.82rem; line-height:1.5; color:var(--ink-faint)}
+  .vcap a{color:inherit}
+  .vcap a:hover{color:var(--gold)}
+  @media (max-width:560px){.vplay .vicon{transform:scale(.78)} .vplay:hover .vicon{transform:scale(.84)}}
+  @media print{.vplay,.vcap{display:none}}
 </style>
 <script>
   (function(){
@@ -249,7 +263,7 @@
       <h1 class="title-en">Family Matters</h1>
       <div class="title-zh">家事</div>
     </header>
-    <figure class="illus landscape" style="--nw:1920px"><img src="../assets/Franz_Lohner_Chronicle_2.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <figure class="illus video landscape" style="--nw:1920px"><div class="vframe"><img src="../assets/Franz_Lohner_Chronicle_2.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"><button class="vplay" type="button" data-yt="ObxGKdrPPpI" aria-label="播放本章视频（YouTube）"><span class="vicon" aria-hidden="true"></span></button></div><figcaption class="vcap">点图播放本章的有声视频（YouTube） · <a href="https://www.bilibili.com/video/BV1ubWc61EgE/" target="_blank" rel="noopener">在 B站看</a></figcaption></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
     <section class="intro"><div class="row"><div class="col en" lang="en"><p><em>Something’s going on with Bardin. He’s not saying what. In fact, he’s not saying anything at all, which is unusual. Looks like we’ll have to turn to Lohner to find out what’s going on.</em></p></div><div class="col zh" lang="zh-CN"><p><em>最近感觉巴丁有点不对劲，问他又不吭声。事实上，他变得什么话也不说，这不正常。看来想知道出了什么事，只能去找洛纳了。</em></p></div></div></section>
     <main>
     <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>I bet you’ve all noticed that our stout, comradely dwarf – while stout as ever – ain’t exactly been as comradely of late. Locked himself up in his room. All kinds of weird banging and the like coming from within. Also been a bit, well, short with everyone, hasn’t he? And Olesya says he’s even stopped eating her candles. Not exactly the Bardin Gorreksson we’ve come to know and love. Well, I’ve done a bit of asking around, and I think I know why.</p></div><div class="col zh" lang="zh-CN"><p>我想你们都注意到了，咱们那位敦实又亲切的矮人……好吧，敦实还是那么敦实，只是最近没那么亲切了。他成天把自己关在房里，里头传出些稀奇古怪的敲打声，跟谁说话都……有点儿「惜字如金」。</p><p>奥蕾丝雅还说，他连她的蜡烛都不吃了<sup class="fnmark"><a href="#%E5%90%83%E8%9C%A1%E7%83%9B" id="fnref-吃蜡烛" aria-label="脚注 ①">①</a></sup>。这可不是咱们认识的那个可爱的巴丁·高瑞克什。</p><p>我四下打听了一通，便已了然于胸。</p></div></div>
@@ -323,6 +337,21 @@
     });
 
     paintTheme();
+  })();
+</script>
+<script>
+  (function(){
+    var b=document.querySelector(".vplay[data-yt]");
+    if(!b) return;
+    b.addEventListener("click",function(){
+      var f=document.createElement("iframe");
+      f.src="https://www.youtube-nocookie.com/embed/"+b.getAttribute("data-yt")+"?autoplay=1&rel=0";
+      f.title="本章视频";
+      f.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      f.allowFullscreen=true;
+      f.referrerPolicy="strict-origin-when-cross-origin";
+      b.parentNode.replaceChildren(f);
+    });
   })();
 </script>
 </body></html>
