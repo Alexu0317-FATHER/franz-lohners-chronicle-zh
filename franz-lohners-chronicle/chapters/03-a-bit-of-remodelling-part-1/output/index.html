@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>战锤：末世鼠疫2 · 小修小补（上） | 《弗兰兹·洛纳的编年史》中英对照翻译</title>
+<meta name="description" content="塔尔之角越来越挤，老洛纳找来一位欠他人情，会光明魔法的建筑师美女，帮他给城堡腾点地方。但是，当美女说想在城堡收留流浪猫的时候……">
+<meta name="keywords" content="Vermintide 2, Warhammer Fantasy, 战锤末世鼠疫, 官网小说, 中英对照, bilingual, 双语翻译">
+<link rel="canonical" href="https://alexu0317-father.github.io/franz-lohners-chronicle-zh/franz-lohners-chronicle/chapters/03-a-bit-of-remodelling-part-1/output/index.html">
+<script>
+  if (location.hostname === "alexu0317-father.github.io") {
+    var ga = document.createElement("script");
+    ga.async = true;
+    ga.src = "https://www.googletagmanager.com/gtag/js?id=G-YWGH1EXEL5";
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag("js", new Date());
+    gtag("config", "G-YWGH1EXEL5");
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  :root{
+    color-scheme:light dark;
+    --paper:#f2eade; --paper-raised:#fbf6ed; --paper-sunk:#eae0d0;
+    --ink:#2a2018; --ink-soft:#665847; --ink-faint:#9c8b73;
+    --rule:#dccfb8; --rule-soft:#e9dfcd;
+    --gold:#8f6c2c; --gold-soft:#b18e4a;
+    --hl:rgba(143,108,44,.075); --shade:rgba(70,52,28,.10);
+    --serif:"Source Serif 4",Georgia,"Iowan Old Style","Times New Roman",serif;
+    --cjk:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+    /* 字体按字符逐个回退：拉丁字母命中衬线体，汉字落到后面的中文字体 */
+    --mix:"Source Serif 4",Georgia,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+      --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+      --rule:#332b20; --rule-soft:#241f17;
+      --gold:#c99c4e; --gold-soft:#dbb066;
+      --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+    --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+    --rule:#332b20; --rule-soft:#241f17;
+    --gold:#c99c4e; --gold-soft:#dbb066;
+    --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif);
+    font-size:clamp(15.5px,.42vw + 14.2px,17.5px); line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%; height:auto}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 clamp(18px,4vw,48px)}
+
+  /* ---------- 顶栏 ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .bar{display:flex; align-items:center; justify-content:space-between; gap:1rem; height:46px}
+  .brand{
+    font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-faint); text-decoration:none; white-space:nowrap;
+    overflow:hidden; text-overflow:ellipsis;
+  }
+  .brand:hover{color:var(--gold)}
+  .tools{display:flex; gap:.4rem; flex:none}
+  .tools button{
+    font:inherit; font-size:.75rem; font-family:var(--cjk);
+    padding:.28em .8em; border-radius:999px; cursor:pointer;
+    color:var(--ink-soft); background:transparent;
+    border:1px solid var(--rule); transition:.15s;
+  }
+  .tools button:hover{color:var(--gold); border-color:var(--gold-soft)}
+
+  /* ---------- 章首 ---------- */
+  header.chapter{text-align:center; padding:clamp(2.6rem,7vw,4.6rem) 0 1.6rem}
+  .series{
+    font-size:.68rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:1.4rem;
+  }
+  .title-en{
+    font-size:clamp(1.7rem,4.4vw,2.7rem); font-weight:600;
+    line-height:1.18; letter-spacing:-.01em; margin:0;
+  }
+  .title-zh{
+    font-family:var(--cjk); font-weight:500;
+    font-size:clamp(1rem,2.2vw,1.24rem); color:var(--ink-soft);
+    margin-top:.7rem; letter-spacing:.04em;
+  }
+  header.chapter::after{
+    content:""; display:block; width:44px; height:1px;
+    background:var(--gold-soft); opacity:.6; margin:1.8rem auto 0;
+  }
+
+  figure{margin:0}
+  /* --nw 是图片原生宽度，由生成脚本写入，用来防止小图被撑大 */
+  figure.illus{margin:0 auto 2.6rem; max-width:min(100%,var(--nw,100%))}
+  figure.illus img{width:100%; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+
+  /* ---------- 开场白 ---------- */
+  .intro{
+    margin:0 0 2.2rem; padding-bottom:1.6rem;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .intro .col{color:var(--ink-soft); font-size:.92em}
+  .intro .col.en p{font-style:italic}
+
+  /* ---------- 双栏对照 ---------- */
+  .row{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(26px,3.6vw,54px);
+    position:relative; padding:.9rem 0 .9rem clamp(1.9rem,3.2vw,2.9rem);
+    border-radius:3px; transition:background .12s;
+    scroll-margin-top:70px;
+  }
+  main .row:hover{background:var(--hl)}
+  main .row:target{background:var(--hl); box-shadow:inset 3px 0 0 var(--gold-soft)}
+  .pn{
+    position:absolute; left:0; top:1.05rem;
+    width:clamp(1.3rem,2.2vw,2rem); text-align:right;
+    font-size:.7rem; font-variant-numeric:tabular-nums;
+    color:var(--ink-faint); text-decoration:none; opacity:.55; transition:.15s;
+  }
+  .row:hover .pn{opacity:1; color:var(--gold)}
+  .col p{margin:0 0 .78em}
+  .col p:last-child{margin-bottom:0}
+  .col.en{hyphens:auto}
+  .col.zh{
+    font-family:var(--mix); font-size:.93em; line-height:1.95;
+    text-align:justify; text-justify:inter-ideograph;
+  }
+  /* 中文没有斜体。原文的 em 混着引文、出处、强调三种用法，
+     统一加装饰必然在其中一种上出错，所以只去掉伪斜体，不另作区分。 */
+  .col.zh em,.notes em{font-style:normal}
+  main .row + .row{border-top:1px solid var(--rule-soft)}
+
+  .full{margin:1.8rem 0; text-align:center}
+  figure.story-img{display:inline-block; max-width:min(100%,560px,var(--nw,560px))}
+  figure.story-img img{width:100%; border-radius:2px}
+
+  /* ---------- 窄屏自动单栏 ---------- */
+  @media (max-width:820px){
+    .row{grid-template-columns:1fr !important; gap:.5rem}
+    .col.en{color:var(--ink-soft); font-size:.9em; line-height:1.7}
+    .col.zh{border-left:2px solid var(--rule); padding-left:1.05rem}
+    .brand{font-size:.62rem; letter-spacing:.1em}
+  }
+
+  /* ---------- 脚注 ---------- */
+  .fnmark{font-size:.62em; line-height:0; vertical-align:super}
+  .fnmark a{color:var(--gold); text-decoration:none; padding:0 .1em}
+  .fnmark a:hover{text-decoration:underline}
+  .fnback{
+    margin-left:.55em; font-size:.72em; color:var(--ink-faint);
+    text-decoration:none; vertical-align:middle;
+  }
+  .fnback:hover{color:var(--gold)}
+
+  /* ---------- 译者按 ---------- */
+  /* 不画上边框：正文以装饰图收尾的章节会与图叠成两道分界，
+     靠这里的留白和居中的小标题分界就够。 */
+  .notes{
+    margin:4rem auto 0; max-width:44rem;
+    padding-top:2rem;
+    font-family:var(--mix);
+  }
+  .notes-title{
+    font-size:.72rem; letter-spacing:.22em; font-weight:500;
+    color:var(--ink-faint); text-align:center; margin:0 0 2rem;
+  }
+  .notes .zh{font-size:.9em; line-height:1.95; color:var(--ink-soft)}
+  .notes p{margin:0 0 .9em}
+  .note-h,.note-h3{
+    font-family:var(--mix); color:var(--ink); font-weight:600;
+    scroll-margin-top:70px;
+  }
+  .note-h{font-size:1.05em; margin:2.2rem 0 .8rem}
+  .note-h3{font-size:.98em; margin:1.9rem 0 .7rem}
+  .notes .zh > :first-child{margin-top:0}
+  .notes [id]:target{
+    background:var(--hl); box-shadow:-.5rem 0 0 var(--hl),.5rem 0 0 var(--hl);
+    border-radius:2px;
+  }
+  .notes ol,.notes ul{margin:.4rem 0 .9em 1.4rem; padding:0}
+  .notes li{margin:0 0 .35em}
+  .note-hr{border:none; border-top:1px solid var(--rule-soft); margin:1.8rem 0}
+  /* 译者按的图横竖混杂，尺寸从 382 宽到 2268 都有。
+     横图统一到列宽、竖图统一到同一高度，两类各自看齐而不变形。 */
+  figure.note-img{margin:1.6rem auto; text-align:center}
+  figure.note-img img{border-radius:3px; box-shadow:0 1px 10px var(--shade)}
+  /* 容许最多 1.12 倍放大，好让宽度只差几个百分点的图也能对齐列宽 */
+  figure.note-img.landscape{max-width:min(100%,calc(var(--nw,100%) * 1.12))}
+  figure.note-img.landscape img{width:100%}
+  figure.note-img.portrait img{max-height:480px; width:auto; max-width:100%}
+  blockquote{
+    margin:1rem 0; padding:.2rem 0 .2rem 1.1rem;
+    border-left:2px solid var(--gold-soft); color:var(--ink-soft);
+  }
+  a{color:var(--gold)}
+
+  footer.foot{
+    margin:4rem 0 0; padding:1.6rem 0 3rem;
+    border-top:1px solid var(--rule-soft);
+    font-family:var(--cjk); font-size:.72rem;
+    color:var(--ink-faint); text-align:center;
+  }
+  footer.foot a{color:var(--ink-faint); text-decoration:none}
+  footer.foot a:hover{color:var(--gold)}
+
+  @media print{
+    .topbar,footer.foot{display:none}
+    body{background:#fff; color:#000; font-size:10.5pt}
+    .row{break-inside:avoid}
+  }
+  /* ---------- 学习注释 ---------- */
+  .term{
+    position:relative; cursor:pointer; color:var(--gold);
+    border-bottom:1px dotted var(--gold-soft); border-radius:2px;
+  }
+  .term:hover,.term:focus-visible,.term[aria-expanded="true"]{background:var(--hl); outline:none}
+  .term-card{
+    display:none; position:absolute; left:0; top:calc(100% + .3em); z-index:15;
+    width:max-content; max-width:min(19rem,78vw);
+    padding:.45em .75em; font-size:max(15px,1em); line-height:1.55;
+    font-style:normal; font-weight:400; text-align:left; hyphens:none;
+    color:var(--ink); background:var(--paper-raised);
+    border:1px solid var(--rule); border-radius:4px; box-shadow:0 4px 16px var(--shade);
+  }
+  .term.show-card .term-card{display:block}
+  .term-detail{
+    margin:.1rem 0 .85em; padding:.6rem .9rem; font-size:max(15px,.95em); line-height:1.65;
+    color:var(--ink-soft); background:var(--paper-raised);
+    border-left:2px solid var(--gold-soft); border-radius:0 3px 3px 0;
+  }
+  .term-detail[hidden]{display:none}
+  .term-detail .td-term{margin:0 0 .15em; font-weight:600; color:var(--ink)}
+  .term-detail dl{margin:0}
+  .term-detail dt{margin-top:.45em; font-family:var(--cjk); font-size:.72em; letter-spacing:.12em; color:var(--ink-faint)}
+  .term-detail dd{margin:0; font-family:var(--mix)}
+  @media print{.term-card{display:none !important}}
+</style>
+<script>
+  (function(){
+    try{
+      var t=localStorage.getItem("flc-theme");
+      if(t){document.documentElement.setAttribute("data-theme",t);}
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+  <div class="topbar"><div class="wrap bar">
+    <a class="brand" href="../../../../index.html">Franz Lohner's Chronicle · 目录</a>
+    <div class="tools">
+      <button id="btn-theme" type="button">夜间</button>
+    </div>
+  </div></div>
+
+  <div class="wrap">
+    <header class="chapter">
+      <div class="series">Franz Lohner's Chronicle · 弗兰兹·洛纳的编年史</div>
+      <h1 class="title-en">A bit of remodeling - Part 1</h1>
+      <div class="title-zh">小修小补（上）</div>
+    </header>
+    <figure class="illus landscape" style="--nw:1920px"><img src="../assets/Franz_Lohner_Chronicle_3.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <section class="intro"><div class="row"><div class="col en" lang="en"><p>Taal’s Horn Keep has recently seen a bit of a change. Seems we have to once more turn to Lohner to get the full story… Or parts of it.</p></div><div class="col zh" lang="zh-CN"><p><em>塔尔之角最近有了点变化。看来想知道来龙去脉，咱们又得去找洛纳了……不过，或许只能知道一部分。</em></p></div></div></section>
+    <main>
+    <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>So, you’ve probably noticed that I’ve made a few changes around the keep.</p></div><div class="col zh" lang="zh-CN"><p>想必你们都注意到了，城堡里的格局跟之前有点不一样。</p></div></div>
+<div class="row" id="p2"><a class="pn" href="#p2">2</a><div class="col en" lang="en"><p>Why? Well, leaving aside the fact that variety’s the spice of life, this place was never meant for long-term habitation (that’s ‘living’ to you and me, Kruber), let alone being any kind of military outpost … which the way things are going, we’ll end up being sooner rather than later. And then there’s the fact that Olesya keeps taking up ever more room, Catrinne needs more space to store her works of art. It’s getting a mite crowded.</p></div><div class="col zh" lang="zh-CN"><p>为什么要改？嗯，抛开「日子就得常过常新」不谈，这地方压根就不是给人长期栖居的（栖居啊，跟你我口中「住」是一个意思，克鲁伯），更别说当什么军事前哨了，可照这势头下去，离这一天不远了。</p><p>还有啊，奥蕾丝雅占的地方越来越多了，卡特妮妮也得有更多地方放她的艺术品。这儿多少开始有那么一捏捏挤了。</p></div></div>
+<div class="row" id="p3"><a class="pn" href="#p3">3</a><div class="col en" lang="en"><p>Then there’s this other business Saltzpyre keeps muttering about. Might need some extra space for that and all. ​And ​ there’s my stockroom to consider. The pumpkin collection. It all takes up space, you know.</p></div><div class="col zh" lang="zh-CN"><p>接着是萨尔茨皮雷老在那儿嘀咕的他那档子事，说不定也得多腾点地方。还有我那间储藏室也得考虑，毕竟还得收藏南瓜。这些全都得安排，知道吧？</p></div></div>
+<div class="row" id="p4"><a class="pn" href="#p4">4</a><div class="col en" lang="en"><p>Anyway, where was I? Oh yes.</p></div><div class="col zh" lang="zh-CN"><p>扯远了，刚说什么来着？哦，对了。</p></div></div>
+<div class="row" id="p5"><a class="pn" href="#p5">5</a><div class="col en" lang="en"><p>I had a bit of a chat with an old mate of mine, name of Rosalinde. She’s an <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-3" data-detail="td-3">architect<span class="term-card" role="tooltip">建筑师；也指设计整体结构的人，软件行业里译作架构师。</span></span> by trade, with a <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-2" data-detail="td-2">side-line<span class="term-card" role="tooltip">副业，主业之外另做的一摊营生或本事。a side-line in X 即“兼营 X”。</span></span> in Light Magic, which is <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-1" data-detail="td-1">very handy<span class="term-card" role="tooltip">好用、顺手、派得上用场。语气比 great 轻。</span></span> when it comes to moving masses of stone very quickly. Something about stone remembering when it was part of the hills, or something. It’s all above my head, if I’m honest, but I’m sure she knows what she’s about.</p><div class="term-detail" id="td-1" hidden><p class="td-term">very handy</p><dl><dt>词义</dt><dd>好用、顺手、派得上用场。语气比 great 轻。</dd><dt>字面</dt><dd>hand＋y，原指用手方便。</dd><dt>本章译法</dt><dd>倒挺顺手</dd><dt>背景</dt><dd>常用来轻描淡写：一件很了不起的本事，说成 very handy，是英式的含蓄。另有“手巧”“就在手边”的用法。</dd></dl></div><div class="term-detail" id="td-2" hidden><p class="td-term">side-line</p><dl><dt>词义</dt><dd>副业，主业之外另做的一摊营生或本事。a side-line in X 即“兼营 X”。</dd><dt>字面</dt><dd>side＋line，字面是旁边的线，运动场上指边线。</dd><dt>中文里</dt><dd>副业、兼营</dd><dt>本章译法</dt><dd>另外还有一手</dd><dt>背景</dt><dd>和 part-time（兼职）不同：part-time 是替雇主做的非全职工作，sideline 是自己主业之外另有的一摊。</dd></dl></div><div class="term-detail" id="td-3" hidden><p class="td-term">architect</p><dl><dt>词义</dt><dd>建筑师；也指设计整体结构的人，软件行业里译作架构师。</dd><dt>字面</dt><dd>来自希腊语，大意是“总工匠”。</dd><dt>本章译法</dt><dd>建筑师</dd><dt>背景</dt><dd>软件里的 architect 是同一个词的引申，中文分成了建筑师和架构师两个词。</dd></dl></div></div><div class="col zh" lang="zh-CN"><p>我跟一位老朋友聊了聊，她叫罗莎琳德。</p><p>她本职是建筑师，另外还有一手光明系魔法的本事，那玩意儿拿来挪石头倒挺顺手，一次能挪一大批，还特别快。</p><p>她跟我解释过，说是什么石头还记得自己当年是山的一部分之类的，大概就这么个意思吧。</p><p>老实讲，我是听得一头雾水，反正她肯定心里有数。</p></div></div>
+<div class="row" id="p6"><a class="pn" href="#p6">6</a><div class="col en" lang="en"><p><span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-5" data-detail="td-5">Best bit is<span class="term-card" role="tooltip">最好的部分，好就好在。</span></span>, Rosalinde owes me <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-4" data-detail="td-4">the odd favour<span class="term-card" role="tooltip">这里是“偶尔的、零星的”。the odd + 单数名词，是“一两个、时不时的”。</span></span>. So we’ve had a <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-7" data-detail="td-7">conflab<span class="term-card" role="tooltip">凑在一起随意商量、聊一阵。非正式，常带一点嘀咕、碰头的意思。</span></span> and she’s done a bit of rearranging. Clever lass. Came up with all kinds of space-saving suggestions, and I took the liberty of getting the first wave organised while you were last out <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-6" data-detail="td-6">indulging<span class="term-card" role="tooltip">放纵自己去享受某件事，沉溺、过一把瘾。</span></span> in a bit of the old ‘derring do’.</p><div class="term-detail" id="td-4" hidden><p class="td-term">the odd favour</p><dl><dt>词义</dt><dd>这里是“偶尔的、零星的”。the odd + 单数名词，是“一两个、时不时的”。</dd><dt>字面</dt><dd>odd 本义是“不成对的、单出来的”，奇数 odd number 也是这个意思。</dd><dt>本章译法</dt><dd>几个人情</dd><dt>背景</dt><dd>odd 另一个常见意思是“奇怪”，比 strange 轻、更口语，指有点怪、有点对不上。strange 更强，也可以是“陌生的”（a stranger 就是陌生人）。the odd job 是零工，the odd favour 是零星的几个人情。</dd></dl></div><div class="term-detail" id="td-5" hidden><p class="td-term">Best bit is</p><dl><dt>词义</dt><dd>最好的部分，好就好在。</dd><dt>字面</dt><dd>bit 是“一小块、一部分”，best bit 即“最好的那一块”。</dd><dt>本章译法</dt><dd>好就好在</dd><dt>背景</dt><dd>英式口语开头常说 the best bit is…，用来引出一件让说话人满意的事。a bit of 是“一点”，也是同一个 bit。</dd></dl></div><div class="term-detail" id="td-6" hidden><p class="td-term">indulging</p><dl><dt>词义</dt><dd>放纵自己去享受某件事，沉溺、过一把瘾。</dd><dt>字面</dt><dd>来自拉丁语“宽容、纵容”。indulge in X：让自己沉浸在 X 里。</dd><dt>本章译法</dt><dd>过英雄瘾</dd><dt>背景</dt><dd>常带一点“不必要但享受”的意味，所以洛纳用来调侃队友出去冒险像是在玩。</dd></dl></div><div class="term-detail" id="td-7" hidden><p class="td-term">conflab</p><dl><dt>词义</dt><dd>凑在一起随意商量、聊一阵。非正式，常带一点嘀咕、碰头的意思。</dd><dt>字面</dt><dd>confabulation（拉丁语“一起聊天”）的口语缩写，写作 confab 或 conflab。</dd><dt>本章译法</dt><dd>打了个商量</dd><dt>背景</dt><dd>和 meeting（正式安排的会面）、conversation（泛指任何交谈）、discussion（围绕一个议题讨论、交换意见）都不同：conflab 是小范围、不拘礼、有点老派和打趣的“凑一块商量商量”。confabulation 在心理学里另有“虚构记忆”的意思。</dd></dl></div></div><div class="col zh" lang="zh-CN"><p>好就好在，罗莎琳德还欠我几个人情，所以我们打了个商量，她就稍微露了一手。</p><p>这姑娘脑子灵光，腾地方的好点子层出不穷。趁着你们上回出门又去过英雄瘾，我就自作主张，先把第一波安排上了。</p></div></div>
+<div class="row" id="p7"><a class="pn" href="#p7">7</a><div class="col en" lang="en"><p>Had to veto a couple of ideas <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-8" data-detail="td-8">along the way<span class="term-card" role="tooltip">在（做某事的）过程中；一路上、中途。</span></span>, of course. She wanted an entire room just for stray cats. I warned her off that one. You invite stray cats in here, I said, and Bardin’ll put them in a stew. Or Saltzpyre will give ‘em a terminal fright by practising his smile on ‘em. So … No cats. Probably for the best. And <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-9" data-detail="td-9">the jury’s still out<span class="term-card" role="tooltip">还没有定论。</span></span> on the roof garden – I’ll have to think about that. As to the rest, maybe I’ll tell you about it next time.</p><div class="term-detail" id="td-8" hidden><p class="td-term">along the way</p><dl><dt>词义</dt><dd>在（做某事的）过程中；一路上、中途。</dd><dt>字面</dt><dd>沿着路。</dd><dt>本章译法</dt><dd>中间</dd><dt>背景</dt><dd>本义是在路上，常借来指“做一件事的这一路”，所以 along the way 常译成“过程中”“一路上”“中间”。</dd></dl></div><div class="term-detail" id="td-9" hidden><p class="td-term">the jury’s still out</p><dl><dt>词义</dt><dd>还没有定论。</dd><dt>字面</dt><dd>陪审团还没出来。jury 是陪审团：由普通公民组成的一组人（常见是十二人），听完证据后决定被告是否有罪。陪审团退庭商议、还没回来宣布裁决，就是“还没出结果”。</dd><dt>本章译法</dt><dd>还没定下来</dd><dt>背景</dt><dd>借法庭的场景比喻“事情还没拿定主意”。jury 也指比赛里的评审团。陪审团负责认定事实、定有罪与否，法官负责主持审判，两者不同。</dd></dl></div></div><div class="col zh" lang="zh-CN"><p>当然，中间也有几条主意被我否了。</p><p>比如她想专门腾出一整间屋子给流浪猫住，我就劝她趁早打消这念头：「你前脚把流浪猫带到这儿，巴丁转头就能把它们炖了。」我还跟她说，「要不就是萨尔茨皮雷拿它们练习微笑，活活把它们给吓死。」</p><p>所以……不养猫，应该是最好的安排。</p><p>对了，屋顶花园这事儿还没定下来，我得再想想。至于剩下的，下回再说给你们听……吧。</p></div></div>
+<div class="full"><figure class="story-img landscape" style="--nw:480px"><img src="../assets/decoration_1.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure></div>
+    </main>
+    
+    <footer class="foot">
+      Franz Lohner's Chronicle &middot; 同人翻译，原文版权归 Fatshark 所有
+      &nbsp;|&nbsp; <a href="../../../../index.html">返回目录</a><br>
+      页面由 <a href="https://github.com/Alexu0317-FATHER/translation-workbench" target="_blank" rel="noopener">Translation Workbench</a> 生成
+    </footer>
+  </div>
+
+<script>
+  (function(){
+    var root=document.documentElement;
+    var btnTheme=document.getElementById("btn-theme");
+
+    function store(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+
+    function currentTheme(){
+      var set=root.getAttribute("data-theme");
+      if(set) return set;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+    }
+    function paintTheme(){
+      var dark=currentTheme()==="dark";
+      btnTheme.textContent=dark?"日间":"夜间";
+      btnTheme.setAttribute("aria-pressed",String(dark));
+    }
+
+    btnTheme.addEventListener("click",function(){
+      var next=currentTheme()==="dark"?"light":"dark";
+      root.setAttribute("data-theme",next);
+      store("flc-theme",next);
+      paintTheme();
+    });
+
+    paintTheme();
+  })();
+</script>
+<script>
+  (function(){
+    var terms=[].slice.call(document.querySelectorAll(".term"));
+    if(!terms.length) return;
+    var canHover=!!(window.matchMedia&&window.matchMedia("(hover: hover)").matches);
+
+    function isOpen(t){return t.getAttribute("aria-expanded")==="true";}
+    function place(t){
+      var c=t.querySelector(".term-card"), w=document.documentElement.clientWidth;
+      // 词折行时，卡片的左边默认对齐第一段，要挪到最后一段（卡片贴在最后一行下面）
+      var rects=t.getClientRects();
+      c.style.left=(rects[rects.length-1].left-rects[0].left)+"px";
+      var r=c.getBoundingClientRect();
+      if(r.right>w-10) c.style.left=(w-10-r.right)+"px";
+      r=c.getBoundingClientRect();
+      if(r.left<10) c.style.left=(parseFloat(c.style.left)+10-r.left)+"px";
+    }
+    function hideCard(t){t.classList.remove("show-card");}
+    function closeCards(except){terms.forEach(function(o){if(o!==except) hideCard(o);});}
+    function showCard(t){closeCards(t); t.classList.add("show-card"); place(t);}
+    function setOpen(t,open){
+      document.getElementById(t.getAttribute("data-detail")).hidden=!open;
+      t.setAttribute("aria-expanded",String(open));
+      if(open) hideCard(t);
+    }
+
+    terms.forEach(function(t){
+      if(canHover){
+        t.addEventListener("mouseenter",function(){if(!isOpen(t)) showCard(t);});
+        t.addEventListener("mouseleave",function(){hideCard(t);});
+      }
+      // 点一下：没有卡片就出卡片；有卡片就展开；已展开就收起
+      t.addEventListener("click",function(e){
+        e.stopPropagation();
+        if(isOpen(t)){setOpen(t,false); if(canHover) showCard(t);}
+        else if(t.classList.contains("show-card")) setOpen(t,true);
+        else showCard(t);
+      });
+      t.addEventListener("focus",function(){
+        if(t.matches(":focus-visible")&&!isOpen(t)) showCard(t);
+      });
+      t.addEventListener("blur",function(){hideCard(t);});
+      t.addEventListener("keydown",function(e){
+        if(e.key==="Enter"||e.key===" "){e.preventDefault(); setOpen(t,!isOpen(t));}
+        else if(e.key==="Escape"){setOpen(t,false); hideCard(t);}
+      });
+    });
+    document.addEventListener("click",function(){closeCards();});
+  })();
+</script>
+</body></html>
