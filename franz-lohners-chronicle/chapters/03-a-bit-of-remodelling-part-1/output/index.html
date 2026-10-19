@@ -251,6 +251,20 @@
   .term-detail dt{margin-top:.45em; font-family:var(--cjk); font-size:.72em; letter-spacing:.12em; color:var(--ink-faint)}
   .term-detail dd{margin:0; font-family:var(--mix)}
   @media print{.term-card{display:none !important}}
+  figure.illus .vframe{position:relative; line-height:0}
+  figure.illus .vframe iframe{width:100%; aspect-ratio:16/9; border:0; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+  .vplay{position:absolute; inset:0; width:100%; margin:0; padding:0; border:0; background:transparent; cursor:pointer}
+  .vplay .vicon{position:absolute; left:50%; top:50%; width:84px; height:84px; margin:-42px 0 0 -42px; border-radius:50%;
+    background:rgba(20,14,8,.62); box-shadow:0 0 0 2px rgba(240,220,170,.75), 0 4px 22px rgba(0,0,0,.45); transition:transform .15s, background .15s}
+  .vplay .vicon::after{content:""; position:absolute; left:33px; top:25px; border-style:solid; border-width:17px 0 17px 27px;
+    border-color:transparent transparent transparent rgba(250,236,200,.95)}
+  .vplay:hover .vicon,.vplay:focus-visible .vicon{transform:scale(1.07); background:rgba(20,14,8,.78)}
+  .vplay:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+  .vcap{margin-top:.6rem; text-align:center; font-size:.82rem; line-height:1.5; color:var(--ink-faint)}
+  .vcap a{color:inherit}
+  .vcap a:hover{color:var(--gold)}
+  @media (max-width:560px){.vplay .vicon{transform:scale(.78)} .vplay:hover .vicon{transform:scale(.84)}}
+  @media print{.vplay,.vcap{display:none}}
 </style>
 <script>
   (function(){
@@ -275,7 +289,7 @@
       <h1 class="title-en">A bit of remodeling - Part 1</h1>
       <div class="title-zh">小修小补（上）</div>
     </header>
-    <figure class="illus landscape" style="--nw:1920px"><img src="../assets/Franz_Lohner_Chronicle_3.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <figure class="illus video landscape" style="--nw:1920px"><div class="vframe"><img src="../assets/Franz_Lohner_Chronicle_3.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"><button class="vplay" type="button" data-yt="YZfDICr3swA" aria-label="播放本章视频（YouTube）"><span class="vicon" aria-hidden="true"></span></button></div><figcaption class="vcap">点图播放本章的有声视频（YouTube） · <a href="https://www.bilibili.com/video/BV1jnnE6PEzc/" target="_blank" rel="noopener">在 B站看</a></figcaption></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
     <section class="intro"><div class="row"><div class="col en" lang="en"><p>Taal’s Horn Keep has recently seen a bit of a change. Seems we have to once more turn to Lohner to get the full story… Or parts of it.</p></div><div class="col zh" lang="zh-CN"><p><em>塔尔之角最近有了点变化。看来想知道来龙去脉，咱们又得去找洛纳了……不过，或许只能知道一部分。</em></p></div></div></section>
     <main>
     <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>So, you’ve probably noticed that I’ve made a few changes around the keep.</p></div><div class="col zh" lang="zh-CN"><p>想必你们都注意到了，城堡里的格局跟之前有点不一样。</p></div></div>
@@ -371,6 +385,21 @@
       });
     });
     document.addEventListener("click",function(){closeCards();});
+  })();
+</script>
+<script>
+  (function(){
+    var b=document.querySelector(".vplay[data-yt]");
+    if(!b) return;
+    b.addEventListener("click",function(){
+      var f=document.createElement("iframe");
+      f.src="https://www.youtube-nocookie.com/embed/"+b.getAttribute("data-yt")+"?autoplay=1&rel=0";
+      f.title="本章视频";
+      f.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      f.allowFullscreen=true;
+      f.referrerPolicy="strict-origin-when-cross-origin";
+      b.parentNode.replaceChildren(f);
+    });
   })();
 </script>
 </body></html>
