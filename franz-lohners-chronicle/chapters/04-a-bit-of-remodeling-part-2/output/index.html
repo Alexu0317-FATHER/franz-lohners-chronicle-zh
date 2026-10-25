@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>战锤：末世鼠疫2 · 小修小补（下） | 《弗兰兹·洛纳的编年史》中英对照翻译</title>
+<meta name="description" content="美女工程师翻修塔尔之角还在进行中，却暴露了一个要命的问题；老洛纳搞神秘，却爆出凯瑞莲往酒桶里「加料」的旧事，以及某人喝了「假酒」后竟然……">
+<meta name="keywords" content="Vermintide 2, Warhammer Fantasy, 战锤末世鼠疫, 官网小说, 中英对照, bilingual, 双语翻译">
+<link rel="canonical" href="https://alexu0317-father.github.io/franz-lohners-chronicle-zh/franz-lohners-chronicle/chapters/04-a-bit-of-remodeling-part-2/output/index.html">
+<script>
+  if (location.hostname === "alexu0317-father.github.io") {
+    var ga = document.createElement("script");
+    ga.async = true;
+    ga.src = "https://www.googletagmanager.com/gtag/js?id=G-YWGH1EXEL5";
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag("js", new Date());
+    gtag("config", "G-YWGH1EXEL5");
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  :root{
+    color-scheme:light dark;
+    --paper:#f2eade; --paper-raised:#fbf6ed; --paper-sunk:#eae0d0;
+    --ink:#2a2018; --ink-soft:#665847; --ink-faint:#9c8b73;
+    --rule:#dccfb8; --rule-soft:#e9dfcd;
+    --gold:#8f6c2c; --gold-soft:#b18e4a;
+    --hl:rgba(143,108,44,.075); --shade:rgba(70,52,28,.10);
+    --serif:"Source Serif 4",Georgia,"Iowan Old Style","Times New Roman",serif;
+    --cjk:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+    /* 字体按字符逐个回退：拉丁字母命中衬线体，汉字落到后面的中文字体 */
+    --mix:"Source Serif 4",Georgia,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+      --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+      --rule:#332b20; --rule-soft:#241f17;
+      --gold:#c99c4e; --gold-soft:#dbb066;
+      --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+    --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+    --rule:#332b20; --rule-soft:#241f17;
+    --gold:#c99c4e; --gold-soft:#dbb066;
+    --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif);
+    font-size:clamp(15.5px,.42vw + 14.2px,17.5px); line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%; height:auto}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 clamp(18px,4vw,48px)}
+
+  /* ---------- 顶栏 ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .bar{display:flex; align-items:center; justify-content:space-between; gap:1rem; height:46px}
+  .brand{
+    font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-faint); text-decoration:none; white-space:nowrap;
+    overflow:hidden; text-overflow:ellipsis;
+  }
+  .brand:hover{color:var(--gold)}
+  .tools{display:flex; gap:.4rem; flex:none}
+  .tools button{
+    font:inherit; font-size:.75rem; font-family:var(--cjk);
+    padding:.28em .8em; border-radius:999px; cursor:pointer;
+    color:var(--ink-soft); background:transparent;
+    border:1px solid var(--rule); transition:.15s;
+  }
+  .tools button:hover{color:var(--gold); border-color:var(--gold-soft)}
+
+  /* ---------- 章首 ---------- */
+  header.chapter{text-align:center; padding:clamp(2.6rem,7vw,4.6rem) 0 1.6rem}
+  .series{
+    font-size:.68rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:1.4rem;
+  }
+  .title-en{
+    font-size:clamp(1.7rem,4.4vw,2.7rem); font-weight:600;
+    line-height:1.18; letter-spacing:-.01em; margin:0;
+  }
+  .title-zh{
+    font-family:var(--cjk); font-weight:500;
+    font-size:clamp(1rem,2.2vw,1.24rem); color:var(--ink-soft);
+    margin-top:.7rem; letter-spacing:.04em;
+  }
+  header.chapter::after{
+    content:""; display:block; width:44px; height:1px;
+    background:var(--gold-soft); opacity:.6; margin:1.8rem auto 0;
+  }
+
+  figure{margin:0}
+  /* --nw 是图片原生宽度，由生成脚本写入，用来防止小图被撑大 */
+  figure.illus{margin:0 auto 2.6rem; max-width:min(100%,var(--nw,100%))}
+  figure.illus img{width:100%; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+
+  /* ---------- 开场白 ---------- */
+  .intro{
+    margin:0 0 2.2rem; padding-bottom:1.6rem;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .intro .col{color:var(--ink-soft); font-size:.92em}
+  .intro .col.en p{font-style:italic}
+
+  /* ---------- 双栏对照 ---------- */
+  .row{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(26px,3.6vw,54px);
+    position:relative; padding:.9rem 0 .9rem clamp(1.9rem,3.2vw,2.9rem);
+    border-radius:3px; transition:background .12s;
+    scroll-margin-top:70px;
+  }
+  main .row:hover{background:var(--hl)}
+  main .row:target{background:var(--hl); box-shadow:inset 3px 0 0 var(--gold-soft)}
+  .pn{
+    position:absolute; left:0; top:1.05rem;
+    width:clamp(1.3rem,2.2vw,2rem); text-align:right;
+    font-size:.7rem; font-variant-numeric:tabular-nums;
+    color:var(--ink-faint); text-decoration:none; opacity:.55; transition:.15s;
+  }
+  .row:hover .pn{opacity:1; color:var(--gold)}
+  .col p{margin:0 0 .78em}
+  .col p:last-child{margin-bottom:0}
+  .col.en{hyphens:auto}
+  .col.zh{
+    font-family:var(--mix); font-size:.93em; line-height:1.95;
+    text-align:justify; text-justify:inter-ideograph;
+  }
+  /* 中文没有斜体。原文的 em 混着引文、出处、强调三种用法，
+     统一加装饰必然在其中一种上出错，所以只去掉伪斜体，不另作区分。 */
+  .col.zh em,.notes em{font-style:normal}
+  main .row + .row{border-top:1px solid var(--rule-soft)}
+
+  .full{margin:1.8rem 0; text-align:center}
+  figure.story-img{display:inline-block; max-width:min(100%,560px,var(--nw,560px))}
+  figure.story-img img{width:100%; border-radius:2px}
+
+  /* ---------- 窄屏自动单栏 ---------- */
+  @media (max-width:820px){
+    .row{grid-template-columns:1fr !important; gap:.5rem}
+    .col.en{color:var(--ink-soft); font-size:.9em; line-height:1.7}
+    .col.zh{border-left:2px solid var(--rule); padding-left:1.05rem}
+    .brand{font-size:.62rem; letter-spacing:.1em}
+  }
+
+  /* ---------- 脚注 ---------- */
+  .fnmark{font-size:.62em; line-height:0; vertical-align:super}
+  .fnmark a{color:var(--gold); text-decoration:none; padding:0 .1em}
+  .fnmark a:hover{text-decoration:underline}
+  .fnback{
+    margin-left:.55em; font-size:.72em; color:var(--ink-faint);
+    text-decoration:none; vertical-align:middle;
+  }
+  .fnback:hover{color:var(--gold)}
+
+  /* ---------- 译者按 ---------- */
+  /* 不画上边框：正文以装饰图收尾的章节会与图叠成两道分界，
+     靠这里的留白和居中的小标题分界就够。 */
+  .notes{
+    margin:4rem auto 0; max-width:44rem;
+    padding-top:2rem;
+    font-family:var(--mix);
+  }
+  .notes-title{
+    font-size:.72rem; letter-spacing:.22em; font-weight:500;
+    color:var(--ink-faint); text-align:center; margin:0 0 2rem;
+  }
+  .notes .zh{font-size:.9em; line-height:1.95; color:var(--ink-soft)}
+  .notes p{margin:0 0 .9em}
+  .note-h,.note-h3{
+    font-family:var(--mix); color:var(--ink); font-weight:600;
+    scroll-margin-top:70px;
+  }
+  .note-h{font-size:1.05em; margin:2.2rem 0 .8rem}
+  .note-h3{font-size:.98em; margin:1.9rem 0 .7rem}
+  .notes .zh > :first-child{margin-top:0}
+  .notes [id]:target{
+    background:var(--hl); box-shadow:-.5rem 0 0 var(--hl),.5rem 0 0 var(--hl);
+    border-radius:2px;
+  }
+  .notes ol,.notes ul{margin:.4rem 0 .9em 1.4rem; padding:0}
+  .notes li{margin:0 0 .35em}
+  .note-hr{border:none; border-top:1px solid var(--rule-soft); margin:1.8rem 0}
+  /* 译者按的图横竖混杂，尺寸从 382 宽到 2268 都有。
+     横图统一到列宽、竖图统一到同一高度，两类各自看齐而不变形。 */
+  figure.note-img{margin:1.6rem auto; text-align:center}
+  figure.note-img img{border-radius:3px; box-shadow:0 1px 10px var(--shade)}
+  /* 容许最多 1.12 倍放大，好让宽度只差几个百分点的图也能对齐列宽 */
+  figure.note-img.landscape{max-width:min(100%,calc(var(--nw,100%) * 1.12))}
+  figure.note-img.landscape img{width:100%}
+  figure.note-img.portrait img{max-height:480px; width:auto; max-width:100%}
+  blockquote{
+    margin:1rem 0; padding:.2rem 0 .2rem 1.1rem;
+    border-left:2px solid var(--gold-soft); color:var(--ink-soft);
+  }
+  a{color:var(--gold)}
+
+  footer.foot{
+    margin:4rem 0 0; padding:1.6rem 0 3rem;
+    border-top:1px solid var(--rule-soft);
+    font-family:var(--cjk); font-size:.72rem;
+    color:var(--ink-faint); text-align:center;
+  }
+  footer.foot a{color:var(--ink-faint); text-decoration:none}
+  footer.foot a:hover{color:var(--gold)}
+
+  @media print{
+    .topbar,footer.foot{display:none}
+    body{background:#fff; color:#000; font-size:10.5pt}
+    .row{break-inside:avoid}
+  }
+  /* ---------- 学习注释 ---------- */
+  .term{
+    position:relative; cursor:pointer; color:var(--gold);
+    border-bottom:1px dotted var(--gold-soft); border-radius:2px;
+  }
+  .term:hover,.term:focus-visible,.term[aria-expanded="true"]{background:var(--hl); outline:none}
+  .term-card{
+    display:none; position:absolute; left:0; top:calc(100% + .3em); z-index:15;
+    width:max-content; max-width:min(19rem,78vw);
+    padding:.45em .75em; font-size:max(15px,1em); line-height:1.55;
+    font-style:normal; font-weight:400; text-align:left; hyphens:none;
+    color:var(--ink); background:var(--paper-raised);
+    border:1px solid var(--rule); border-radius:4px; box-shadow:0 4px 16px var(--shade);
+  }
+  .term.show-card .term-card{display:block}
+  .term-detail{
+    margin:.1rem 0 .85em; padding:.6rem .9rem; font-size:max(15px,.95em); line-height:1.65;
+    color:var(--ink-soft); background:var(--paper-raised);
+    border-left:2px solid var(--gold-soft); border-radius:0 3px 3px 0;
+  }
+  .term-detail[hidden]{display:none}
+  .term-detail .td-term{margin:0 0 .15em; font-weight:600; color:var(--ink)}
+  .term-detail dl{margin:0}
+  .term-detail dt{margin-top:.45em; font-family:var(--cjk); font-size:.72em; letter-spacing:.12em; color:var(--ink-faint)}
+  .term-detail dd{margin:0; font-family:var(--mix)}
+  @media print{.term-card{display:none !important}}
+</style>
+<script>
+  (function(){
+    try{
+      var t=localStorage.getItem("flc-theme");
+      if(t){document.documentElement.setAttribute("data-theme",t);}
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+  <div class="topbar"><div class="wrap bar">
+    <a class="brand" href="../../../../index.html">Franz Lohner's Chronicle · 目录</a>
+    <div class="tools">
+      <button id="btn-theme" type="button">夜间</button>
+    </div>
+  </div></div>
+
+  <div class="wrap">
+    <header class="chapter">
+      <div class="series">Franz Lohner's Chronicle · 弗兰兹·洛纳的编年史</div>
+      <h1 class="title-en">A Bit of remodeling - Part 2</h1>
+      <div class="title-zh">小修小补（下）</div>
+    </header>
+    <figure class="illus landscape" style="--nw:1920px"><img src="../assets/A_Bit_of_Remodelling_Part2_Social.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <section class="intro"><div class="row"><div class="col en" lang="en"><p>Why exactly has Lohner closed off parts of the Keep? Hopefully, we will receive some answers this time.</p></div><div class="col zh" lang="zh-CN"><p><em>洛纳到底为什么把城堡的一部分封起来？但愿这回能问出点答案。</em></p></div></div></section>
+    <main>
+    <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>Last time we had <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-1" data-detail="td-1">a bit of a natter<span class="term-card" role="tooltip">熟人之间没有特定目的地闲聊、拉家常。英国非正式用语。</span></span>, you were asking me about the <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-2" data-detail="td-2">refurbishment<span class="term-card" role="tooltip">翻修、整修：修理、清洁或重新装修已有的建筑，使其恢复较新的状态。</span></span> of this here keep, I believe?</p><div class="term-detail" id="td-1" hidden><p class="td-term">a bit of a natter</p><dl><dt>词义</dt><dd>熟人之间没有特定目的地闲聊、拉家常。英国非正式用语。</dd><dt>字面</dt><dd>have a bit of a natter：闲聊一会儿。</dd><dt>本章译法</dt><dd>闲聊</dd><dt>背景</dt><dd>此处是名词，不带嫌人啰嗦的意思。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/natter" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-2" hidden><p class="td-term">refurbishment</p><dl><dt>词义</dt><dd>翻修、整修：修理、清洁或重新装修已有的建筑，使其恢复较新的状态。</dd><dt>字面</dt><dd>refurbish 是动词；refurbishment 是名词。</dd><dt>本章译法</dt><dd>翻修</dd><dt>背景</dt><dd>也可用于设备的翻新，如 refurbished phone（翻新手机）。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/refurbishment" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>上回咱们唠嗑时候，你们就在问塔尔之角翻修的事。</p></div></div>
+<div class="row" id="p2"><a class="pn" href="#p2">2</a><div class="col en" lang="en"><p>How do you feel about it now it’s <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-3" data-detail="td-3">bedding in<span class="term-card" role="tooltip">逐渐适应、磨合并稳定运作；不限于居住，也可用于部件、新制度或新成员融入团队。</span></span>, by the way? I reckon it’s <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-4" data-detail="td-4">practical<span class="term-card" role="tooltip">实际使用起来合适、有效、方便。</span></span> to put the armoury and the forge next to one another. Although now I come to think of it, maybe storing black powder bombs next to open flames wasn’t the best idea I’ve ever had. Still, it’ll be a night to remember, if nothing else. And it’s not like any of us are <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-5" data-detail="td-5">clumsy<span class="term-card" role="tooltip">动作或拿东西不灵便，容易碰倒、摔坏东西。</span></span> old <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-6" data-detail="td-6">sods<span class="term-card" role="tooltip">英式冒犯性的人称用语；具体语气随上下文，可用于辱骂，也可用于熟人间挤兑。</span></span>, is it?</p><div class="term-detail" id="td-3" hidden><p class="td-term">bedding in</p><dl><dt>词义</dt><dd>逐渐适应、磨合并稳定运作；不限于居住，也可用于部件、新制度或新成员融入团队。</dd><dt>本章译法</dt><dd>住得惯吗</dd><dt>背景</dt><dd>now it’s bedding in 把逐渐用顺作为背景，不是在追问是否适应；适应不等于满意。</dd><dt>出处</dt><dd><a href="https://www.collinsdictionary.com/dictionary/english/bed-in" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-4" hidden><p class="td-term">practical</p><dl><dt>词义</dt><dd>实际使用起来合适、有效、方便。</dd><dt>本章译法</dt><dd>还挺方便的</dd><dt>背景</dt><dd>这里评价军械库与锻造间相邻的安排。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/practical" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-5" hidden><p class="td-term">clumsy</p><dl><dt>词义</dt><dd>动作或拿东西不灵便，容易碰倒、摔坏东西。</dd><dt>本章译法</dt><dd>笨手笨脚</dd><dt>背景</dt><dd>侧重动作，不是智力。</dd><dt>出处</dt><dd><a href="https://www.collinsdictionary.com/dictionary/english/clumsy" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-6" hidden><p class="td-term">sods</p><dl><dt>词义</dt><dd>英式冒犯性的人称用语；具体语气随上下文，可用于辱骂，也可用于熟人间挤兑。</dd><dt>本章译法</dt><dd>老东西</dd><dt>背景</dt><dd>clumsy old sods 在本段挤兑自己人。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/sod" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>那，改成现在这样，你们住得惯吗？</p><p>我先前觉着吧，把军械库和锻造间挨着放，还挺方便的。现在转念一想，把黑火药炸弹放在明火旁边，属实算不上英明的抉择。</p><p>别的不说，真要炸了一定是个绚丽难忘的夜晚。再说了，咱们这里没有谁是笨手笨脚的老东西，对吧？</p></div></div>
+<div class="row" id="p3"><a class="pn" href="#p3">3</a><div class="col en" lang="en"><p>Well, it’s not like *all *of us are clumsy old sods, anyway. Maybe we <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-7" data-detail="td-7">ought to<span class="term-card" role="tooltip">应该，表示建议或认为某事是妥当的做法，与 should 意思接近。</span></span> lock that bomb cabinet up? And keep the key well hidden.</p><div class="term-detail" id="td-7" hidden><p class="td-term">ought to</p><dl><dt>词义</dt><dd>应该，表示建议或认为某事是妥当的做法，与 should 意思接近。</dd><dt>字面</dt><dd>ought to 后接动词原形。</dd><dt>本章译法</dt><dd>不行咱还是把炸弹柜锁上吧？</dd><dt>背景</dt><dd>Maybe we ought to… 在本段是商量和自我修正的口气，可译为“要不还是……”。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/us/grammar/british-grammar/ought-to" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>……好吧，至少不<em>全是</em>笨手笨脚的老东西。不行咱还是把炸弹柜锁上吧？再把钥匙藏严实点。</p></div></div>
+<div class="row" id="p4"><a class="pn" href="#p4">4</a><div class="col en" lang="en"><p>Anyhow, about the closed-off sections of the keep. That’s a bit of a necessity, I’m afraid. My mate Rosalinde – who as I’m sure you’ll recall, what with you all taking <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-9" data-detail="td-9">eager<span class="term-card" role="tooltip">热切的、兴致很高的；taking eager notes 指记笔记的人十分起劲。</span></span> notes and trying to second guess my <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-10" data-detail="td-10">motivations<span class="term-card" role="tooltip">做某事背后的动机、原因；也可指做事的动力。本段为前一种意思。</span></span>, is a Light Wizard specialising in architecture – prefers to complete these little projects of hers stage by stage. Likes to keep everything in her head so as to reduce the chances of accidentally leaving out <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-11" data-detail="td-11">the odd<span class="term-card" role="tooltip">这里是“偶尔的、零星的”。the odd + 单数名词，是“一两个、时不时的”。</span></span> <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-8" data-detail="td-8">buttress<span class="term-card" role="tooltip">扶壁：紧贴主墙、向外凸出的支撑构件，从侧面加固墙体，帮助抵抗向外的推力。</span></span> here or there.</p><div class="term-detail" id="td-8" hidden><p class="td-term">buttress</p><dl><dt>词义</dt><dd>扶壁：紧贴主墙、向外凸出的支撑构件，从侧面加固墙体，帮助抵抗向外的推力。</dd><dt>本章译法</dt><dd>扶壁</dd><dt>背景</dt><dd>整座凸出的墙垛都属于扶壁，不只是底部加厚的一段。详见本章译者注及标注图。</dd><dt>出处</dt><dd><a href="https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Counterfort" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-9" hidden><p class="td-term">eager</p><dl><dt>词义</dt><dd>热切的、兴致很高的；taking eager notes 指记笔记的人十分起劲。</dd><dt>本章译法</dt><dd>记得飞起</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/us/dictionary/english/eager" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-10" hidden><p class="td-term">motivations</p><dl><dt>词义</dt><dd>做某事背后的动机、原因；也可指做事的动力。本段为前一种意思。</dd><dt>本章译法</dt><dd>八卦</dd><dt>出处</dt><dd><a href="https://www.oxfordlearnersdictionaries.com/definition/english/motivation" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-11" hidden><p class="td-term">the odd</p><dl><dt>词义</dt><dd>这里是“偶尔的、零星的”。the odd + 单数名词，是“一两个、时不时的”。</dd><dt>字面</dt><dd>odd 本义是“不成对的、单出来的”，奇数 odd number 也是这个意思。</dd><dt>本章译法</dt><dd>一不留神就在哪儿漏了个不能漏的扶壁</dd><dt>背景</dt><dd>odd 另一个常见意思是“奇怪”，比 strange 轻、更口语，指有点怪、有点对不上。strange 更强，也可以是“陌生的”（a stranger 就是陌生人）。the odd job 是零工，the odd favour 是零星的几个人情。</dd></dl></div></div><div class="col zh" lang="zh-CN"><p>说回城堡封起来的那几块地方。</p><p>唉，这也是没办法的事。我那位朋友罗莎琳德……</p><p>我就知道你们惦记这个！上次一个个小本本记得飞起，还一个劲挖我的八卦……</p><p>所以，我的朋友罗莎琳德，那个专攻建筑的光明系法师，搞这些小工程的时候呢，喜欢做一块算一块。她还喜欢把所有细节都记在脑子里，免得一不留神就在哪儿漏了个不能漏的扶壁<sup class="fnmark"><a href="#%E6%89%B6%E5%A3%81" id="fnref-扶壁" aria-label="脚注 ①">①</a></sup>。</p></div></div>
+<div class="row" id="p5"><a class="pn" href="#p5">5</a><div class="col en" lang="en"><p>It’s not perfect: her memory has limits, and there are holes everywhere. Those warning signs aren’t just for show. I’ve got a couple of my lads lending a hand as well, just to be sure. Personally, I reckon that’s just good sense when you’re as far up a mountain as we are. No sense us helping out the Pactsworn with a bit of <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-13" data-detail="td-13">shoddy<span class="term-card" role="tooltip">做工粗劣、质量低劣或工作敷衍的；可形容商品、施工、服务及研究等。</span></span> stonework over <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-12" data-detail="td-12">a sheer drop<span class="term-card" role="tooltip">陡直或近乎垂直向下的落差；这里指脚下直落的悬崖。</span></span>, now is there?</p><div class="term-detail" id="td-12" hidden><p class="td-term">a sheer drop</p><dl><dt>词义</dt><dd>陡直或近乎垂直向下的落差；这里指脚下直落的悬崖。</dd><dt>本章译法</dt><dd>悬崖峭壁</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/us/dictionary/english/sheer?topic=very-and-extreme" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-13" hidden><p class="td-term">shoddy</p><dl><dt>词义</dt><dd>做工粗劣、质量低劣或工作敷衍的；可形容商品、施工、服务及研究等。</dd><dt>本章译法</dt><dd>豆腐渣工程</dd><dt>背景</dt><dd>也有纺织业名词义：用废旧羊毛纤维再加工成的纱或织物。</dd><dt>出处</dt><dd><a href="https://www.collinsdictionary.com/dictionary/english/shoddy" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>不过，她这套做法也有缺点：她能记住的东西就那么多，偏偏城堡里还到处是窟窿——那些警示牌可不是摆设。</p><p>为了保险起见，我叫了两个手下去搭把手。你们说，我这么干有没有道理？</p><p>咱们住在这么高的山上，四周还都是悬崖峭壁，这要砌了个豆腐渣工程，那不就等于帮了誓约者的忙么？</p></div></div>
+<div class="row" id="p6"><a class="pn" href="#p6">6</a><div class="col en" lang="en"><p>As to what Rosalinde’s working on? Well, that’s secret, for now.</p></div><div class="col zh" lang="zh-CN"><p>至于罗莎琳德到底在忙什么？这个嘛，暂时保密。</p></div></div>
+<div class="row" id="p7"><a class="pn" href="#p7">7</a><div class="col en" lang="en"><p>Oh, don’t look at me like that. What’s life without one or two surprises, eh? And this’ll be the good kind of surprise, not the ‘Kerillian’s been putting funny herbs in the ale barrels’ kind of surprise. I’m all for new experiences, but <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-15" data-detail="td-15">seeing through time and space<span class="term-card" role="tooltip">看穿时间和空间；本段把喝下加了古怪草药的酒后的异常体验夸张地说成看穿时空。</span></span> ain’t one of them. Had <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-14" data-detail="td-14">a splitting headache<span class="term-card" role="tooltip">剧烈的头痛，头痛欲裂。split 是劈开、裂开；这里不是真的裂开。</span></span> for days after, but I got off light.</p><div class="term-detail" id="td-14" hidden><p class="td-term">a splitting headache</p><dl><dt>词义</dt><dd>剧烈的头痛，头痛欲裂。split 是劈开、裂开；这里不是真的裂开。</dd><dt>本章译法</dt><dd>头都要裂开了</dd><dt>出处</dt><dd><a href="https://www.dictionary.com/browse/splitting-headache" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-15" hidden><p class="td-term">seeing through time and space</p><dl><dt>词义</dt><dd>看穿时间和空间；本段把喝下加了古怪草药的酒后的异常体验夸张地说成看穿时空。</dd><dt>本章译法</dt><dd>喝完能让我看穿时空</dd></dl></div></div><div class="col zh" lang="zh-CN"><p>哎哎哎，你们都什么眼神啊！这日子要是没点惊喜，还有什么过头，嗯？</p><p>而且这回是真的惊喜，绝对不是「凯瑞莲往艾尔酒桶里塞草药」那种。</p><p>我一直喜欢新奇体验，但是喝完能让我看穿时空那种除外。那次我头都要裂开了，疼了好几天，但我这症状还算轻的。</p></div></div>
+<div class="row" id="p8"><a class="pn" href="#p8">8</a><div class="col en" lang="en"><p>Three days, s*omeone *thought they were a sheep, didn’t they? We’ll say no more about it.</p></div><div class="col zh" lang="zh-CN"><p><em>某人</em>可是整整三天都以为自己是只羊，对吧？<sup class="fnmark"><a href="#%E6%9F%90%E4%BA%BA%E6%98%AF%E8%B0%81" id="fnref-某人是谁" aria-label="脚注 ②">②</a></sup></p><p>行～，点到为止。</p></div></div>
+<div class="full"><figure class="story-img landscape" style="--nw:480px"><img src="../assets/decoration_1.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure></div>
+    </main>
+    <section class="notes"><div class="zh"><h2 id="译者注" class="note-h">译者注</h2>
+<h3 id="扶壁" class="note-h3">扶壁<a class="fnback" href="#fnref-扶壁" title="回到正文">↩</a></h3>
+<p><strong>① 扶壁（buttress）</strong>：紧贴主墙、向外凸出的支撑构件，常见于欧洲古老的砖石建筑。拱顶等结构除了向下压，也可能产生把墙向外推的力量；扶壁从侧面加固墙体，帮助把力传向地基，使墙不易向外倾斜或变形。可以把它想成从旁边抵住墙的厚墙垛，而不是独立站立的柱子。</p>
+<p>图中蓝框圈出的是整座扶壁，红框只是它下部向外加厚的一段。扶壁常做成下宽上窄、向上逐级收进的形状，可以与主墙同时砌筑，也可以后来增建。它不是装饰，更不能随便漏建。</p>
+<figure class="note-img landscape" style="--nw:651px"><img src="../assets/buttress-annotated.png" alt="蓝框为整座扶壁，红框为下部加厚部分" width="651" height="547" loading="lazy" decoding="async"></figure>
+<p>图片：<a href="https://www.geograph.org.uk/photo/4612865">Church buttresses at Bourne, Lincolnshire — © Rex Needle / Geograph</a>，原图及本裁切标注版采用 <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>；裁切及红蓝标注由译者提供。结构说明参考：<a href="https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Counterfort">《大英百科全书》Counterfort 条目</a>。</p>
+<h3 id="某人是谁" class="note-h3">某人是谁<a class="fnback" href="#fnref-某人是谁" title="回到正文">↩</a></h3>
+<p>**② 「某人」八成就是克鲁伯。**在《血与暗》地图里，凯瑞莲问他除了被鼠人抓住，以前还被关押过没有。他先提到债务监狱，随后继续列举：「在努恩那次喝醉了闹事……还有乌特巴德……还有瓦尔登霍夫……以及跟羊有关的那茬事……」凯瑞莲最后忍不住打断：「够了！拜托，给我留点美好的想象吧。」</p>
+<p>所以，笔者认为，这特么就是在点克鲁伯。</p>
+</div></section>
+    <footer class="foot">
+      Franz Lohner's Chronicle &middot; 同人翻译，原文版权归 Fatshark 所有
+      &nbsp;|&nbsp; <a href="../../../../index.html">返回目录</a><br>
+      页面由 <a href="https://github.com/Alexu0317-FATHER/translation-workbench" target="_blank" rel="noopener">Translation Workbench</a> 生成
+    </footer>
+  </div>
+
+<script>
+  (function(){
+    var root=document.documentElement;
+    var btnTheme=document.getElementById("btn-theme");
+
+    function store(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+
+    function currentTheme(){
+      var set=root.getAttribute("data-theme");
+      if(set) return set;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+    }
+    function paintTheme(){
+      var dark=currentTheme()==="dark";
+      btnTheme.textContent=dark?"日间":"夜间";
+      btnTheme.setAttribute("aria-pressed",String(dark));
+    }
+
+    btnTheme.addEventListener("click",function(){
+      var next=currentTheme()==="dark"?"light":"dark";
+      root.setAttribute("data-theme",next);
+      store("flc-theme",next);
+      paintTheme();
+    });
+
+    paintTheme();
+  })();
+</script>
+<script>
+  (function(){
+    var terms=[].slice.call(document.querySelectorAll(".term"));
+    if(!terms.length) return;
+    var canHover=!!(window.matchMedia&&window.matchMedia("(hover: hover)").matches);
+
+    function isOpen(t){return t.getAttribute("aria-expanded")==="true";}
+    function place(t){
+      var c=t.querySelector(".term-card"), w=document.documentElement.clientWidth;
+      // 词折行时，卡片的左边默认对齐第一段，要挪到最后一段（卡片贴在最后一行下面）
+      var rects=t.getClientRects();
+      c.style.left=(rects[rects.length-1].left-rects[0].left)+"px";
+      var r=c.getBoundingClientRect();
+      if(r.right>w-10) c.style.left=(w-10-r.right)+"px";
+      r=c.getBoundingClientRect();
+      if(r.left<10) c.style.left=(parseFloat(c.style.left)+10-r.left)+"px";
+    }
+    function hideCard(t){t.classList.remove("show-card");}
+    function closeCards(except){terms.forEach(function(o){if(o!==except) hideCard(o);});}
+    function showCard(t){closeCards(t); t.classList.add("show-card"); place(t);}
+    function setOpen(t,open){
+      document.getElementById(t.getAttribute("data-detail")).hidden=!open;
+      t.setAttribute("aria-expanded",String(open));
+      if(open) hideCard(t);
+    }
+
+    terms.forEach(function(t){
+      if(canHover){
+        t.addEventListener("mouseenter",function(){if(!isOpen(t)) showCard(t);});
+        t.addEventListener("mouseleave",function(){hideCard(t);});
+      }
+      // 点一下：没有卡片就出卡片；有卡片就展开；已展开就收起
+      t.addEventListener("click",function(e){
+        e.stopPropagation();
+        if(isOpen(t)){setOpen(t,false); if(canHover) showCard(t);}
+        else if(t.classList.contains("show-card")) setOpen(t,true);
+        else showCard(t);
+      });
+      t.addEventListener("focus",function(){
+        if(t.matches(":focus-visible")&&!isOpen(t)) showCard(t);
+      });
+      t.addEventListener("blur",function(){hideCard(t);});
+      t.addEventListener("keydown",function(e){
+        if(e.key==="Enter"||e.key===" "){e.preventDefault(); setOpen(t,!isOpen(t));}
+        else if(e.key==="Escape"){setOpen(t,false); hideCard(t);}
+      });
+    });
+    document.addEventListener("click",function(){closeCards();});
+  })();
+</script>
+</body></html>
