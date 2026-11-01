@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>战锤：末世鼠疫2 · 瞧瞧这是什么 | 《弗兰兹·洛纳的编年史》中英对照翻译</title>
+<meta name="description" content="洛纳的日记本被西耶娜找到了，没想到情报头子洛纳还会背地里磕CP，而西耶娜看到最后居然恼羞成怒！">
+<meta name="keywords" content="Vermintide 2, Warhammer Fantasy, 战锤末世鼠疫, 官网小说, 中英对照, bilingual, 双语翻译">
+<link rel="canonical" href="https://alexu0317-father.github.io/franz-lohners-chronicle-zh/franz-lohners-chronicle/chapters/13-what-do-we-have-here/output/index.html">
+<script>
+  if (location.hostname === "alexu0317-father.github.io") {
+    var ga = document.createElement("script");
+    ga.async = true;
+    ga.src = "https://www.googletagmanager.com/gtag/js?id=G-YWGH1EXEL5";
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag("js", new Date());
+    gtag("config", "G-YWGH1EXEL5");
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  :root{
+    color-scheme:light dark;
+    --paper:#f2eade; --paper-raised:#fbf6ed; --paper-sunk:#eae0d0;
+    --ink:#2a2018; --ink-soft:#665847; --ink-faint:#9c8b73;
+    --rule:#dccfb8; --rule-soft:#e9dfcd;
+    --gold:#8f6c2c; --gold-soft:#b18e4a;
+    --hl:rgba(143,108,44,.075); --shade:rgba(70,52,28,.10);
+    --serif:"Source Serif 4",Georgia,"Iowan Old Style","Times New Roman",serif;
+    --cjk:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+    /* 字体按字符逐个回退：拉丁字母命中衬线体，汉字落到后面的中文字体 */
+    --mix:"Source Serif 4",Georgia,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+      --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+      --rule:#332b20; --rule-soft:#241f17;
+      --gold:#c99c4e; --gold-soft:#dbb066;
+      --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+    --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+    --rule:#332b20; --rule-soft:#241f17;
+    --gold:#c99c4e; --gold-soft:#dbb066;
+    --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif);
+    font-size:clamp(15.5px,.42vw + 14.2px,17.5px); line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%; height:auto}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 clamp(18px,4vw,48px)}
+
+  /* ---------- 顶栏 ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .bar{display:flex; align-items:center; justify-content:space-between; gap:1rem; height:46px}
+  .brand{
+    font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-faint); text-decoration:none; white-space:nowrap;
+    overflow:hidden; text-overflow:ellipsis;
+  }
+  .brand:hover{color:var(--gold)}
+  .tools{display:flex; gap:.4rem; flex:none}
+  .tools button{
+    font:inherit; font-size:.75rem; font-family:var(--cjk);
+    padding:.28em .8em; border-radius:999px; cursor:pointer;
+    color:var(--ink-soft); background:transparent;
+    border:1px solid var(--rule); transition:.15s;
+  }
+  .tools button:hover{color:var(--gold); border-color:var(--gold-soft)}
+
+  /* ---------- 章首 ---------- */
+  header.chapter{text-align:center; padding:clamp(2.6rem,7vw,4.6rem) 0 1.6rem}
+  .series{
+    font-size:.68rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:1.4rem;
+  }
+  .title-en{
+    font-size:clamp(1.7rem,4.4vw,2.7rem); font-weight:600;
+    line-height:1.18; letter-spacing:-.01em; margin:0;
+  }
+  .title-zh{
+    font-family:var(--cjk); font-weight:500;
+    font-size:clamp(1rem,2.2vw,1.24rem); color:var(--ink-soft);
+    margin-top:.7rem; letter-spacing:.04em;
+  }
+  header.chapter::after{
+    content:""; display:block; width:44px; height:1px;
+    background:var(--gold-soft); opacity:.6; margin:1.8rem auto 0;
+  }
+
+  figure{margin:0}
+  /* --nw 是图片原生宽度，由生成脚本写入，用来防止小图被撑大 */
+  figure.illus{margin:0 auto 2.6rem; max-width:min(100%,var(--nw,100%))}
+  figure.illus img{width:100%; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+
+  /* ---------- 开场白 ---------- */
+  .intro{
+    margin:0 0 2.2rem; padding-bottom:1.6rem;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .intro .col{color:var(--ink-soft); font-size:.92em}
+  .intro .col.en p{font-style:italic}
+
+  /* ---------- 双栏对照 ---------- */
+  .row{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(26px,3.6vw,54px);
+    position:relative; padding:.9rem 0 .9rem clamp(1.9rem,3.2vw,2.9rem);
+    border-radius:3px; transition:background .12s;
+    scroll-margin-top:70px;
+  }
+  main .row:hover{background:var(--hl)}
+  main .row:target{background:var(--hl); box-shadow:inset 3px 0 0 var(--gold-soft)}
+  .pn{
+    position:absolute; left:0; top:1.05rem;
+    width:clamp(1.3rem,2.2vw,2rem); text-align:right;
+    font-size:.7rem; font-variant-numeric:tabular-nums;
+    color:var(--ink-faint); text-decoration:none; opacity:.55; transition:.15s;
+  }
+  .row:hover .pn{opacity:1; color:var(--gold)}
+  .col p{margin:0 0 .78em}
+  .col p:last-child{margin-bottom:0}
+  .col.en{hyphens:auto}
+  .col.zh{
+    font-family:var(--mix); font-size:.93em; line-height:1.95;
+    text-align:justify; text-justify:inter-ideograph;
+  }
+  /* 中文没有斜体。原文的 em 混着引文、出处、强调三种用法，
+     统一加装饰必然在其中一种上出错，所以只去掉伪斜体，不另作区分。 */
+  .col.zh em,.notes em{font-style:normal}
+  main .row + .row{border-top:1px solid var(--rule-soft)}
+
+  .full{margin:1.8rem 0; text-align:center}
+  figure.story-img{display:inline-block; max-width:min(100%,560px,var(--nw,560px))}
+  figure.story-img img{width:100%; border-radius:2px}
+
+  /* ---------- 窄屏自动单栏 ---------- */
+  @media (max-width:820px){
+    .row{grid-template-columns:1fr !important; gap:.5rem}
+    .col.en{color:var(--ink-soft); font-size:.9em; line-height:1.7}
+    .col.zh{border-left:2px solid var(--rule); padding-left:1.05rem}
+    .brand{font-size:.62rem; letter-spacing:.1em}
+  }
+
+  /* ---------- 脚注 ---------- */
+  .fnmark{font-size:.62em; line-height:0; vertical-align:super}
+  .fnmark a{color:var(--gold); text-decoration:none; padding:0 .1em}
+  .fnmark a:hover{text-decoration:underline}
+  .fnback{
+    margin-left:.55em; font-size:.72em; color:var(--ink-faint);
+    text-decoration:none; vertical-align:middle;
+  }
+  .fnback:hover{color:var(--gold)}
+
+  /* ---------- 译者按 ---------- */
+  /* 不画上边框：正文以装饰图收尾的章节会与图叠成两道分界，
+     靠这里的留白和居中的小标题分界就够。 */
+  .notes{
+    margin:4rem auto 0; max-width:44rem;
+    padding-top:2rem;
+    font-family:var(--mix);
+  }
+  .notes-title{
+    font-size:.72rem; letter-spacing:.22em; font-weight:500;
+    color:var(--ink-faint); text-align:center; margin:0 0 2rem;
+  }
+  .notes .zh{font-size:.9em; line-height:1.95; color:var(--ink-soft)}
+  .notes p{margin:0 0 .9em}
+  .note-h,.note-h3{
+    font-family:var(--mix); color:var(--ink); font-weight:600;
+    scroll-margin-top:70px;
+  }
+  .note-h{font-size:1.05em; margin:2.2rem 0 .8rem}
+  .note-h3{font-size:.98em; margin:1.9rem 0 .7rem}
+  .notes .zh > :first-child{margin-top:0}
+  .notes [id]:target{
+    background:var(--hl); box-shadow:-.5rem 0 0 var(--hl),.5rem 0 0 var(--hl);
+    border-radius:2px;
+  }
+  .notes ol,.notes ul{margin:.4rem 0 .9em 1.4rem; padding:0}
+  .notes li{margin:0 0 .35em}
+  .note-hr{border:none; border-top:1px solid var(--rule-soft); margin:1.8rem 0}
+  /* 译者按的图横竖混杂，尺寸从 382 宽到 2268 都有。
+     横图统一到列宽、竖图统一到同一高度，两类各自看齐而不变形。 */
+  figure.note-img{margin:1.6rem auto; text-align:center}
+  figure.note-img img{border-radius:3px; box-shadow:0 1px 10px var(--shade)}
+  /* 容许最多 1.12 倍放大，好让宽度只差几个百分点的图也能对齐列宽 */
+  figure.note-img.landscape{max-width:min(100%,calc(var(--nw,100%) * 1.12))}
+  figure.note-img.landscape img{width:100%}
+  figure.note-img.portrait img{max-height:480px; width:auto; max-width:100%}
+  blockquote{
+    margin:1rem 0; padding:.2rem 0 .2rem 1.1rem;
+    border-left:2px solid var(--gold-soft); color:var(--ink-soft);
+  }
+  a{color:var(--gold)}
+
+  footer.foot{
+    margin:4rem 0 0; padding:1.6rem 0 3rem;
+    border-top:1px solid var(--rule-soft);
+    font-family:var(--cjk); font-size:.72rem;
+    color:var(--ink-faint); text-align:center;
+  }
+  footer.foot a{color:var(--ink-faint); text-decoration:none}
+  footer.foot a:hover{color:var(--gold)}
+
+  @media print{
+    .topbar,footer.foot{display:none}
+    body{background:#fff; color:#000; font-size:10.5pt}
+    .row{break-inside:avoid}
+  }
+  /* ---------- 学习注释 ---------- */
+  .term{
+    position:relative; cursor:pointer; color:var(--gold);
+    border-bottom:1px dotted var(--gold-soft); border-radius:2px;
+  }
+  .term:hover,.term:focus-visible,.term[aria-expanded="true"]{background:var(--hl); outline:none}
+  .term-card{
+    display:none; position:absolute; left:0; top:calc(100% + .3em); z-index:15;
+    width:max-content; max-width:min(19rem,78vw);
+    padding:.45em .75em; font-size:max(15px,1em); line-height:1.55;
+    font-style:normal; font-weight:400; text-align:left; hyphens:none;
+    color:var(--ink); background:var(--paper-raised);
+    border:1px solid var(--rule); border-radius:4px; box-shadow:0 4px 16px var(--shade);
+  }
+  .term.show-card .term-card{display:block}
+  .term-detail{
+    margin:.1rem 0 .85em; padding:.6rem .9rem; font-size:max(15px,.95em); line-height:1.65;
+    color:var(--ink-soft); background:var(--paper-raised);
+    border-left:2px solid var(--gold-soft); border-radius:0 3px 3px 0;
+  }
+  .term-detail[hidden]{display:none}
+  .term-detail .td-term{margin:0 0 .15em; font-weight:600; color:var(--ink)}
+  .term-detail dl{margin:0}
+  .term-detail dt{margin-top:.45em; font-family:var(--cjk); font-size:.72em; letter-spacing:.12em; color:var(--ink-faint)}
+  .term-detail dd{margin:0; font-family:var(--mix)}
+  @media print{.term-card{display:none !important}}
+</style>
+<script>
+  (function(){
+    try{
+      var t=localStorage.getItem("flc-theme");
+      if(t){document.documentElement.setAttribute("data-theme",t);}
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+  <div class="topbar"><div class="wrap bar">
+    <a class="brand" href="../../../../index.html">Franz Lohner's Chronicle · 目录</a>
+    <div class="tools">
+      <button id="btn-theme" type="button">夜间</button>
+    </div>
+  </div></div>
+
+  <div class="wrap">
+    <header class="chapter">
+      <div class="series">Franz Lohner's Chronicle · 弗兰兹·洛纳的编年史</div>
+      <h1 class="title-en">What do we have here</h1>
+      <div class="title-zh">瞧瞧这是什么</div>
+    </header>
+    <figure class="illus landscape" style="--nw:1920px"><img src="../assets/Franz_Lohner_Chronicle_13.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <section class="intro"><div class="row"><div class="col en" lang="en"><p><em>An absent-minded man of mysteries, Franz Lohner relies on his bulging journal to keep track of occurrences, intrigues and arguments around Taal's Horn Keep. Sometimes his notes are even useful, believe it or not. The Franz Lohner Chronicles are extracts from that journal.</em></p></div><div class="col zh" lang="zh-CN"><p><em>神秘且健忘的弗兰兹·洛纳，靠着他那本鼓鼓囊囊的日记来记录塔尔之角周围发生的事情、阴谋和争论。信不信由你，有时他的笔记还真有点用。《弗兰兹·洛纳编年史》就是摘自这本日记的内容。</em></p></div></div></section>
+    <main>
+    <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>Hello Franz, darling, it’s Sienna. If you’re reading this, then you already know I’ve found your little diary.</p></div><div class="col zh" lang="zh-CN"><p>你好呀，亲爱的弗兰兹，是我，西耶娜。要是你读到了这几行字，那你肯定已经知道，我翻出你这本小日记了。</p></div></div>
+<div class="row" id="p2"><a class="pn" href="#p2">2</a><div class="col en" lang="en"><p>I have to say, I’m very impressed. Quite apart from the content – which is simply chock full of interesting bric-a-brac, if oddly miss-spelled in places – I adore those <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-11" data-detail="td-11">loving<span class="term-card" role="tooltip">带着感情的、亲切的；也可指用心、细致的。</span></span> little <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-3" data-detail="td-3">doodles<span class="term-card" role="tooltip">随手画的小画或图案，常是在走神、无聊或想着别的事情时画的。可作名词或动词。</span></span> in the <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-4" data-detail="td-4">margins<span class="term-card" role="tooltip">纸页正文周围的空白边缘。in the margins 即在页边空白处。</span></span>. Especially the ones of Saltzpyre. You’ve really <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-9" data-detail="td-9">captured<span class="term-card" role="tooltip">在画、文字、照片或影片中准确表现出神态、气氛或特征。本段指把他的臭脸画得传神。</span></span> his scowl – <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-10" data-detail="td-10">or rather<span class="term-card" role="tooltip">or rather 用来修正刚说过的话，意为“更准确地说”。</span></span>, one of his many scowls. They do say that goblins have a hundred different words for ‘mushroom’. Our dear, <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-5" data-detail="td-5">gallant<span class="term-card" role="tooltip">英勇的；也可指男子对女性殷勤有礼、有骑士风度。</span></span> Victor is a bit like that, but with <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-6" data-detail="td-6">bleak<span class="term-card" role="tooltip">阴冷、荒凉、缺乏暖意或希望的。</span></span> <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-7" data-detail="td-7">facial<span class="term-card" role="tooltip">面部的、脸上的。facial expressions 即面部表情。</span></span> <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-8" data-detail="td-8">expressions<span class="term-card" role="tooltip">表情；也可指表达、表达方式或词语说法，随搭配判断。</span></span>, don’t you find? Perhaps it’s only having the one eye that does it? Or having a <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-1" data-detail="td-1">shard<span class="term-card" role="tooltip">硬质物体破裂后形成的碎片，常带尖锐边缘。</span></span> of <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-2" data-detail="td-2">flint<span class="term-card" role="tooltip">燧石：一种很硬的石头，与钢铁敲击可产生火花。</span></span> where his heart should be.</p><div class="term-detail" id="td-1" hidden><p class="td-term">shard</p><dl><dt>词义</dt><dd>硬质物体破裂后形成的碎片，常带尖锐边缘。</dd><dt>本章译法</dt><dd>碎</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/tr/s%C3%B6zl%C3%BCk/ingilizce/shard" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-2" hidden><p class="td-term">flint</p><dl><dt>词义</dt><dd>燧石：一种很硬的石头，与钢铁敲击可产生火花。</dd><dt>本章译法</dt><dd>燧石</dd><dt>出处</dt><dd><a href="https://www.oxfordlearnersdictionaries.com/definition/english/flint" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-3" hidden><p class="td-term">doodles</p><dl><dt>词义</dt><dd>随手画的小画或图案，常是在走神、无聊或想着别的事情时画的。可作名词或动词。</dd><dt>本章译法</dt><dd>小涂鸦</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/doodle?q=DOODLE" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-4" hidden><p class="td-term">margins</p><dl><dt>词义</dt><dd>纸页正文周围的空白边缘。in the margins 即在页边空白处。</dd><dt>本章译法</dt><dd>页边空白处</dd><dt>背景</dt><dd>另可指差额、余地；profit margin 是利润率，margin for error 是容许出错的余地。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/us/dictionary/english/margin" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-5" hidden><p class="td-term">gallant</p><dl><dt>词义</dt><dd>英勇的；也可指男子对女性殷勤有礼、有骑士风度。</dd><dt>本章译法</dt><dd>英武</dd><dt>背景</dt><dd>本段用在挤兑维克多的语境里，带着戏谑。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/us/dictionary/english/gallant" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-6" hidden><p class="td-term">bleak</p><dl><dt>词义</dt><dd>阴冷、荒凉、缺乏暖意或希望的。</dd><dt>本章译法</dt><dd>阴沉晦气</dd><dt>背景</dt><dd>本段修饰面部表情，可理解为阴沉、冷峻、毫无暖意；形容前景时可指黯淡。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/us/dictionary/english/bleak" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-7" hidden><p class="td-term">facial</p><dl><dt>词义</dt><dd>面部的、脸上的。facial expressions 即面部表情。</dd><dt>本章译法</dt><dd>面部的（融入“表情”）</dd><dt>背景</dt><dd>facial recognition 是人脸识别，facial hair 是脸上的毛发。</dd><dt>出处</dt><dd><a href="https://www.oxfordlearnersdictionaries.com/definition/english/facial_1" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-8" hidden><p class="td-term">expressions</p><dl><dt>词义</dt><dd>表情；也可指表达、表达方式或词语说法，随搭配判断。</dd><dt>本章译法</dt><dd>表情</dd><dt>背景</dt><dd>facial expressions 是面部表情；an English expression 是一种英语说法；freedom of expression 是表达自由。</dd><dt>出处</dt><dd><a href="https://www.oxfordlearnersdictionaries.com/definition/english/expression" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-9" hidden><p class="td-term">captured</p><dl><dt>词义</dt><dd>在画、文字、照片或影片中准确表现出神态、气氛或特征。本段指把他的臭脸画得传神。</dd><dt>本章译法</dt><dd>画活了</dd><dt>背景</dt><dd>也可指抓获、攻占、吸引注意，以及拍摄或记录。screen capture 是截屏，motion capture 是动作捕捉。可把这些用法联系为抓住并留住某种东西。</dd><dt>出处</dt><dd><a href="https://www.oxfordlearnersdictionaries.com/definition/english/capture_1" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-10" hidden><p class="td-term">or rather</p><dl><dt>词义</dt><dd>or rather 用来修正刚说过的话，意为“更准确地说”。</dd><dt>本章译法</dt><dd>或者该说</dd><dt>背景</dt><dd>与 either、whether 放在一起辨认：rather 常用于程度、改口或偏好；either 表示两者中任选一个，或配合 or 列出选项；whether 引出“是否／究竟选哪个”的问题，也能表示无论哪种情况。对照例句：I&#x27;d rather have tea.（我更想喝茶。）He can have either tea or coffee.（茶或咖啡，他任选一种。）I don&#x27;t know whether he wants tea or coffee.（我不知道他想喝茶还是咖啡。）另外，rather cold 是挺冷，rather than 表示取舍，or rather 是更准确地说。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/grammar/british-grammar/rather" target="_blank" rel="noopener noreferrer">来源 1</a>　<a href="https://dictionary.cambridge.org/grammar/british-grammar/would-rather-would-sooner" target="_blank" rel="noopener noreferrer">来源 2</a>　<a href="https://dictionary.cambridge.org/grammar/british-grammar/either?q=Either" target="_blank" rel="noopener noreferrer">来源 3</a>　<a href="https://dictionary.cambridge.org/grammar/british-grammar/whether" target="_blank" rel="noopener noreferrer">来源 4</a>　<a href="https://www.oxfordlearnersdictionaries.com/definition/english/whether" target="_blank" rel="noopener noreferrer">来源 5</a></dd></dl></div><div class="term-detail" id="td-11" hidden><p class="td-term">loving</p><dl><dt>词义</dt><dd>带着感情的、亲切的；也可指用心、细致的。</dd><dt>本章译法</dt><dd>传神</dd><dt>背景</dt><dd>loving little doodles 可理解为带感情或用心画的小涂鸦。本段用温情词来夸臭脸涂鸦，可带戏谑，但不能单凭 loving 认定有浪漫或性意味。</dd><dt>出处</dt><dd><a href="https://www.merriam-webster.com/dictionary/loving" target="_blank" rel="noopener noreferrer">来源 1</a>　<a href="https://www.oxfordlearnersdictionaries.com/definition/english/loving" target="_blank" rel="noopener noreferrer">来源 2</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>不得不说，真是让我叹为观止。先不说里头塞满了各种稀奇古怪的零碎杂记（虽说有些单词拼写错得叫人匪夷所思），我爱死边边角角画的那些传神的小涂鸦了！</p><p>特别是萨尔茨皮雷的那几个，你可真把他的那副臭脸给画活了！啊，应该说，是他那千百种臭脸当中的一种。</p><p>人们常说，地精嘴里有一百个不同的词用来指代「蘑菇」。我们英明神武的维克多也差不多，也可以用一百个不同的词来形容他那张阴沉晦气的脸，你不觉得吗？</p><p>你说会不会是因为他是个独眼龙，才成天摆出那副尊容？要不就是本该长着人心的地方，其实只塞了一块锋利、冷硬的碎燧石？</p></div></div>
+<div class="row" id="p3"><a class="pn" href="#p3">3</a><div class="col en" lang="en"><p>And speaking of hearts … Don’t think I didn’t spot where you’ve <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-22" data-detail="td-22">scrubbed out<span class="term-card" role="tooltip">用力擦洗、刷洗；擦掉、划掉。scrub out 指在纸上用力擦去或涂黑划掉（字迹）。</span></span> all those bits of <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-14" data-detail="td-14">conjecture<span class="term-card" role="tooltip">推测、猜想；缺乏充分根据的揣测。</span></span> about Kerillian and Markus. Never mind how I know what you’ve been writing – one is a wizard, darling, and you are a <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-16" data-detail="td-16">dull<span class="term-card" role="tooltip">迟钝的、愚钝的；也可指枯燥无味的、阴沉的。</span></span> <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-17" data-detail="td-17">fellow<span class="term-card" role="tooltip">家伙、伙计；同伴。口语中常泛指男子或人。</span></span> at times. Such <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-18" data-detail="td-18">imagery<span class="term-card" role="tooltip">（文学修辞中的）意象、形象化描述、辞藻。</span></span>! And all in <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-15" data-detail="td-15">rhyme<span class="term-card" role="tooltip">押韵；韵文，同韵词。</span></span>, but honestly I don’t know where you got the idea in the first place. It’s best we <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-13" data-detail="td-13">draw a veil over<span class="term-card" role="tooltip">面纱、帷幔；遮蔽物。draw a veil over 即对尴尬事或丑闻秘事避而不谈、遮掩过去。</span></span> the matter, don’t you think? At least, unless you’d rather I accidentally let <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-12" data-detail="td-12">the odd detail<span class="term-card" role="tooltip">这里是“偶尔的、零星的”。the odd + 单数名词，是“一两个、时不时的”。</span></span> slip? I’d have to explain some of the longer words to dear Markus, <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-23" data-detail="td-23">bless him<span class="term-card" role="tooltip">英式口语插入语，混合了亲昵、好笑与轻微的居高临下，用来打趣某人天真、单纯、头脑简单或笨拙可爱。</span></span>, but I’ve a feeling Kerillian would be rather <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-19" data-detail="td-19">faster on the uptake<span class="term-card" role="tooltip">领悟、理解。quick/fast on the uptake 指理解能力快、一点就透。</span></span>. And if Bardin finds out, he’ll only put it to music, and I <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-20" data-detail="td-20">shudder<span class="term-card" role="tooltip">战栗、发抖、打冷战（常因害怕、反感或寒冷）。shudder to think 是“一想到就打冷战/不寒而栗”。</span></span> to think of the <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-21" data-detail="td-21">consequences<span class="term-card" role="tooltip">后果、结果（常指不良后果）；重要性。</span></span>.</p><div class="term-detail" id="td-12" hidden><p class="td-term">the odd detail</p><dl><dt>词义</dt><dd>这里是“偶尔的、零星的”。the odd + 单数名词，是“一两个、时不时的”。</dd><dt>字面</dt><dd>odd 本义是“不成对的、单出来的”，奇数 odd number 也是这个意思。</dd><dt>本章译法</dt><dd>一两个细节</dd><dt>背景</dt><dd>odd 另一个常见意思是“奇怪”，比 strange 轻、更口语，指有点怪、有点对不上。strange 更强，也可以是“陌生的”（a stranger 就是陌生人）。the odd job 是零工，the odd favour 是零星的几个人情。</dd></dl></div><div class="term-detail" id="td-13" hidden><p class="td-term">draw a veil over</p><dl><dt>词义</dt><dd>面纱、帷幔；遮蔽物。draw a veil over 即对尴尬事或丑闻秘事避而不谈、遮掩过去。</dd><dt>字面</dt><dd>veil 是面纱，draw a veil over 字面是拉上面纱遮住。</dd><dt>中文里</dt><dd>遮掩过去、避而不谈</dd><dt>本章译法</dt><dd>遮掩过去</dd><dt>背景</dt><dd>英国文学中经典的委婉修辞。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/draw-a-veil-over-sth" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-14" hidden><p class="td-term">conjecture</p><dl><dt>词义</dt><dd>推测、猜想；缺乏充分根据的揣测。</dd><dt>字面</dt><dd>con（共同）＋ject（投掷）＋ure，把零碎念头凑在一起。</dd><dt>中文里</dt><dd>揣测、无端猜测</dd><dt>本章译法</dt><dd>揣测</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/conjecture" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-15" hidden><p class="td-term">rhyme</p><dl><dt>词义</dt><dd>押韵；韵文，同韵词。</dd><dt>字面</dt><dd>in rhyme：押韵地、成韵文地。</dd><dt>本章译法</dt><dd>押韵</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/rhyme" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-16" hidden><p class="td-term">dull</p><dl><dt>词义</dt><dd>迟钝的、愚钝的；也可指枯燥无味的、阴沉的。</dd><dt>本章译法</dt><dd>迟钝</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/dull" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-17" hidden><p class="td-term">fellow</p><dl><dt>词义</dt><dd>家伙、伙计；同伴。口语中常泛指男子或人。</dd><dt>本章译法</dt><dd>人/家伙</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/fellow" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-18" hidden><p class="td-term">imagery</p><dl><dt>词义</dt><dd>（文学修辞中的）意象、形象化描述、辞藻。</dd><dt>本章译法</dt><dd>用词/辞藻</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/imagery" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-19" hidden><p class="td-term">faster on the uptake</p><dl><dt>词义</dt><dd>领悟、理解。quick/fast on the uptake 指理解能力快、一点就透。</dd><dt>中文里</dt><dd>一点就透、领会得快</dd><dt>本章译法</dt><dd>领会得可比他快得多</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/be-quick-slow-on-the-uptake" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-20" hidden><p class="td-term">shudder</p><dl><dt>词义</dt><dd>战栗、发抖、打冷战（常因害怕、反感或寒冷）。shudder to think 是“一想到就打冷战/不寒而栗”。</dd><dt>本章译法</dt><dd>打冷战</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/shudder" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-21" hidden><p class="td-term">consequences</p><dl><dt>词义</dt><dd>后果、结果（常指不良后果）；重要性。</dd><dt>本章译法</dt><dd>后果</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/consequence" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-22" hidden><p class="td-term">scrubbed out</p><dl><dt>词义</dt><dd>用力擦洗、刷洗；擦掉、划掉。scrub out 指在纸上用力擦去或涂黑划掉（字迹）。</dd><dt>字面</dt><dd>scrub 是刷洗，scrub out 是用力擦除。</dd><dt>中文里</dt><dd>涂抹掉、划掉、擦掉</dd><dt>本章译法</dt><dd>涂抹掉</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/scrub" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-23" hidden><p class="td-term">bless him</p><dl><dt>词义</dt><dd>英式口语插入语，混合了亲昵、好笑与轻微的居高临下，用来打趣某人天真、单纯、头脑简单或笨拙可爱。</dd><dt>字面</dt><dd>愿神赐福给他。</dd><dt>中文里</dt><dd>可怜见儿的、真拿他没办法、瞧他那呆样</dd><dt>本章译法</dt><dd>诸神保佑他吧</dd><dt>背景</dt><dd>本段配合 explain longer words，调侃马库斯是大老粗步兵、读不懂诗歌里的生僻长词。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/bless-someone-her-him" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>说到人心……别以为我没发现，你把八卦凯瑞莲和马库斯的那些句子给擦掉了。</p><p>不用琢磨我是怎么知道的。</p><p>亲爱的，你有时候可真够迟钝的，我好歹是个法师啊。</p><p>瞧瞧你写得多生动啊！居然还句句押韵呢！</p><p>不过说实在的，你打一开始究竟是从哪儿冒出这念头的？这事咱们最好还是烂在肚子里比较好，对吧？还是说其实你更希望我不小心说漏一两个细节？</p><p>真要说漏了……噢，亲爱的马库斯，诸神保佑他吧，我还得多费口舌解释几个大长词；但我觉得凯瑞莲领会得可比他快得多。要是再让巴丁知道了，他绝对要把这事儿编成曲子到处唱，那画面我想想都不寒而栗。</p></div></div>
+<div class="row" id="p4"><a class="pn" href="#p4">4</a><div class="col en" lang="en"><p>And all because of your little diary. Hang on … there’s not something about me in here, is there?</p></div><div class="col zh" lang="zh-CN"><p>而这一切全拜你的小日记所赐。等等……你该不会……把我也编排进去了吧？</p></div></div>
+<div class="row" id="p5"><a class="pn" href="#p5">5</a><div class="col en" lang="en"><p>Oh. Apparently not.</p></div><div class="col zh" lang="zh-CN"><p>噢，还……真就没有！</p></div></div>
+<div class="row" id="p6"><a class="pn" href="#p6">6</a><div class="col en" lang="en"><p>So … I’m not worth writing about, is that it? You can’t stop <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-24" data-detail="td-24">chattering on about<span class="term-card" role="tooltip">喋喋不休、唠唠叨叨地说个没完，常指琐碎闲聊。</span></span> the others, but poor little Sienna’s too boring, is she? Well, the things I could tell you!</p><div class="term-detail" id="td-24" hidden><p class="td-term">chattering on about</p><dl><dt>词义</dt><dd>喋喋不休、唠唠叨叨地说个没完，常指琐碎闲聊。</dd><dt>字面</dt><dd>chatter 是叽叽喳喳地讲，on 表示持续进行。</dd><dt>中文里</dt><dd>念叨个没完、碎嘴、唠叨个不停</dd><dt>本章译法</dt><dd>念叨个没完</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/chatter-on" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>这么说来……我就不配入你法眼，是这意思吧？别人一点破事你能叨叨个没完，唯独可怜的小西耶娜太无趣了，乏善可陈，对吧？</p><p>好吧~是时候让你长点见识了！</p></div></div>
+<div class="row" id="p7"><a class="pn" href="#p7">7</a><div class="col en" lang="en"><p>I’ll have you know I’ve led a fascinating life, full of wisdom, excitement … and not one or two <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-25" data-detail="td-25">moments of indiscretion<span class="term-card" role="tooltip">不够审慎；在英美文学中常委婉指代风流失检、荒唐出格的行为或丑闻。</span></span>. <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-26" data-detail="td-26">Anecdotes<span class="term-card" role="tooltip">轶事、趣闻奇事；未经正式记载的秘闻小故事。</span></span> that would make your toes curl. Tales of romance and daring from across the Old World. <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-27" data-detail="td-27">Intrigue<span class="term-card" role="tooltip">阴谋、诡计；悬念、引人入胜的秘密情节。</span></span>. Danger. <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-28" data-detail="td-28">Excitement<span class="term-card" role="tooltip">刺激、兴奋、激动的情绪或体验。-ment 将动词 excite 转化为表示状态与体验的名词。</span></span>. Explosions!</p><div class="term-detail" id="td-25" hidden><p class="td-term">moments of indiscretion</p><dl><dt>词义</dt><dd>不够审慎；在英美文学中常委婉指代风流失检、荒唐出格的行为或丑闻。</dd><dt>字面</dt><dd>in（否定）＋discretion（审慎、慎重）。</dd><dt>中文里</dt><dd>出格、荒唐事、风流秘事</dd><dt>本章译法</dt><dd>出格荒唐的乱子</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/indiscretion" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-26" hidden><p class="td-term">Anecdotes</p><dl><dt>词义</dt><dd>轶事、趣闻奇事；未经正式记载的秘闻小故事。</dd><dt>本章译法</dt><dd>随便挑出一桩来/奇闻轶事</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/anecdote" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-27" hidden><p class="td-term">Intrigue</p><dl><dt>词义</dt><dd>阴谋、诡计；悬念、引人入胜的秘密情节。</dd><dt>本章译法</dt><dd>阴谋</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/intrigue" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-28" hidden><p class="td-term">Excitement</p><dl><dt>词义</dt><dd>刺激、兴奋、激动的情绪或体验。-ment 将动词 excite 转化为表示状态与体验的名词。</dd><dt>本章译法</dt><dd>刺激</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/excitement" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>告诉你，老娘这辈子过得那叫一个精彩，人生充满了智慧和激情……风流韵事那更是如数家珍，随便说一件出来，都能刺激得你这样的老东西脚趾抠地，脸红心跳。</p><p>老娘的罗曼史和冒险史早已享誉整个旧世界，阴谋！凶险！激情！爆炸！</p></div></div>
+<div class="row" id="p8"><a class="pn" href="#p8">8</a><div class="col en" lang="en"><p>Oh, the stories I could tell. And you’re never going to hear them. Not now. You’ve hurt my feelings.</p></div><div class="col zh" lang="zh-CN"><p>哈，老娘的故事三天三夜都说不完！可你，现在一个字也休想听到了！你伤了我的心。</p></div></div>
+<div class="row" id="p9"><a class="pn" href="#p9">9</a><div class="col en" lang="en"><p>How does it feel to be left out?</p></div><div class="col zh" lang="zh-CN"><p>被人冷落是什么感觉？</p></div></div>
+<div class="row" id="p10"><a class="pn" href="#p10">10</a><div class="col en" lang="en"><p>Being back at the Bright College, that’s what it feels like.</p></div><div class="col zh" lang="zh-CN"><p>就像……又回到了烈焰学院。</p></div></div>
+<div class="full"><figure class="story-img landscape" style="--nw:480px"><img src="../assets/decoration_1.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure></div>
+    </main>
+    <section class="notes"><div class="zh"><h2 id="译者按" class="note-h">译者按</h2>
+<h3 id="地精有一百个词称呼「蘑菇」" class="note-h3">地精有一百个词称呼「蘑菇」</h3>
+<p>西耶娜所说的「地精嘴里有一百个不同的词用来指代『蘑菇』」，是英语世界流传极广的语言人类学俗谚——「爱斯基摩人对『雪』有一百种不同的称呼」（源自博阿斯 1911 年《美洲印第安语言手册》与后来的萨丕尔-沃尔夫假说）。
+用来形容萨尔兹皮雷那张虽然万年不变，但各种死人脸，真是够损的。</p>
+<h3 id="宫廷骑士与仙灵之恋的民谣戏仿" class="note-h3">宫廷骑士与仙灵之恋的民谣戏仿</h3>
+<p>西耶娜在此调侃洛纳的「用词生动且句句押韵（Such imagery! And all in rhyme）」，戏仿的是英国中世纪至浪漫主义时期极其经典的**「骑士与仙女相恋的押韵民谣」传统**（如中世纪苏格兰民谣《托马斯与仙后》、济慈名篇《无情妖姬》）：作品通常描写人类骑士与森林妖精仙子跨种族相恋，通篇采用华丽生动的意象（imagery）与严格的四行民谣押韵格律（rhyme）。</p>
+<p>我去看了下诗歌的原文，真的肉麻！！你再品品：人类骑士——马库斯（圣杯），森林妖精仙子——凯瑞莲！</p>
+<p>洛纳，真有你的！</p>
+</div></section>
+    <footer class="foot">
+      Franz Lohner's Chronicle &middot; 同人翻译，原文版权归 Fatshark 所有
+      &nbsp;|&nbsp; <a href="../../../../index.html">返回目录</a><br>
+      页面由 <a href="https://github.com/Alexu0317-FATHER/translation-workbench" target="_blank" rel="noopener">Translation Workbench</a> 生成
+    </footer>
+  </div>
+
+<script>
+  (function(){
+    var root=document.documentElement;
+    var btnTheme=document.getElementById("btn-theme");
+
+    function store(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+
+    function currentTheme(){
+      var set=root.getAttribute("data-theme");
+      if(set) return set;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+    }
+    function paintTheme(){
+      var dark=currentTheme()==="dark";
+      btnTheme.textContent=dark?"日间":"夜间";
+      btnTheme.setAttribute("aria-pressed",String(dark));
+    }
+
+    btnTheme.addEventListener("click",function(){
+      var next=currentTheme()==="dark"?"light":"dark";
+      root.setAttribute("data-theme",next);
+      store("flc-theme",next);
+      paintTheme();
+    });
+
+    paintTheme();
+  })();
+</script>
+<script>
+  (function(){
+    var terms=[].slice.call(document.querySelectorAll(".term"));
+    if(!terms.length) return;
+    var canHover=!!(window.matchMedia&&window.matchMedia("(hover: hover)").matches);
+
+    function isOpen(t){return t.getAttribute("aria-expanded")==="true";}
+    function place(t){
+      var c=t.querySelector(".term-card"), w=document.documentElement.clientWidth;
+      // 词折行时，卡片的左边默认对齐第一段，要挪到最后一段（卡片贴在最后一行下面）
+      var rects=t.getClientRects();
+      c.style.left=(rects[rects.length-1].left-rects[0].left)+"px";
+      var r=c.getBoundingClientRect();
+      if(r.right>w-10) c.style.left=(w-10-r.right)+"px";
+      r=c.getBoundingClientRect();
+      if(r.left<10) c.style.left=(parseFloat(c.style.left)+10-r.left)+"px";
+    }
+    function hideCard(t){t.classList.remove("show-card");}
+    function closeCards(except){terms.forEach(function(o){if(o!==except) hideCard(o);});}
+    function showCard(t){closeCards(t); t.classList.add("show-card"); place(t);}
+    function setOpen(t,open){
+      document.getElementById(t.getAttribute("data-detail")).hidden=!open;
+      t.setAttribute("aria-expanded",String(open));
+      if(open) hideCard(t);
+    }
+
+    terms.forEach(function(t){
+      if(canHover){
+        t.addEventListener("mouseenter",function(){if(!isOpen(t)) showCard(t);});
+        t.addEventListener("mouseleave",function(){hideCard(t);});
+      }
+      // 点一下：没有卡片就出卡片；有卡片就展开；已展开就收起
+      t.addEventListener("click",function(e){
+        e.stopPropagation();
+        if(isOpen(t)){setOpen(t,false); if(canHover) showCard(t);}
+        else if(t.classList.contains("show-card")) setOpen(t,true);
+        else showCard(t);
+      });
+      t.addEventListener("focus",function(){
+        if(t.matches(":focus-visible")&&!isOpen(t)) showCard(t);
+      });
+      t.addEventListener("blur",function(){hideCard(t);});
+      t.addEventListener("keydown",function(e){
+        if(e.key==="Enter"||e.key===" "){e.preventDefault(); setOpen(t,!isOpen(t));}
+        else if(e.key==="Escape"){setOpen(t,false); hideCard(t);}
+      });
+    });
+    document.addEventListener("click",function(){closeCards();});
+  })();
+</script>
+</body></html>
