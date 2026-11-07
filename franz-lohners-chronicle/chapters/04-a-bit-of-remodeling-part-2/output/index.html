@@ -251,6 +251,20 @@
   .term-detail dt{margin-top:.45em; font-family:var(--cjk); font-size:.72em; letter-spacing:.12em; color:var(--ink-faint)}
   .term-detail dd{margin:0; font-family:var(--mix)}
   @media print{.term-card{display:none !important}}
+  figure.illus .vframe{position:relative; line-height:0}
+  figure.illus .vframe iframe{width:100%; aspect-ratio:16/9; border:0; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+  .vplay{position:absolute; inset:0; width:100%; margin:0; padding:0; border:0; background:transparent; cursor:pointer}
+  .vplay .vicon{position:absolute; left:50%; top:50%; width:84px; height:84px; margin:-42px 0 0 -42px; border-radius:50%;
+    background:rgba(20,14,8,.62); box-shadow:0 0 0 2px rgba(240,220,170,.75), 0 4px 22px rgba(0,0,0,.45); transition:transform .15s, background .15s}
+  .vplay .vicon::after{content:""; position:absolute; left:33px; top:25px; border-style:solid; border-width:17px 0 17px 27px;
+    border-color:transparent transparent transparent rgba(250,236,200,.95)}
+  .vplay:hover .vicon,.vplay:focus-visible .vicon{transform:scale(1.07); background:rgba(20,14,8,.78)}
+  .vplay:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+  .vcap{margin-top:.6rem; text-align:center; font-size:.82rem; line-height:1.5; color:var(--ink-faint)}
+  .vcap a{color:inherit}
+  .vcap a:hover{color:var(--gold)}
+  @media (max-width:560px){.vplay .vicon{transform:scale(.78)} .vplay:hover .vicon{transform:scale(.84)}}
+  @media print{.vplay,.vcap{display:none}}
 </style>
 <script>
   (function(){
@@ -275,7 +289,7 @@
       <h1 class="title-en">A Bit of remodeling - Part 2</h1>
       <div class="title-zh">小修小补（下）</div>
     </header>
-    <figure class="illus landscape" style="--nw:1920px"><img src="../assets/A_Bit_of_Remodelling_Part2_Social.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <figure class="illus video landscape" style="--nw:1920px"><div class="vframe"><img src="../assets/A_Bit_of_Remodelling_Part2_Social.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"><button class="vplay" type="button" data-yt="i3F9RKZD2MI" aria-label="播放本章视频（YouTube）"><span class="vicon" aria-hidden="true"></span></button></div><figcaption class="vcap">点图播放本章的有声视频（YouTube） · <a href="https://www.bilibili.com/video/BV1GZ4B6wEP1/" target="_blank" rel="noopener">在 B站看</a></figcaption></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
     <section class="intro"><div class="row"><div class="col en" lang="en"><p>Why exactly has Lohner closed off parts of the Keep? Hopefully, we will receive some answers this time.</p></div><div class="col zh" lang="zh-CN"><p><em>洛纳到底为什么把城堡的一部分封起来？但愿这回能问出点答案。</em></p></div></div></section>
     <main>
     <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>Last time we had <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-1" data-detail="td-1">a bit of a natter<span class="term-card" role="tooltip">熟人之间没有特定目的地闲聊、拉家常。英国非正式用语。</span></span>, you were asking me about the <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-2" data-detail="td-2">refurbishment<span class="term-card" role="tooltip">翻修、整修：修理、清洁或重新装修已有的建筑，使其恢复较新的状态。</span></span> of this here keep, I believe?</p><div class="term-detail" id="td-1" hidden><p class="td-term">a bit of a natter</p><dl><dt>词义</dt><dd>熟人之间没有特定目的地闲聊、拉家常。英国非正式用语。</dd><dt>字面</dt><dd>have a bit of a natter：闲聊一会儿。</dd><dt>本章译法</dt><dd>闲聊</dd><dt>背景</dt><dd>此处是名词，不带嫌人啰嗦的意思。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/natter" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-2" hidden><p class="td-term">refurbishment</p><dl><dt>词义</dt><dd>翻修、整修：修理、清洁或重新装修已有的建筑，使其恢复较新的状态。</dd><dt>字面</dt><dd>refurbish 是动词；refurbishment 是名词。</dd><dt>本章译法</dt><dd>翻修</dd><dt>背景</dt><dd>也可用于设备的翻新，如 refurbished phone（翻新手机）。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/refurbishment" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>上回咱们唠嗑时候，你们就在问塔尔之角翻修的事。</p></div></div>
@@ -381,6 +395,21 @@
       });
     });
     document.addEventListener("click",function(){closeCards();});
+  })();
+</script>
+<script>
+  (function(){
+    var b=document.querySelector(".vplay[data-yt]");
+    if(!b) return;
+    b.addEventListener("click",function(){
+      var f=document.createElement("iframe");
+      f.src="https://www.youtube-nocookie.com/embed/"+b.getAttribute("data-yt")+"?autoplay=1&rel=0";
+      f.title="本章视频";
+      f.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      f.allowFullscreen=true;
+      f.referrerPolicy="strict-origin-when-cross-origin";
+      b.parentNode.replaceChildren(f);
+    });
   })();
 </script>
 </body></html>
