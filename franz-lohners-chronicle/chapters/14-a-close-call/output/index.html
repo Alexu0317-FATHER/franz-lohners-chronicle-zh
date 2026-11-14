@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>战锤：末世鼠疫2 · 好险 | 《弗兰兹·洛纳的编年史》中英对照翻译</title>
+<meta name="description" content="倒反天罡！精灵妹子缘何倒吊上级？一众小弟竟敢袖手旁观？">
+<meta name="keywords" content="Vermintide 2, Warhammer Fantasy, 战锤末世鼠疫, 官网小说, 中英对照, bilingual, 双语翻译">
+<link rel="canonical" href="https://alexu0317-father.github.io/franz-lohners-chronicle-zh/franz-lohners-chronicle/chapters/14-a-close-call/output/index.html">
+<script>
+  if (location.hostname === "alexu0317-father.github.io") {
+    var ga = document.createElement("script");
+    ga.async = true;
+    ga.src = "https://www.googletagmanager.com/gtag/js?id=G-YWGH1EXEL5";
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag("js", new Date());
+    gtag("config", "G-YWGH1EXEL5");
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  :root{
+    color-scheme:light dark;
+    --paper:#f2eade; --paper-raised:#fbf6ed; --paper-sunk:#eae0d0;
+    --ink:#2a2018; --ink-soft:#665847; --ink-faint:#9c8b73;
+    --rule:#dccfb8; --rule-soft:#e9dfcd;
+    --gold:#8f6c2c; --gold-soft:#b18e4a;
+    --hl:rgba(143,108,44,.075); --shade:rgba(70,52,28,.10);
+    --serif:"Source Serif 4",Georgia,"Iowan Old Style","Times New Roman",serif;
+    --cjk:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+    /* 字体按字符逐个回退：拉丁字母命中衬线体，汉字落到后面的中文字体 */
+    --mix:"Source Serif 4",Georgia,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+      --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+      --rule:#332b20; --rule-soft:#241f17;
+      --gold:#c99c4e; --gold-soft:#dbb066;
+      --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+    --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+    --rule:#332b20; --rule-soft:#241f17;
+    --gold:#c99c4e; --gold-soft:#dbb066;
+    --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif);
+    font-size:clamp(15.5px,.42vw + 14.2px,17.5px); line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%; height:auto}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 clamp(18px,4vw,48px)}
+
+  /* ---------- 顶栏 ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .bar{display:flex; align-items:center; justify-content:space-between; gap:1rem; height:46px}
+  .brand{
+    font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-faint); text-decoration:none; white-space:nowrap;
+    overflow:hidden; text-overflow:ellipsis;
+  }
+  .brand:hover{color:var(--gold)}
+  .tools{display:flex; gap:.4rem; flex:none}
+  .tools button{
+    font:inherit; font-size:.75rem; font-family:var(--cjk);
+    padding:.28em .8em; border-radius:999px; cursor:pointer;
+    color:var(--ink-soft); background:transparent;
+    border:1px solid var(--rule); transition:.15s;
+  }
+  .tools button:hover{color:var(--gold); border-color:var(--gold-soft)}
+
+  /* ---------- 章首 ---------- */
+  header.chapter{text-align:center; padding:clamp(2.6rem,7vw,4.6rem) 0 1.6rem}
+  .series{
+    font-size:.68rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:1.4rem;
+  }
+  .title-en{
+    font-size:clamp(1.7rem,4.4vw,2.7rem); font-weight:600;
+    line-height:1.18; letter-spacing:-.01em; margin:0;
+  }
+  .title-zh{
+    font-family:var(--cjk); font-weight:500;
+    font-size:clamp(1rem,2.2vw,1.24rem); color:var(--ink-soft);
+    margin-top:.7rem; letter-spacing:.04em;
+  }
+  header.chapter::after{
+    content:""; display:block; width:44px; height:1px;
+    background:var(--gold-soft); opacity:.6; margin:1.8rem auto 0;
+  }
+
+  figure{margin:0}
+  /* --nw 是图片原生宽度，由生成脚本写入，用来防止小图被撑大 */
+  figure.illus{margin:0 auto 2.6rem; max-width:min(100%,var(--nw,100%))}
+  figure.illus img{width:100%; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+
+  /* ---------- 开场白 ---------- */
+  .intro{
+    margin:0 0 2.2rem; padding-bottom:1.6rem;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .intro .col{color:var(--ink-soft); font-size:.92em}
+  .intro .col.en p{font-style:italic}
+
+  /* ---------- 双栏对照 ---------- */
+  .row{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(26px,3.6vw,54px);
+    position:relative; padding:.9rem 0 .9rem clamp(1.9rem,3.2vw,2.9rem);
+    border-radius:3px; transition:background .12s;
+    scroll-margin-top:70px;
+  }
+  main .row:hover{background:var(--hl)}
+  main .row:target{background:var(--hl); box-shadow:inset 3px 0 0 var(--gold-soft)}
+  .pn{
+    position:absolute; left:0; top:1.05rem;
+    width:clamp(1.3rem,2.2vw,2rem); text-align:right;
+    font-size:.7rem; font-variant-numeric:tabular-nums;
+    color:var(--ink-faint); text-decoration:none; opacity:.55; transition:.15s;
+  }
+  .row:hover .pn{opacity:1; color:var(--gold)}
+  .col p{margin:0 0 .78em}
+  .col p:last-child{margin-bottom:0}
+  .col.en{hyphens:auto}
+  .col.zh{
+    font-family:var(--mix); font-size:.93em; line-height:1.95;
+    text-align:justify; text-justify:inter-ideograph;
+  }
+  /* 中文没有斜体。原文的 em 混着引文、出处、强调三种用法，
+     统一加装饰必然在其中一种上出错，所以只去掉伪斜体，不另作区分。 */
+  .col.zh em,.notes em{font-style:normal}
+  main .row + .row{border-top:1px solid var(--rule-soft)}
+
+  .full{margin:1.8rem 0; text-align:center}
+  figure.story-img{display:inline-block; max-width:min(100%,560px,var(--nw,560px))}
+  figure.story-img img{width:100%; border-radius:2px}
+
+  /* ---------- 窄屏自动单栏 ---------- */
+  @media (max-width:820px){
+    .row{grid-template-columns:1fr !important; gap:.5rem}
+    .col.en{color:var(--ink-soft); font-size:.9em; line-height:1.7}
+    .col.zh{border-left:2px solid var(--rule); padding-left:1.05rem}
+    .brand{font-size:.62rem; letter-spacing:.1em}
+  }
+
+  /* ---------- 脚注 ---------- */
+  .fnmark{font-size:.62em; line-height:0; vertical-align:super}
+  .fnmark a{color:var(--gold); text-decoration:none; padding:0 .1em}
+  .fnmark a:hover{text-decoration:underline}
+  .fnback{
+    margin-left:.55em; font-size:.72em; color:var(--ink-faint);
+    text-decoration:none; vertical-align:middle;
+  }
+  .fnback:hover{color:var(--gold)}
+
+  /* ---------- 译者按 ---------- */
+  /* 不画上边框：正文以装饰图收尾的章节会与图叠成两道分界，
+     靠这里的留白和居中的小标题分界就够。 */
+  .notes{
+    margin:4rem auto 0; max-width:44rem;
+    padding-top:2rem;
+    font-family:var(--mix);
+  }
+  .notes-title{
+    font-size:.72rem; letter-spacing:.22em; font-weight:500;
+    color:var(--ink-faint); text-align:center; margin:0 0 2rem;
+  }
+  .notes .zh{font-size:.9em; line-height:1.95; color:var(--ink-soft)}
+  .notes p{margin:0 0 .9em}
+  .note-h,.note-h3{
+    font-family:var(--mix); color:var(--ink); font-weight:600;
+    scroll-margin-top:70px;
+  }
+  .note-h{font-size:1.05em; margin:2.2rem 0 .8rem}
+  .note-h3{font-size:.98em; margin:1.9rem 0 .7rem}
+  .notes .zh > :first-child{margin-top:0}
+  .notes [id]:target{
+    background:var(--hl); box-shadow:-.5rem 0 0 var(--hl),.5rem 0 0 var(--hl);
+    border-radius:2px;
+  }
+  .notes ol,.notes ul{margin:.4rem 0 .9em 1.4rem; padding:0}
+  .notes li{margin:0 0 .35em}
+  .note-hr{border:none; border-top:1px solid var(--rule-soft); margin:1.8rem 0}
+  /* 译者按的图横竖混杂，尺寸从 382 宽到 2268 都有。
+     横图统一到列宽、竖图统一到同一高度，两类各自看齐而不变形。 */
+  figure.note-img{margin:1.6rem auto; text-align:center}
+  figure.note-img img{border-radius:3px; box-shadow:0 1px 10px var(--shade)}
+  /* 容许最多 1.12 倍放大，好让宽度只差几个百分点的图也能对齐列宽 */
+  figure.note-img.landscape{max-width:min(100%,calc(var(--nw,100%) * 1.12))}
+  figure.note-img.landscape img{width:100%}
+  figure.note-img.portrait img{max-height:480px; width:auto; max-width:100%}
+  blockquote{
+    margin:1rem 0; padding:.2rem 0 .2rem 1.1rem;
+    border-left:2px solid var(--gold-soft); color:var(--ink-soft);
+  }
+  a{color:var(--gold)}
+
+  footer.foot{
+    margin:4rem 0 0; padding:1.6rem 0 3rem;
+    border-top:1px solid var(--rule-soft);
+    font-family:var(--cjk); font-size:.72rem;
+    color:var(--ink-faint); text-align:center;
+  }
+  footer.foot a{color:var(--ink-faint); text-decoration:none}
+  footer.foot a:hover{color:var(--gold)}
+
+  @media print{
+    .topbar,footer.foot{display:none}
+    body{background:#fff; color:#000; font-size:10.5pt}
+    .row{break-inside:avoid}
+  }
+  /* ---------- 学习注释 ---------- */
+  .term{
+    position:relative; cursor:pointer; color:var(--gold);
+    border-bottom:1px dotted var(--gold-soft); border-radius:2px;
+  }
+  .term:hover,.term:focus-visible,.term[aria-expanded="true"]{background:var(--hl); outline:none}
+  .term-card{
+    display:none; position:absolute; left:0; top:calc(100% + .3em); z-index:15;
+    width:max-content; max-width:min(19rem,78vw);
+    padding:.45em .75em; font-size:max(15px,1em); line-height:1.55;
+    font-style:normal; font-weight:400; text-align:left; hyphens:none;
+    color:var(--ink); background:var(--paper-raised);
+    border:1px solid var(--rule); border-radius:4px; box-shadow:0 4px 16px var(--shade);
+  }
+  .term.show-card .term-card{display:block}
+  .term-detail{
+    margin:.1rem 0 .85em; padding:.6rem .9rem; font-size:max(15px,.95em); line-height:1.65;
+    color:var(--ink-soft); background:var(--paper-raised);
+    border-left:2px solid var(--gold-soft); border-radius:0 3px 3px 0;
+  }
+  .term-detail[hidden]{display:none}
+  .term-detail .td-term{margin:0 0 .15em; font-weight:600; color:var(--ink)}
+  .term-detail dl{margin:0}
+  .term-detail dt{margin-top:.45em; font-family:var(--cjk); font-size:.72em; letter-spacing:.12em; color:var(--ink-faint)}
+  .term-detail dd{margin:0; font-family:var(--mix)}
+  @media print{.term-card{display:none !important}}
+</style>
+<script>
+  (function(){
+    try{
+      var t=localStorage.getItem("flc-theme");
+      if(t){document.documentElement.setAttribute("data-theme",t);}
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+  <div class="topbar"><div class="wrap bar">
+    <a class="brand" href="../../../../index.html">Franz Lohner's Chronicle · 目录</a>
+    <div class="tools">
+      <button id="btn-theme" type="button">夜间</button>
+    </div>
+  </div></div>
+
+  <div class="wrap">
+    <header class="chapter">
+      <div class="series">Franz Lohner's Chronicle · 弗兰兹·洛纳的编年史</div>
+      <h1 class="title-en">A Close Call</h1>
+      <div class="title-zh">好险</div>
+    </header>
+    <figure class="illus landscape" style="--nw:1920px"><img src="../assets/Franz_Lohner_Chronicle_14.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <section class="intro"><div class="row"><div class="col en" lang="en"><p><em>An absent-minded man of mysteries, Franz Lohner relies on his bulging journal to keep track of occurrences, intrigues and arguments around Taal's Horn Keep. Sometimes his notes are even useful, believe it or not. The Franz Lohner Chronicles are extracts from that journal.</em></p></div><div class="col zh" lang="zh-CN"><p><em>神秘且健忘的弗兰兹·洛纳，靠着他那本鼓鼓囊囊的日记来记录塔尔之角周围发生的事情、阴谋和争论。信不信由你，有时他的笔记还真有点用。《弗兰兹·洛纳编年史》就是摘自这本日记的内容。</em></p></div></div></section>
+    <main>
+    <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>Well, that’s an experience I wouldn’t want to repeat <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-1" data-detail="td-1">any time soon<span class="term-card" role="tooltip">在近期内、短期内；常用于否定句表示在可预见的将来都不会发生，在语用中常作英式轻描淡写（understatement）以淡化事态的严重性。</span></span>.</p><div class="term-detail" id="td-1" hidden><p class="td-term">any time soon</p><dl><dt>词义</dt><dd>在近期内、短期内；常用于否定句表示在可预见的将来都不会发生，在语用中常作英式轻描淡写（understatement）以淡化事态的严重性。</dd><dt>字面</dt><dd>any time（任何时候）＋ soon（很快）。</dd><dt>本章译法</dt><dd>这辈子体验一次就够了</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/anytime-soon" target="_blank" rel="noopener noreferrer">来源 1</a>　<a href="https://www.collinsdictionary.com/dictionary/english/any-time-soon" target="_blank" rel="noopener noreferrer">来源 2</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>嗐，有些乐子，这辈子体验一次就够了。</p></div></div>
+<div class="row" id="p2"><a class="pn" href="#p2">2</a><div class="col en" lang="en"><p>Seems someone <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-2" data-detail="td-2">prowling<span class="term-card" role="tooltip">潜行、四处游荡窥探，常形容野兽潜伏寻找猎物或小偷鬼鬼祟祟摸索。</span></span> around in my journal got the wrong end of the stick about something I’d written. The “someone” in question was Sienna, and the “something” was a bit of <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-4" data-detail="td-4">innocent speculation<span class="term-card" role="tooltip">纯良无害的瞎琢磨、毫无恶意的揣测。</span></span> about how Kerillian seems to be <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-5" data-detail="td-5">softening<span class="term-card" role="tooltip">变软；soften to someone 指对某人态度软化、不再那么严厉尖刻，变得温和亲近。</span></span> to Kruber now he’s <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-6" data-detail="td-6">cognisant<span class="term-card" role="tooltip">知晓的、认识到的、意识到……的；语气较正式书面。</span></span> of his Bretonnian <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-3" data-detail="td-3">heritage<span class="term-card" role="tooltip">血脉传承、文化遗产、祖辈背景。</span></span>.</p><div class="term-detail" id="td-2" hidden><p class="td-term">prowling</p><dl><dt>词义</dt><dd>潜行、四处游荡窥探，常形容野兽潜伏寻找猎物或小偷鬼鬼祟祟摸索。</dd><dt>字面</dt><dd>prowl 即潜行、巡行。</dd><dt>本章译法</dt><dd>偷看</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/prowl" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-3" hidden><p class="td-term">heritage</p><dl><dt>词义</dt><dd>血脉传承、文化遗产、祖辈背景。</dd><dt>字面</dt><dd>源自古法语 heriter（继承），与 heir（继承人）同源。</dd><dt>本章译法</dt><dd>血统</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/heritage" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-4" hidden><p class="td-term">innocent speculation</p><dl><dt>词义</dt><dd>纯良无害的瞎琢磨、毫无恶意的揣测。</dd><dt>字面</dt><dd>innocent（无害的）＋ speculation（推测、揣测）。</dd><dt>本章译法</dt><dd>无伤大雅的小创作</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/speculation" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-5" hidden><p class="td-term">softening</p><dl><dt>词义</dt><dd>变软；soften to someone 指对某人态度软化、不再那么严厉尖刻，变得温和亲近。</dd><dt>字面</dt><dd>形容词 soft（软）＋ 后缀 -en 构成动词。</dd><dt>本章译法</dt><dd>没以前那么横了</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/soften" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-6" hidden><p class="td-term">cognisant</p><dl><dt>词义</dt><dd>知晓的、认识到的、意识到……的；语气较正式书面。</dd><dt>字面</dt><dd>来自拉丁语 cognoscere（认识、了解），与 cognitive、recognize 同源。英式作 cognisant，美式作 cognizant。</dd><dt>本章译法</dt><dd>知道了</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/cognizant" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>看来某人不仅偷看了我的日记，还把我写的那点事儿给想歪了。某人呢，说的就是西耶娜！至于写的那点事儿……</p><p>首先，自打克鲁伯知道了自己的巴托血统，不光学起了巴托口音，张口闭口就是誓言和荣誉，爵爷范儿都起来了。</p><p>然后，凯瑞莲最近对克鲁伯也……没以前那么横了。</p><p>那我搞一点无伤大雅的「小创作」咋了？</p></div></div>
+<div class="row" id="p3"><a class="pn" href="#p3">3</a><div class="col en" lang="en"><p>The next thing I know, I’m hanging out over the cliff edge with a none too <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-8" data-detail="td-8">sturdy<span class="term-card" role="tooltip">结实的、牢固的、强健的。</span></span> rope about my ankles, the other end <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-9" data-detail="td-9">lashed<span class="term-card" role="tooltip">（用绳索等）紧紧绑住、捆牢。</span></span> to a tree, and a decidedly displeased elf <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-10" data-detail="td-10">partway along<span class="term-card" role="tooltip">沿着某物的中途、半截处。</span></span>, with a dagger against the <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-11" data-detail="td-11">hemp<span class="term-card" role="tooltip">大麻纤维，口语中直接代指粗麻绳。</span></span> and an unhappy look in her eye. I tried telling Kerillian that Sienna had committed one or two <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-12" data-detail="td-12">embellishments<span class="term-card" role="tooltip">美化、修饰；引申为说话或叙事时的添油加醋、渲染夸张。</span></span> <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-7" data-detail="td-7">along the way<span class="term-card" role="tooltip">在（做某事的）过程中；一路上、中途。</span></span>, but she wouldn’t listen. Nor did she pay much <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-13" data-detail="td-13">heed<span class="term-card" role="tooltip">注意、留心、听从；pay heed to 即听进心里去。</span></span> when I explained that I often make notes in the form of a <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-14" data-detail="td-14">prose poem<span class="term-card" role="tooltip">散文诗：兼具散文形式与诗歌意境的文学体裁。</span></span>, and that what she took as being – and I quote – “a <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-15" data-detail="td-15">balladic<span class="term-card" role="tooltip">叙事民谣风格的、歌谣体的。</span></span> romance <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-16" data-detail="td-16">achingly<span class="term-card" role="tooltip">令人心痛地、令人牙酸地；极其、万分。</span></span> <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-17" data-detail="td-17">offensive<span class="term-card" role="tooltip">冒犯性的、令人作呕不适的。</span></span> in its <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-18" data-detail="td-18">naivete<span class="term-card" role="tooltip">天真、幼稚、毫无社会见识。</span></span>, and <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-19" data-detail="td-19">demeaning<span class="term-card" role="tooltip">贬低身份的、有辱人格的、令人蒙羞的。</span></span> to all concerned” was <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-20" data-detail="td-20">merely<span class="term-card" role="tooltip">仅仅、只不过、纯粹。</span></span> a form of code I employ in my spymasterly duties.</p><div class="term-detail" id="td-7" hidden><p class="td-term">along the way</p><dl><dt>词义</dt><dd>在（做某事的）过程中；一路上、中途。</dd><dt>字面</dt><dd>沿着路。</dd><dt>本章译法</dt><dd>在转述的时候</dd><dt>背景</dt><dd>本义是在路上，常借来指“做一件事的这一路”，所以 along the way 常译成“过程中”“一路上”“中间”。</dd></dl></div><div class="term-detail" id="td-8" hidden><p class="td-term">sturdy</p><dl><dt>词义</dt><dd>结实的、牢固的、强健的。</dd><dt>字面</dt><dd>古法语 estourdi（鲁莽的、强健的），引申为坚固耐用。</dd><dt>本章译法</dt><dd>看起来就要断</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/sturdy" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-9" hidden><p class="td-term">lashed</p><dl><dt>词义</dt><dd>（用绳索等）紧紧绑住、捆牢。</dd><dt>字面</dt><dd>lash 作为动词除了鞭打外，专指航海或野外作业中用绳索牢牢系缚。</dd><dt>本章译法</dt><dd>拴在</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/lash" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-10" hidden><p class="td-term">partway along</p><dl><dt>词义</dt><dd>沿着某物的中途、半截处。</dd><dt>字面</dt><dd>partway（中途、部分路程）＋ along（沿着）。</dd><dt>本章译法</dt><dd>用一把匕首抵在那根看起来就要断的绳子上</dd><dt>背景</dt><dd>本段描写精灵蹲在拴树端与悬崖外洛纳之间绷紧绳索的中段位置。</dd></dl></div><div class="term-detail" id="td-11" hidden><p class="td-term">hemp</p><dl><dt>词义</dt><dd>大麻纤维，口语中直接代指粗麻绳。</dd><dt>字面</dt><dd>制造绳索的麻料植物。</dd><dt>本章译法</dt><dd>绳子</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/hemp" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-12" hidden><p class="td-term">embellishments</p><dl><dt>词义</dt><dd>美化、修饰；引申为说话或叙事时的添油加醋、渲染夸张。</dd><dt>字面</dt><dd>动词 embellish（修饰、美化）的名词形式。</dd><dt>本章译法</dt><dd>添油加醋</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/embellishment" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-13" hidden><p class="td-term">heed</p><dl><dt>词义</dt><dd>注意、留心、听从；pay heed to 即听进心里去。</dd><dt>字面</dt><dd>古英语 hedan（留心）。</dd><dt>本章译法</dt><dd>根本不听/压根不吃这套</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/heed" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-14" hidden><p class="td-term">prose poem</p><dl><dt>词义</dt><dd>散文诗：兼具散文形式与诗歌意境的文学体裁。</dd><dt>字面</dt><dd>prose（散文）＋ poem（诗）。</dd><dt>本章译法</dt><dd>散文诗</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/prose-poem" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-15" hidden><p class="td-term">balladic</p><dl><dt>词义</dt><dd>叙事民谣风格的、歌谣体的。</dd><dt>字面</dt><dd>ballad（叙事歌谣、民间叙事长诗）的形容词形式。</dd><dt>本章译法</dt><dd>艳情思（艳情诗）</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/ballad" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-16" hidden><p class="td-term">achingly</p><dl><dt>词义</dt><dd>令人心痛地、令人牙酸地；极其、万分。</dd><dt>字面</dt><dd>ache（疼痛）＋ -ing ＋ -ly，形容程度极其强烈，令人作痛。</dd><dt>本章译法</dt><dd>令人作呕</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/achingly" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-17" hidden><p class="td-term">offensive</p><dl><dt>词义</dt><dd>冒犯性的、令人作呕不适的。</dd><dt>字面</dt><dd>offend（冒犯）的形容词形式。</dd><dt>本章译法</dt><dd>不堪录目（不堪入目）</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/offensive" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-18" hidden><p class="td-term">naivete</p><dl><dt>词义</dt><dd>天真、幼稚、毫无社会见识。</dd><dt>字面</dt><dd>源自法语 naïveté，保留了法语中的上标符号。</dd><dt>本章译法</dt><dd>幼稚</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/naivety" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-19" hidden><p class="td-term">demeaning</p><dl><dt>词义</dt><dd>贬低身份的、有辱人格的、令人蒙羞的。</dd><dt>字面</dt><dd>demean（贬低、降低身份）的现在分词形容词。</dd><dt>本章译法</dt><dd>斯文扫地</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/demeaning" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-20" hidden><p class="td-term">merely</p><dl><dt>词义</dt><dd>仅仅、只不过、纯粹。</dd><dt>字面</dt><dd>mere 的副词形式。</dd><dt>本章译法</dt><dd>纯粹</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/merely" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>只是等我回过神来的时候，整个人已经脑袋朝下被吊在悬崖边了。脚脖子上绑着根绳子，另一头拴在树上，而心情并不美丽的精灵正用一把匕首抵在那根看起来就要断的绳子上，双眼忿忿地盯着我。</p><p>我立马说：「你听我解释，这事儿全赖西耶娜，一定是她传闲话的时候添油加醋没把门！」</p><p>但凯瑞莲根本不听，还拿话臊我！原话怎么说来着？</p><p>哦对，「你的艳情思幼稚得令人作呕！漏麻得不堪录目！让涉四诸君斯文扫地！」</p><p>我又说，老子平时写笔记就爱整点散文诗，那是我作为谍报头子用惯了的密码暗号。</p><p>可不管我怎么白话，她压根不吃这套。</p></div></div>
+<div class="row" id="p4"><a class="pn" href="#p4">4</a><div class="col en" lang="en"><p>That’s my story, and I’m sticking to it.</p></div><div class="col zh" lang="zh-CN"><p>反正我就咬定这套说辞，绝不改口。</p></div></div>
+<div class="row" id="p5"><a class="pn" href="#p5">5</a><div class="col en" lang="en"><p>I was <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-21" data-detail="td-21">in a bit of a pickle<span class="term-card" role="tooltip">腌菜、泡菜（卤汁）；in a pickle 是英语经典俗语，字面是掉进酸菜坛子里，比喻陷入尴尬、麻烦或进退维谷的窘境。</span></span>, <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-22" data-detail="td-22">as you might say<span class="term-card" role="tooltip">正如大家常说的、套句俗话说、可以说是；口语中的垫词与委婉语修饰，用来打圆场或引出比喻。</span></span>, what with the other four having gone off to kill a few ratties in Helmgart, and my lads all having the good sense not to bother Kerillian when she’s in one of her moods.</p><div class="term-detail" id="td-21" hidden><p class="td-term">in a bit of a pickle</p><dl><dt>词义</dt><dd>腌菜、泡菜（卤汁）；in a pickle 是英语经典俗语，字面是掉进酸菜坛子里，比喻陷入尴尬、麻烦或进退维谷的窘境。</dd><dt>字面</dt><dd>pickle 腌菜，in a pickle 比喻身处窘境。</dd><dt>本章译法</dt><dd>有些许抓瞎</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/in-a-pretty-pickle" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-22" hidden><p class="td-term">as you might say</p><dl><dt>词义</dt><dd>正如大家常说的、套句俗话说、可以说是；口语中的垫词与委婉语修饰，用来打圆场或引出比喻。</dd><dt>字面</dt><dd>as（正如）＋ you（泛指人们）＋ might say（可能会说）。</dd><dt>本章译法</dt><dd>说实话</dd><dt>出处</dt><dd><a href="https://www.merriam-webster.com/dictionary/you%20might%20say" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>说实话，当时我的确有些许抓瞎。一来呢，另外四个人都跑去赫姆加特宰耗子了；而在家的那几个兔崽子这会儿倒是全都透着精明劲儿，一见凯瑞莲这架势，一个个都有多远躲多远。</p></div></div>
+<div class="row" id="p6"><a class="pn" href="#p6">6</a><div class="col en" lang="en"><p>She <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-23" data-detail="td-23">hauled me back up<span class="term-card" role="tooltip">费力地拖拉、拽上来、硬拉上来。</span></span> in the end, you’ll be pleased to know. Whatever <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-24" data-detail="td-24">folk<span class="term-card" role="tooltip">人们、大家、街坊邻里。口语中常作 folks。</span></span> say about our elf, she’s not actively <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-25" data-detail="td-25">wicked<span class="term-card" role="tooltip">邪恶的、歹毒的、心肠狠毒的。</span></span> … Well, not unless <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-26" data-detail="td-26">provoked<span class="term-card" role="tooltip">激怒、挑衅、惹毛。</span></span>, and I’ll admit I <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-27" data-detail="td-27">sailed a bit close to the wind<span class="term-card" role="tooltip">航海习语：紧贴顶头风航行；比喻游走在危险边缘、冒险踩线、涉险玩火。</span></span> on this one. To earn that <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-28" data-detail="td-28">concession<span class="term-card" role="tooltip">让步、妥协、容许的优惠/高抬贵手。</span></span>, I had to promise to never again put <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-29" data-detail="td-29">quill<span class="term-card" role="tooltip">羽毛笔；禽鸟的大翼羽。</span></span> to <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-30" data-detail="td-30">parchment<span class="term-card" role="tooltip">羊皮纸；羊皮纸手卷。</span></span> in such a <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-31" data-detail="td-31">manner<span class="term-card" role="tooltip">方式、样式、调调；in such a manner 即以这种调调/方式。</span></span>. Wasn’t exactly <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-32" data-detail="td-32">on pain of death<span class="term-card" role="tooltip">古典法令用语：以死相逼、违者处死。</span></span>, but Kerillian did ask me if I was attached to my fingers, and desired to remain <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-33" data-detail="td-33">thus<span class="term-card" role="tooltip">如此、这般、像这样（保持现状）。</span></span> … so the stakes are pretty well <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-34" data-detail="td-34">established<span class="term-card" role="tooltip">确立、确立明确、树立清楚。</span></span>, if you ask me.</p><div class="term-detail" id="td-23" hidden><p class="td-term">hauled me back up</p><dl><dt>词义</dt><dd>费力地拖拉、拽上来、硬拉上来。</dd><dt>字面</dt><dd>haul 是费劲拉扯沉重物体的动作。</dd><dt>本章译法</dt><dd>把我拉上来了</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/haul" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-24" hidden><p class="td-term">folk</p><dl><dt>词义</dt><dd>人们、大家、街坊邻里。口语中常作 folks。</dd><dt>字面</dt><dd>古英语 folc（平民、人群）。</dd><dt>本章译法</dt><dd>大伙儿</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/folk" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-25" hidden><p class="td-term">wicked</p><dl><dt>词义</dt><dd>邪恶的、歹毒的、心肠狠毒的。</dd><dt>字面</dt><dd>古英语 wicca（巫师、邪法）相关。</dd><dt>本章译法</dt><dd>歹毒</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/wicked" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-26" hidden><p class="td-term">provoked</p><dl><dt>词义</dt><dd>激怒、挑衅、惹毛。</dd><dt>字面</dt><dd>拉丁语 provocare（唤起、叫阵出战）。</dd><dt>本章译法</dt><dd>惹毛了</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/provoke" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-27" hidden><p class="td-term">sailed a bit close to the wind</p><dl><dt>词义</dt><dd>航海习语：紧贴顶头风航行；比喻游走在危险边缘、冒险踩线、涉险玩火。</dd><dt>字面</dt><dd>sail（航行）＋ close to the wind（贴着风向）。</dd><dt>本章译法</dt><dd>稍微有点玩脱了</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/sail-close-to-the-wind" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-28" hidden><p class="td-term">concession</p><dl><dt>词义</dt><dd>让步、妥协、容许的优惠/高抬贵手。</dd><dt>字面</dt><dd>concede（让步、退让）的名词形式。</dd><dt>本章译法</dt><dd>高抬贵手/让步</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/concession" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-29" hidden><p class="td-term">quill</p><dl><dt>词义</dt><dd>羽毛笔；禽鸟的大翼羽。</dd><dt>字面</dt><dd>中世纪常用的鹅毛笔。</dd><dt>本章译法</dt><dd>动笔（羽毛笔）</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/quill" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-30" hidden><p class="td-term">parchment</p><dl><dt>词义</dt><dd>羊皮纸；羊皮纸手卷。</dd><dt>字面</dt><dd>古希腊地名帕加马传入，古时书写载体。</dd><dt>本章译法</dt><dd>羊皮纸</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/parchment" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-31" hidden><p class="td-term">manner</p><dl><dt>词义</dt><dd>方式、样式、调调；in such a manner 即以这种调调/方式。</dd><dt>字面</dt><dd>拉丁语 manuarius，引申为行事做派。</dd><dt>本章译法</dt><dd>调调/方式</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/manner" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-32" hidden><p class="td-term">on pain of death</p><dl><dt>词义</dt><dd>古典法令用语：以死相逼、违者处死。</dd><dt>字面</dt><dd>pain 在古英语中可指刑罚，即处于死刑威逼之下。</dd><dt>本章译法</dt><dd>以死相逼</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/on-under-pain-of-death" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-33" hidden><p class="td-term">thus</p><dl><dt>词义</dt><dd>如此、这般、像这样（保持现状）。</dd><dt>字面</dt><dd>remain thus 即保持这样（手指继续长在手上）。</dd><dt>本章译法</dt><dd>继续长在手上</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/thus" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-34" hidden><p class="td-term">established</p><dl><dt>词义</dt><dd>确立、确立明确、树立清楚。</dd><dt>字面</dt><dd>the stakes are well established 即后果有多严重已经交代得明明白白。</dd><dt>本章译法</dt><dd>交代得够明白</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/establish" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>让人欣慰的是，她还是把我拉上来了。甭管大伙儿平时怎么编排咱们的精灵，她倒不是真有多恶毒的心肠……呃，除非你把她惹急眼了。</p><p>就像……我干的这样。这把真差点儿玩儿脱了。</p><p>条件嘛，就是我得保证以后再也不准搞这种「创作」了。</p><p>不遵守会不会死路一条？怎么可能~不至于，凯瑞莲只问了我一句：是不是还挺稀罕自己这几根手指头的，还想不想让它们长在原来的地方。</p><p>非要我说的话，她这话问得有点多余。</p></div></div>
+<div class="row" id="p7"><a class="pn" href="#p7">7</a><div class="col en" lang="en"><p>Oh well. Looks like the <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-35" data-detail="td-35">fledgling career<span class="term-card" role="tooltip">刚起步的、初出茅庐的、稚嫩的。</span></span> of Franz Lohner, <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-36" data-detail="td-36">Journeyman Poet<span class="term-card" role="tooltip">满师熟练工、行工；中世纪行会介于学徒（apprentice）与大师（master）之间的等级。洛纳借手工业行会术语自封头衔，将崇高的诗人写作降格为中世纪搬砖打铁般的粗粝手艺。</span></span> is over before it’s begun. I know you’re supposed to suffer for your art, but there are limits, and I reckon I’ve <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-37" data-detail="td-37">ridden<span class="term-card" role="tooltip">ride 的过去分词；ride hard 是骑术/马匹隐喻，指狠命鞭策、把牲口逼到极限；引申为把自己能承受的极限榨干。</span></span> mine pretty hard. At least Kerillian didn’t find the actual <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-38" data-detail="td-38">manuscript<span class="term-card" role="tooltip">手稿、原稿；指作者亲手写下的原始书稿。</span></span>. At least, I hope she didn’t.</p><div class="term-detail" id="td-35" hidden><p class="td-term">fledgling career</p><dl><dt>词义</dt><dd>刚起步的、初出茅庐的、稚嫩的。</dd><dt>字面</dt><dd>fledge（长羽毛），指羽翼未丰、刚出巢的小鸟。</dd><dt>本章译法</dt><dd>刚刚起步的生涯</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/fledgling" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-36" hidden><p class="td-term">Journeyman Poet</p><dl><dt>词义</dt><dd>满师熟练工、行工；中世纪行会介于学徒（apprentice）与大师（master）之间的等级。洛纳借手工业行会术语自封头衔，将崇高的诗人写作降格为中世纪搬砖打铁般的粗粝手艺。</dd><dt>字面</dt><dd>源自古法语 journée（一天的工作、日薪），即拿日薪干活的熟练工。</dd><dt>本章译法</dt><dd>学徒诗人/手艺人诗人</dd><dt>出处</dt><dd><a href="https://www.britannica.com/topic/journeyman" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-37" hidden><p class="td-term">ridden</p><dl><dt>词义</dt><dd>ride 的过去分词；ride hard 是骑术/马匹隐喻，指狠命鞭策、把牲口逼到极限；引申为把自己能承受的极限榨干。</dd><dt>字面</dt><dd>骑乘、驱策。</dd><dt>本章译法</dt><dd>踩得够狠/逼到极限</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/ride" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-38" hidden><p class="td-term">manuscript</p><dl><dt>词义</dt><dd>手稿、原稿；指作者亲手写下的原始书稿。</dd><dt>字面</dt><dd>manu（手）＋ script（写）。</dd><dt>本章译法</dt><dd>原稿/手稿</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/manuscript" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div></div><div class="col zh" lang="zh-CN"><p>好吧~好吧，看来，我弗兰兹·洛纳「诗坛匠人」的职业生涯刚拉开帷幕就让人砸了场子。</p><p>啥？为艺术献身？我懂~我懂。但老子他妈这不差点真就献了吗？适可而止吧，至少凯瑞莲没看到原稿……至少，我希望她没看到。</p></div></div>
+<div class="row" id="p8"><a class="pn" href="#p8">8</a><div class="col en" lang="en"><p>I think I’d better go and burn it, just to be sure. Turns out I am rather attached to my fingers.</p></div><div class="col zh" lang="zh-CN"><p>啧，保险起见，我还是悄摸把原稿烧了算了，我还真挺稀罕自己这几根手指头的。</p></div></div>
+<div class="full"><figure class="story-img landscape" style="--nw:480px"><img src="../assets/decoration_1.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure></div>
+    </main>
+    
+    <footer class="foot">
+      Franz Lohner's Chronicle &middot; 同人翻译，原文版权归 Fatshark 所有
+      &nbsp;|&nbsp; <a href="../../../../index.html">返回目录</a><br>
+      页面由 <a href="https://github.com/Alexu0317-FATHER/translation-workbench" target="_blank" rel="noopener">Translation Workbench</a> 生成
+    </footer>
+  </div>
+
+<script>
+  (function(){
+    var root=document.documentElement;
+    var btnTheme=document.getElementById("btn-theme");
+
+    function store(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+
+    function currentTheme(){
+      var set=root.getAttribute("data-theme");
+      if(set) return set;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+    }
+    function paintTheme(){
+      var dark=currentTheme()==="dark";
+      btnTheme.textContent=dark?"日间":"夜间";
+      btnTheme.setAttribute("aria-pressed",String(dark));
+    }
+
+    btnTheme.addEventListener("click",function(){
+      var next=currentTheme()==="dark"?"light":"dark";
+      root.setAttribute("data-theme",next);
+      store("flc-theme",next);
+      paintTheme();
+    });
+
+    paintTheme();
+  })();
+</script>
+<script>
+  (function(){
+    var terms=[].slice.call(document.querySelectorAll(".term"));
+    if(!terms.length) return;
+    var canHover=!!(window.matchMedia&&window.matchMedia("(hover: hover)").matches);
+
+    function isOpen(t){return t.getAttribute("aria-expanded")==="true";}
+    function place(t){
+      var c=t.querySelector(".term-card"), w=document.documentElement.clientWidth;
+      // 词折行时，卡片的左边默认对齐第一段，要挪到最后一段（卡片贴在最后一行下面）
+      var rects=t.getClientRects();
+      c.style.left=(rects[rects.length-1].left-rects[0].left)+"px";
+      var r=c.getBoundingClientRect();
+      if(r.right>w-10) c.style.left=(w-10-r.right)+"px";
+      r=c.getBoundingClientRect();
+      if(r.left<10) c.style.left=(parseFloat(c.style.left)+10-r.left)+"px";
+    }
+    function hideCard(t){t.classList.remove("show-card");}
+    function closeCards(except){terms.forEach(function(o){if(o!==except) hideCard(o);});}
+    function showCard(t){closeCards(t); t.classList.add("show-card"); place(t);}
+    function setOpen(t,open){
+      document.getElementById(t.getAttribute("data-detail")).hidden=!open;
+      t.setAttribute("aria-expanded",String(open));
+      if(open) hideCard(t);
+    }
+
+    terms.forEach(function(t){
+      if(canHover){
+        t.addEventListener("mouseenter",function(){if(!isOpen(t)) showCard(t);});
+        t.addEventListener("mouseleave",function(){hideCard(t);});
+      }
+      // 点一下：没有卡片就出卡片；有卡片就展开；已展开就收起
+      t.addEventListener("click",function(e){
+        e.stopPropagation();
+        if(isOpen(t)){setOpen(t,false); if(canHover) showCard(t);}
+        else if(t.classList.contains("show-card")) setOpen(t,true);
+        else showCard(t);
+      });
+      t.addEventListener("focus",function(){
+        if(t.matches(":focus-visible")&&!isOpen(t)) showCard(t);
+      });
+      t.addEventListener("blur",function(){hideCard(t);});
+      t.addEventListener("keydown",function(e){
+        if(e.key==="Enter"||e.key===" "){e.preventDefault(); setOpen(t,!isOpen(t));}
+        else if(e.key==="Escape"){setOpen(t,false); hideCard(t);}
+      });
+    });
+    document.addEventListener("click",function(){closeCards();});
+  })();
+</script>
+</body></html>
