@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>战锤：末世鼠疫2 · 塔尔之角 | 《弗兰兹·洛纳的编年史》中英对照翻译</title>
+<meta name="description" content="魔法八风为何肆虐，情报头子揭秘真相">
+<meta name="keywords" content="Vermintide 2, Warhammer Fantasy, 战锤末世鼠疫, 官网小说, 中英对照, bilingual, 双语翻译">
+<link rel="canonical" href="https://alexu0317-father.github.io/franz-lohners-chronicle-zh/franz-lohners-chronicle/chapters/15-taals-horn-keep/output/index.html">
+<script>
+  if (location.hostname === "alexu0317-father.github.io") {
+    var ga = document.createElement("script");
+    ga.async = true;
+    ga.src = "https://www.googletagmanager.com/gtag/js?id=G-YWGH1EXEL5";
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag("js", new Date());
+    gtag("config", "G-YWGH1EXEL5");
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  :root{
+    color-scheme:light dark;
+    --paper:#f2eade; --paper-raised:#fbf6ed; --paper-sunk:#eae0d0;
+    --ink:#2a2018; --ink-soft:#665847; --ink-faint:#9c8b73;
+    --rule:#dccfb8; --rule-soft:#e9dfcd;
+    --gold:#8f6c2c; --gold-soft:#b18e4a;
+    --hl:rgba(143,108,44,.075); --shade:rgba(70,52,28,.10);
+    --serif:"Source Serif 4",Georgia,"Iowan Old Style","Times New Roman",serif;
+    --cjk:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+    /* 字体按字符逐个回退：拉丁字母命中衬线体，汉字落到后面的中文字体 */
+    --mix:"Source Serif 4",Georgia,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+      --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+      --rule:#332b20; --rule-soft:#241f17;
+      --gold:#c99c4e; --gold-soft:#dbb066;
+      --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131009; --paper-raised:#1c1811; --paper-sunk:#0d0b06;
+    --ink:#dbcfba; --ink-soft:#9c8e78; --ink-faint:#6d6252;
+    --rule:#332b20; --rule-soft:#241f17;
+    --gold:#c99c4e; --gold-soft:#dbb066;
+    --hl:rgba(201,156,78,.075); --shade:rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif);
+    font-size:clamp(15.5px,.42vw + 14.2px,17.5px); line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%; height:auto}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 clamp(18px,4vw,48px)}
+
+  /* ---------- 顶栏 ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .bar{display:flex; align-items:center; justify-content:space-between; gap:1rem; height:46px}
+  .brand{
+    font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-faint); text-decoration:none; white-space:nowrap;
+    overflow:hidden; text-overflow:ellipsis;
+  }
+  .brand:hover{color:var(--gold)}
+  .tools{display:flex; gap:.4rem; flex:none}
+  .tools button{
+    font:inherit; font-size:.75rem; font-family:var(--cjk);
+    padding:.28em .8em; border-radius:999px; cursor:pointer;
+    color:var(--ink-soft); background:transparent;
+    border:1px solid var(--rule); transition:.15s;
+  }
+  .tools button:hover{color:var(--gold); border-color:var(--gold-soft)}
+
+  /* ---------- 章首 ---------- */
+  header.chapter{text-align:center; padding:clamp(2.6rem,7vw,4.6rem) 0 1.6rem}
+  .series{
+    font-size:.68rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:1.4rem;
+  }
+  .title-en{
+    font-size:clamp(1.7rem,4.4vw,2.7rem); font-weight:600;
+    line-height:1.18; letter-spacing:-.01em; margin:0;
+  }
+  .title-zh{
+    font-family:var(--cjk); font-weight:500;
+    font-size:clamp(1rem,2.2vw,1.24rem); color:var(--ink-soft);
+    margin-top:.7rem; letter-spacing:.04em;
+  }
+  header.chapter::after{
+    content:""; display:block; width:44px; height:1px;
+    background:var(--gold-soft); opacity:.6; margin:1.8rem auto 0;
+  }
+
+  figure{margin:0}
+  /* --nw 是图片原生宽度，由生成脚本写入，用来防止小图被撑大 */
+  figure.illus{margin:0 auto 2.6rem; max-width:min(100%,var(--nw,100%))}
+  figure.illus img{width:100%; border-radius:2px; box-shadow:0 2px 18px var(--shade)}
+
+  /* ---------- 开场白 ---------- */
+  .intro{
+    margin:0 0 2.2rem; padding-bottom:1.6rem;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .intro .col{color:var(--ink-soft); font-size:.92em}
+  .intro .col.en p{font-style:italic}
+
+  /* ---------- 双栏对照 ---------- */
+  .row{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(26px,3.6vw,54px);
+    position:relative; padding:.9rem 0 .9rem clamp(1.9rem,3.2vw,2.9rem);
+    border-radius:3px; transition:background .12s;
+    scroll-margin-top:70px;
+  }
+  main .row:hover{background:var(--hl)}
+  main .row:target{background:var(--hl); box-shadow:inset 3px 0 0 var(--gold-soft)}
+  .pn{
+    position:absolute; left:0; top:1.05rem;
+    width:clamp(1.3rem,2.2vw,2rem); text-align:right;
+    font-size:.7rem; font-variant-numeric:tabular-nums;
+    color:var(--ink-faint); text-decoration:none; opacity:.55; transition:.15s;
+  }
+  .row:hover .pn{opacity:1; color:var(--gold)}
+  .col p{margin:0 0 .78em}
+  .col p:last-child{margin-bottom:0}
+  .col.en{hyphens:auto}
+  .col.zh{
+    font-family:var(--mix); font-size:.93em; line-height:1.95;
+    text-align:justify; text-justify:inter-ideograph;
+  }
+  /* 中文没有斜体。原文的 em 混着引文、出处、强调三种用法，
+     统一加装饰必然在其中一种上出错，所以只去掉伪斜体，不另作区分。 */
+  .col.zh em,.notes em{font-style:normal}
+  main .row + .row{border-top:1px solid var(--rule-soft)}
+
+  .full{margin:1.8rem 0; text-align:center}
+  figure.story-img{display:inline-block; max-width:min(100%,560px,var(--nw,560px))}
+  figure.story-img img{width:100%; border-radius:2px}
+
+  /* ---------- 窄屏自动单栏 ---------- */
+  @media (max-width:820px){
+    .row{grid-template-columns:1fr !important; gap:.5rem}
+    .col.en{color:var(--ink-soft); font-size:.9em; line-height:1.7}
+    .col.zh{border-left:2px solid var(--rule); padding-left:1.05rem}
+    .brand{font-size:.62rem; letter-spacing:.1em}
+  }
+
+  /* ---------- 脚注 ---------- */
+  .fnmark{font-size:.62em; line-height:0; vertical-align:super}
+  .fnmark a{color:var(--gold); text-decoration:none; padding:0 .1em}
+  .fnmark a:hover{text-decoration:underline}
+  .fnback{
+    margin-left:.55em; font-size:.72em; color:var(--ink-faint);
+    text-decoration:none; vertical-align:middle;
+  }
+  .fnback:hover{color:var(--gold)}
+
+  /* ---------- 译者按 ---------- */
+  /* 不画上边框：正文以装饰图收尾的章节会与图叠成两道分界，
+     靠这里的留白和居中的小标题分界就够。 */
+  .notes{
+    margin:4rem auto 0; max-width:44rem;
+    padding-top:2rem;
+    font-family:var(--mix);
+  }
+  .notes-title{
+    font-size:.72rem; letter-spacing:.22em; font-weight:500;
+    color:var(--ink-faint); text-align:center; margin:0 0 2rem;
+  }
+  .notes .zh{font-size:.9em; line-height:1.95; color:var(--ink-soft)}
+  .notes p{margin:0 0 .9em}
+  .note-h,.note-h3{
+    font-family:var(--mix); color:var(--ink); font-weight:600;
+    scroll-margin-top:70px;
+  }
+  .note-h{font-size:1.05em; margin:2.2rem 0 .8rem}
+  .note-h3{font-size:.98em; margin:1.9rem 0 .7rem}
+  .notes .zh > :first-child{margin-top:0}
+  .notes [id]:target{
+    background:var(--hl); box-shadow:-.5rem 0 0 var(--hl),.5rem 0 0 var(--hl);
+    border-radius:2px;
+  }
+  .notes ol,.notes ul{margin:.4rem 0 .9em 1.4rem; padding:0}
+  .notes li{margin:0 0 .35em}
+  .note-hr{border:none; border-top:1px solid var(--rule-soft); margin:1.8rem 0}
+  /* 译者按的图横竖混杂，尺寸从 382 宽到 2268 都有。
+     横图统一到列宽、竖图统一到同一高度，两类各自看齐而不变形。 */
+  figure.note-img{margin:1.6rem auto; text-align:center}
+  figure.note-img img{border-radius:3px; box-shadow:0 1px 10px var(--shade)}
+  /* 容许最多 1.12 倍放大，好让宽度只差几个百分点的图也能对齐列宽 */
+  figure.note-img.landscape{max-width:min(100%,calc(var(--nw,100%) * 1.12))}
+  figure.note-img.landscape img{width:100%}
+  figure.note-img.portrait img{max-height:480px; width:auto; max-width:100%}
+  blockquote{
+    margin:1rem 0; padding:.2rem 0 .2rem 1.1rem;
+    border-left:2px solid var(--gold-soft); color:var(--ink-soft);
+  }
+  a{color:var(--gold)}
+
+  footer.foot{
+    margin:4rem 0 0; padding:1.6rem 0 3rem;
+    border-top:1px solid var(--rule-soft);
+    font-family:var(--cjk); font-size:.72rem;
+    color:var(--ink-faint); text-align:center;
+  }
+  footer.foot a{color:var(--ink-faint); text-decoration:none}
+  footer.foot a:hover{color:var(--gold)}
+
+  @media print{
+    .topbar,footer.foot{display:none}
+    body{background:#fff; color:#000; font-size:10.5pt}
+    .row{break-inside:avoid}
+  }
+  /* ---------- 学习注释 ---------- */
+  .term{
+    position:relative; cursor:pointer; color:var(--gold);
+    border-bottom:1px dotted var(--gold-soft); border-radius:2px;
+  }
+  .term:hover,.term:focus-visible,.term[aria-expanded="true"]{background:var(--hl); outline:none}
+  .term-card{
+    display:none; position:absolute; left:0; top:calc(100% + .3em); z-index:15;
+    width:max-content; max-width:min(19rem,78vw);
+    padding:.45em .75em; font-size:max(15px,1em); line-height:1.55;
+    font-style:normal; font-weight:400; text-align:left; hyphens:none;
+    color:var(--ink); background:var(--paper-raised);
+    border:1px solid var(--rule); border-radius:4px; box-shadow:0 4px 16px var(--shade);
+  }
+  .term.show-card .term-card{display:block}
+  .term-detail{
+    margin:.1rem 0 .85em; padding:.6rem .9rem; font-size:max(15px,.95em); line-height:1.65;
+    color:var(--ink-soft); background:var(--paper-raised);
+    border-left:2px solid var(--gold-soft); border-radius:0 3px 3px 0;
+  }
+  .term-detail[hidden]{display:none}
+  .term-detail .td-term{margin:0 0 .15em; font-weight:600; color:var(--ink)}
+  .term-detail .td-ipa{margin-left:.5em; font-weight:400; color:var(--ink-soft)}
+  .term-detail .td-speak{
+    margin-left:.3em; padding:.15em .3em; vertical-align:middle; cursor:pointer;
+    color:var(--ink-soft); background:none; border:0; border-radius:3px;
+  }
+  .term-detail .td-speak:hover,.term-detail .td-speak:focus-visible{color:var(--gold); background:var(--hl); outline:none}
+  .term-detail dl{margin:0}
+  .term-detail dt{margin-top:.45em; font-family:var(--cjk); font-size:.72em; letter-spacing:.12em; color:var(--ink-faint)}
+  .term-detail dd{margin:0; font-family:var(--mix)}
+  @media print{.term-card{display:none !important}}
+</style>
+<script>
+  (function(){
+    try{
+      var t=localStorage.getItem("flc-theme");
+      if(t){document.documentElement.setAttribute("data-theme",t);}
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+  <div class="topbar"><div class="wrap bar">
+    <a class="brand" href="../../../../index.html">Franz Lohner's Chronicle · 目录</a>
+    <div class="tools">
+      <button id="btn-theme" type="button">夜间</button>
+    </div>
+  </div></div>
+
+  <div class="wrap">
+    <header class="chapter">
+      <div class="series">Franz Lohner's Chronicle · 弗兰兹·洛纳的编年史</div>
+      <h1 class="title-en">Taal&#x27;s Horn Keep</h1>
+      <div class="title-zh">塔尔之角</div>
+    </header>
+    <figure class="illus landscape" style="--nw:1920px"><img src="../assets/Franz_Lohner_Chronicle_15.png" alt="" width="1920" height="1080" loading="lazy" decoding="async"></figure><figure class="illus landscape" style="--nw:480px"><img src="../assets/decoration_2.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure>
+    <section class="intro"><div class="row"><div class="col en" lang="en"><p><em>An absent-minded man of mysteries, Franz Lohner relies on his bulging journal to keep track of occurrences, intrigues and arguments around Taal's Horn Keep. Sometimes his notes are even useful, believe it or not. The Franz Lohner Chronicles are extracts from that journal.</em></p></div><div class="col zh" lang="zh-CN"><p><em>神秘且健忘的弗兰兹·洛纳，靠着他那本鼓鼓囊囊的日记来记录塔尔之角周围发生的事情、阴谋和争论。信不信由你，有时他的笔记还真有点用。《弗兰兹·洛纳编年史》就是摘自这本日记的内容。</em></p></div></div></section>
+    <main>
+    <div class="row" id="p1"><a class="pn" href="#p1">1</a><div class="col en" lang="en"><p>Well, we’ve been here a while now, so I guess it’s time I <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-1" data-detail="td-1">laid<span class="term-card" role="tooltip">系统地陈述、讲清楚，或白纸黑字记下来。</span></span> down a little bit about the history of our <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-2" data-detail="td-2">fair base of operations<span class="term-card" role="tooltip">军事作战基地、行动大本营；日常戏指据点或落脚地。</span></span>: Taal’s Horn Keep.</p><div class="term-detail" id="td-1" hidden><p class="td-term">laid <span class="td-ipa">/ˌleɪ ˈdaʊn/</span> <button type="button" class="td-speak" data-speak="laid" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>系统地陈述、讲清楚，或白纸黑字记下来。</dd><dt>字面</dt><dd>字面是“平铺放下、立案定下”。</dd><dt>中文里</dt><dd>交代交代、摆一摆、记上一笔</dd><dt>背景</dt><dd>常用于制定规矩（lay down the rules）或正式陈述事实、立此存照（lay down the facts/history）。</dd></dl></div><div class="term-detail" id="td-2" hidden><p class="td-term">fair base of operations <span class="td-ipa">/ˌbeɪs əv ˌɒpəˈreɪʃnz/</span> <button type="button" class="td-speak" data-speak="fair base of operations" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>军事作战基地、行动大本营；日常戏指据点或落脚地。</dd><dt>字面</dt><dd>开展行动（operations）的依托据点（base）。</dd><dt>中文里</dt><dd>作战基地、大本营、根据地</dd><dt>背景</dt><dd>常与 fair、humble 等修饰词连用构成反讽或自谦，借严肃的军旅用语调侃简陋的居住环境。</dd></dl></div></div><div class="col zh" lang="zh-CN"><p>呃……咱们在这地方也窝了有些日子了，我想是时候给大伙儿上点儿历史课。有请咱们那座「恢弘、壮丽」的大本营——塔尔之角。</p></div></div>
+<div class="row" id="p2"><a class="pn" href="#p2">2</a><div class="col en" lang="en"><p>First thing you <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-3" data-detail="td-3">ought<span class="term-card" role="tooltip">应该、理当。通常与 to 连用。</span></span> to know is that there were originally <em>two</em> Taal’s Horn Keeps – or rather two Taal’s Horn<em>s</em> Keeps. You see, <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-4" data-detail="td-4">folk<span class="term-card" role="tooltip">人们、大家、街坊邻里。口语中常作 folks。</span></span> think this place is named for Taal’s hunting horn. But in the earlier <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-5" data-detail="td-5">depiction<span class="term-card" role="tooltip">画像、雕绘、刻画形象。</span></span>s, Taal has two bloody great antlers. That’s where these two keeps got their names. One sitting on either shoulder of the pass. Turns out the baron who ordered their <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-7" data-detail="td-7">raising<span class="term-card" role="tooltip">建起、耸立（堡垒或大型建筑）。</span></span> was a <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-6" data-detail="td-6">devout<span class="term-card" role="tooltip">虔诚的、笃信宗教的。</span></span> follower of the Hunter God, and wanted every <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-8" data-detail="td-8">advantage<span class="term-card" role="tooltip">优势、胜算、有利条件。</span></span> <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-12" data-detail="td-12">he could get over the greenskins<span class="term-card" role="tooltip">在面对对手时占到便宜、取得优势。</span></span> <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-9" data-detail="td-9">flowing out<span class="term-card" role="tooltip">涌出、漫出。</span></span> of the mountains. And you have to admit, there’s some fine <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-13" data-detail="td-13">symbolism<span class="term-card" role="tooltip">象征手法、象征意味、寓意。这里指要塞选址与神明双角相呼应的设计寓意。</span></span> in an <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-10" data-detail="td-10">invading<span class="term-card" role="tooltip">进犯、大举入侵。</span></span> army having to chance the Horns of Taal before they can get on with the <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-11" data-detail="td-11">pillaging<span class="term-card" role="tooltip">洗劫、烧杀抢掠。</span></span>.</p><div class="term-detail" id="td-3" hidden><p class="td-term">ought <span class="td-ipa">/ɔːt/</span> <button type="button" class="td-speak" data-speak="ought" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>应该、理当。通常与 to 连用。</dd><dt>字面</dt><dd>古英语 āhte（owe 的过去式），原意为“负有责任”，后引申为应当。</dd><dt>中文里</dt><dd>应该、得、理当</dd></dl></div><div class="term-detail" id="td-4" hidden><p class="td-term">folk <span class="td-ipa">/fəʊk/</span> <button type="button" class="td-speak" data-speak="folk" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>人们、大家、街坊邻里。口语中常作 folks。</dd><dt>字面</dt><dd>古英语 folc（平民、人群）。</dd><dt>出处</dt><dd><a href="https://dictionary.cambridge.org/dictionary/english/folk" target="_blank" rel="noopener noreferrer">来源 1</a></dd></dl></div><div class="term-detail" id="td-5" hidden><p class="td-term">depiction <span class="td-ipa">/dɪˈpɪkʃn/</span> <button type="button" class="td-speak" data-speak="depiction" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>画像、雕绘、刻画形象。</dd><dt>字面</dt><dd>前缀 de-（强调）+ 拉丁语 pingere（绘画）的名词形式。</dd><dt>中文里</dt><dd>画像、描绘、造像</dd></dl></div><div class="term-detail" id="td-6" hidden><p class="td-term">devout <span class="td-ipa">/dəˈvʌʊt/</span> <button type="button" class="td-speak" data-speak="devout" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>虔诚的、笃信宗教的。</dd><dt>字面</dt><dd>源自拉丁语 devovere（发誓、立誓献身）。</dd><dt>中文里</dt><dd>虔诚的、笃信的</dd></dl></div><div class="term-detail" id="td-7" hidden><p class="td-term">raising <span class="td-ipa">/reɪz/</span> <button type="button" class="td-speak" data-speak="raising" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>建起、耸立（堡垒或大型建筑）。</dd><dt>字面</dt><dd>日耳曼语源词，本义为举起、拔高，筑城语境下指平地起高楼。</dd><dt>中文里</dt><dd>修造、筑建、立起</dd></dl></div><div class="term-detail" id="td-8" hidden><p class="td-term">advantage <span class="td-ipa">/ədˈvɑːntɪdʒ/</span> <button type="button" class="td-speak" data-speak="advantage" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>优势、胜算、有利条件。</dd><dt>字面</dt><dd>前缀 ad- + 法语 avant（向前），本义为“占得先机、走在前头”。</dd><dt>中文里</dt><dd>优势、上风、便宜</dd></dl></div><div class="term-detail" id="td-9" hidden><p class="td-term">flowing out <button type="button" class="td-speak" data-speak="flowing out" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>涌出、漫出。</dd><dt>字面</dt><dd>flow（流动）+ out（向外），比喻群体像潮水一样倾泻而出。</dd><dt>中文里</dt><dd>涌出、漫出、倾泻</dd></dl></div><div class="term-detail" id="td-10" hidden><p class="td-term">invading <span class="td-ipa">/ɪnˈveɪd/</span> <button type="button" class="td-speak" data-speak="invading" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>进犯、大举入侵。</dd><dt>字面</dt><dd>in-（进入）+ 拉丁语 vadere（走、行进），字面为踩进他人领地。</dd><dt>中文里</dt><dd>入侵的、进犯的</dd></dl></div><div class="term-detail" id="td-11" hidden><p class="td-term">pillaging <span class="td-ipa">/ˈpɪlɪdʒ/</span> <button type="button" class="td-speak" data-speak="pillaging" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>洗劫、烧杀抢掠。</dd><dt>字面</dt><dd>源自古法语 piller（抢劫、搜刮）。</dd><dt>中文里</dt><dd>洗劫、掠夺、劫掠</dd></dl></div><div class="term-detail" id="td-12" hidden><p class="td-term">he could get over the greenskins <button type="button" class="td-speak" data-speak="he could get over the greenskins" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>在面对对手时占到便宜、取得优势。</dd><dt>字面</dt><dd>get an advantage（获取优势）+ over somebody（压过某人、凌驾于某人之上）。</dd><dt>中文里</dt><dd>占上风、捞胜算、占便宜</dd><dt>背景</dt><dd>这里的 over 是和前面的名词 advantage 搭配的介词，表示相对于竞争对手的优势，中间常被修饰成分隔开。</dd></dl></div><div class="term-detail" id="td-13" hidden><p class="td-term">symbolism <span class="td-ipa">/ˈsɪmbəˌlɪzəm/</span> <button type="button" class="td-speak" data-speak="symbolism" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>象征手法、象征意味、寓意。这里指要塞选址与神明双角相呼应的设计寓意。</dd><dt>字面</dt><dd>源自希腊语 symbolon（信物、记号）+ -ism（名词后缀，表体系或特征）。</dd><dt>中文里</dt><dd>寓意、象征意味、讲究、彩头</dd><dt>背景</dt><dd>文艺评论与神学里的大词，洛纳在闲聊中拿来品评军事要塞，带有自得和调侃的反差感。</dd></dl></div></div><div class="col zh" lang="zh-CN"><p>首先大伙儿得知道，这地方起初其实有两座塔尔之角要塞，确切地说应该叫「塔尔的双角<sup class="fnmark"><a href="#%E5%A1%94%E5%B0%94%E7%9A%84%E5%8F%8C%E8%A7%92" id="fnref-塔尔的双角" aria-label="脚注 ①">①</a></sup>」。大伙儿总以为这地方是拿塔尔手里那只号角命名的。其实在更早的造像里，这位猎神头上长着两只硕大无比的鹿角，两座要塞正是因此得名，当年各占着隘口一侧的崖肩。</p><p>原来啊，当年下令盖要塞的男爵呢，是个塔尔的虔诚信徒，面对跟潮水一样从山里涌出来的绿皮，这个天险不守白不守，甚至还想借神明的名头搞点信仰加持。
+抛开信仰不谈，至少这寓意确实讲究：入侵的敌军想进来烧杀劫掠，就得先站在塔尔的双角底下掂量掂量自己的小命硬不硬。</p></div></div>
+<div class="row" id="p3"><a class="pn" href="#p3">3</a><div class="col en" lang="en"><p>The only problem was, <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-14" data-detail="td-14">this here baron<span class="term-card" role="tooltip">这位男爵。“this here + 名词”是非正式口语与方言用法，用来加重语气强调“眼前谈到的这一个”。</span></span> was also a bit <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-16" data-detail="td-16">lax<span class="term-card" role="tooltip">马虎的、松懈的、不严格的。</span></span> when it came to keeping his <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-17" data-detail="td-17">fortifications<span class="term-card" role="tooltip">防御工事、防御设施、堡垒。</span></span> <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-18" data-detail="td-18">maintained<span class="term-card" role="tooltip">保持、维修、保养。</span></span>. Wasn’t great on spending money to build ‘em, <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-19" data-detail="td-19">neither<span class="term-card" role="tooltip">两者都不；放在否定句末表示“也（不）”。</span></span>. If you reckon this place looks bad now, it’s an improvement on what he <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-15" data-detail="td-15">stumped up for<span class="term-card" role="tooltip">勉强掏钱、不得不掏腰包支付费用。</span></span>. <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-20" data-detail="td-20">Regardless<span class="term-card" role="tooltip">不管怎样、无论如何、不顾。</span></span>, by the time the greenskins finally did come a-knocking at the door, neither keep was able to offer much in the way of resistance, although the <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-21" data-detail="td-21">garrisons<span class="term-card" role="tooltip">守备部队、驻军。</span></span> surely tried.</p><div class="term-detail" id="td-14" hidden><p class="td-term">this here baron <button type="button" class="td-speak" data-speak="this here baron" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>这位男爵。“this here + 名词”是非正式口语与方言用法，用来加重语气强调“眼前谈到的这一个”。</dd><dt>字面</dt><dd>由 this（这个）与 here（这里）叠在一起形成的口语强指代。</dd><dt>中文里</dt><dd>这位男爵老爷、咱说的这位男爵</dd><dt>背景</dt><dd>常见于英美民间口语和叙事，带浓厚的市井说书和乡土色彩。</dd></dl></div><div class="term-detail" id="td-15" hidden><p class="td-term">stumped up for <span class="td-ipa">/stʌmp ʌp fɔː/</span> <button type="button" class="td-speak" data-speak="stumped up for" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>勉强掏钱、不得不掏腰包支付费用。</dd><dt>字面</dt><dd>stump up 原为英式俚语，意指付款、掏腰包。</dd><dt>中文里</dt><dd>掏腰包、勉强掏钱、硬凑出来的银子</dd><dt>背景</dt><dd>多用于私下抱怨某项开销昂贵或者付钱付得肉痛的语境。</dd></dl></div><div class="term-detail" id="td-16" hidden><p class="td-term">lax <span class="td-ipa">/læks/</span> <button type="button" class="td-speak" data-speak="lax" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>马虎的、松懈的、不严格的。</dd><dt>字面</dt><dd>源自拉丁语 laxus（松弛的、松散的）。</dd><dt>中文里</dt><dd>松懈、马虎、不上心</dd></dl></div><div class="term-detail" id="td-17" hidden><p class="td-term">fortifications <span class="td-ipa">/ˌfɔː(ɹ)tɪfəˈkeɪʃən/</span> <button type="button" class="td-speak" data-speak="fortifications" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>防御工事、防御设施、堡垒。</dd><dt>字面</dt><dd>源自 fortify（设防、加固）。</dd><dt>中文里</dt><dd>防御工事、城防</dd></dl></div><div class="term-detail" id="td-18" hidden><p class="td-term">maintained <span class="td-ipa">/meɪnˈteɪn/</span> <button type="button" class="td-speak" data-speak="maintained" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>保持、维修、保养。</dd><dt>中文里</dt><dd>维护、修缮</dd></dl></div><div class="term-detail" id="td-19" hidden><p class="td-term">neither <span class="td-ipa">/ˈnaɪðə/</span> <button type="button" class="td-speak" data-speak="neither" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>两者都不；放在否定句末表示“也（不）”。</dd><dt>中文里</dt><dd>也（没）、同样不</dd></dl></div><div class="term-detail" id="td-20" hidden><p class="td-term">Regardless <span class="td-ipa">/rɪˈɡɑːdləs/</span> <button type="button" class="td-speak" data-speak="Regardless" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>不管怎样、无论如何、不顾。</dd><dt>中文里</dt><dd>反正、不管怎么说、无论如何</dd></dl></div><div class="term-detail" id="td-21" hidden><p class="td-term">garrisons <span class="td-ipa">/ˈɡærɪsn/</span> <button type="button" class="td-speak" data-speak="garrisons" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>守备部队、驻军。</dd><dt>中文里</dt><dd>守军、驻军</dd></dl></div></div><div class="col zh" lang="zh-CN"><p>美中不足的是，这位虔诚的男爵老爷修缮要塞的时候呢就不怎么上心，当初建要塞的时候也不怎么舍得掏钱。
+你要觉得现在住的地方跟他妈废墟似的，那我告诉你，当年他花钱建起来的原装货色还不如现在这堆废墟呢。</p><p>反正等绿皮真的一路砸上门来的时候，两座城堡根本就没能撑起像样的抵抗。倒不是驻军偷懒，那些守兵拼确实是拼过了，可架不住这地方根本就不顶事啊。</p></div></div>
+<div class="row" id="p4"><a class="pn" href="#p4">4</a><div class="col en" lang="en"><p>There’s a <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-23" data-detail="td-23">persistent<span class="term-card" role="tooltip">持续存在的、顽固不散的。</span></span> <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-25" data-detail="td-25">rumour<span class="term-card" role="tooltip">谣言、传言、风声。</span></span> that one of two <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-24" data-detail="td-24">castellans<span class="term-card" role="tooltip">城堡长官、要塞守将、城主。</span></span> even <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-26" data-detail="td-26">retained<span class="term-card" role="tooltip">聘请、留用（专门人员）。</span></span> a <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-22" data-detail="td-22">hedge wizard<span class="term-card" role="tooltip">野法师、民间自学巫师。指未经正规学院训练、没有合法施法资格的草莽施法者。</span></span> to aid in the defence … Only the <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-27" data-detail="td-27">scruffy<span class="term-card" role="tooltip">邋遢的、破败不整洁的。</span></span> old fool ended up calling on rather more of the Winds of Magic than he intended. <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-28" data-detail="td-28">Routed<span class="term-card" role="tooltip">击溃、使彻底溃败逃散。</span></span> the greenskins and cursed the fortress at the same time. <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-31" data-detail="td-31">Nasty business<span class="term-card" role="tooltip">恶心棘手的事、令人反感的烂摊子。常用来轻描淡写地代指丑闻、严重惨案或糟糕事态。</span></span>, or so I understand. All <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-29" data-detail="td-29">tentacles<span class="term-card" role="tooltip">触手、触角、触须。</span></span>, screams and <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-30" data-detail="td-30">inky<span class="term-card" role="tooltip">墨水般的、漆黑的。</span></span> black madness that even a northlander’d baulk at.</p><div class="term-detail" id="td-22" hidden><p class="td-term">hedge wizard <span class="td-ipa">/hedʒ ˈwɪzəd/</span> <button type="button" class="td-speak" data-speak="hedge wizard" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>野法师、民间自学巫师。指未经正规学院训练、没有合法施法资格的草莽施法者。</dd><dt>字面</dt><dd>hedge（路边灌木树篱，引申为流浪、野路子）+ wizard（法师）。</dd><dt>中文里</dt><dd>野法师、江湖术士</dd><dt>背景</dt><dd>从16世纪起，hedge- 常加在职业前表示非正规、无资质或游方草莽，如 hedge-priest（野教士）、hedge-doctor（江湖郎中）。</dd></dl></div><div class="term-detail" id="td-23" hidden><p class="td-term">persistent <span class="td-ipa">/pəˈsɪstənt/</span> <button type="button" class="td-speak" data-speak="persistent" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>持续存在的、顽固不散的。</dd><dt>中文里</dt><dd>经久不息、一直流传</dd></dl></div><div class="term-detail" id="td-24" hidden><p class="td-term">castellans <span class="td-ipa">/ˈkæstələn/</span> <button type="button" class="td-speak" data-speak="castellans" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>城堡长官、要塞守将、城主。</dd><dt>字面</dt><dd>源自拉丁语 castellum（要塞、小堡垒）。</dd><dt>中文里</dt><dd>城主、要塞长官</dd><dt>背景</dt><dd>欧洲中世纪受领主委托统辖城堡及其防务的军政官员。</dd></dl></div><div class="term-detail" id="td-25" hidden><p class="td-term">rumour <span class="td-ipa">/ˈɹuːmə(ɹ)/</span> <button type="button" class="td-speak" data-speak="rumour" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>谣言、传言、风声。</dd><dt>中文里</dt><dd>传言、风声</dd></dl></div><div class="term-detail" id="td-26" hidden><p class="td-term">retained <span class="td-ipa">/rɪˈteɪn/</span> <button type="button" class="td-speak" data-speak="retained" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>聘请、留用（专门人员）。</dd><dt>中文里</dt><dd>聘请、雇佣</dd></dl></div><div class="term-detail" id="td-27" hidden><p class="td-term">scruffy <span class="td-ipa">/ˈskrʌfi/</span> <button type="button" class="td-speak" data-speak="scruffy" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>邋遢的、破败不整洁的。</dd><dt>中文里</dt><dd>邋遢、不修边幅</dd></dl></div><div class="term-detail" id="td-28" hidden><p class="td-term">Routed <span class="td-ipa">/raʊt/</span> <button type="button" class="td-speak" data-speak="Routed" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>击溃、使彻底溃败逃散。</dd><dt>中文里</dt><dd>击溃、打垮</dd></dl></div><div class="term-detail" id="td-29" hidden><p class="td-term">tentacles <span class="td-ipa">/ˈtentəkl/</span> <button type="button" class="td-speak" data-speak="tentacles" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>触手、触角、触须。</dd><dt>中文里</dt><dd>触手</dd></dl></div><div class="term-detail" id="td-30" hidden><p class="td-term">inky <span class="td-ipa">/ˈɪŋki/</span> <button type="button" class="td-speak" data-speak="inky" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>墨水般的、漆黑的。</dd><dt>字面</dt><dd>由 ink（墨水）加上形容词后缀 -y 构成。</dd><dt>中文里</dt><dd>漆黑一片、如墨般的</dd></dl></div><div class="term-detail" id="td-31" hidden><p class="td-term">Nasty business <span class="td-ipa">/ˈnɑːsti ˈbɪznəs/</span> <button type="button" class="td-speak" data-speak="Nasty business" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>恶心棘手的事、令人反感的烂摊子。常用来轻描淡写地代指丑闻、严重惨案或糟糕事态。</dd><dt>字面</dt><dd>nasty（令人作呕的、凶险的）+ business（事情、行当、事态）。</dd><dt>中文里</dt><dd>恶心透顶的事、晦气勾当、遭罪的烂摊子</dd><dt>背景</dt><dd>英式英语中极具代表性的轻描淡写（understatement），习惯用极轻的日常词去指代极其可怕或惨烈的事件。</dd></dl></div></div><div class="col zh" lang="zh-CN"><p>一直有这么个传闻，说是当年两座要塞的城主里头，有一个为了守城，雇了个野法师<sup class="fnmark"><a href="#%E9%87%8E%E6%B3%95%E5%B8%88" id="fnref-野法师" aria-label="脚注 ②">②</a></sup>助战。
+结果那个学艺不精的老蠢蛋玩脱了，引来了他根本控制不了的魔法八风。绿皮倒是给打退了，但要塞也因为失控的魔法八风被当场给诅咒了。
+据说那场面……啧啧，到处都是触手和尖叫，漆黑一片的疯狂景象连北佬来了都得尿裤子。</p></div></div>
+<div class="row" id="p5"><a class="pn" href="#p5">5</a><div class="col en" lang="en"><p>Both keeps were abandoned soon after that. Can’t blame anyone for that – the only thing that comes close to living in a cursed keep is having to stare at it across the valley. Step a bit closer to the present day, and one of them collapses from disrepair, its stones <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-32" data-detail="td-32">nicked<span class="term-card" role="tooltip">偷、顺手牵羊、顺走。</span></span> to build that lovely bridge down in the valley. The trouble is, I can’t rightly tell which keep collapsed, and which one was left standing … not that the one left standing what you might call good nick. Records are as <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-33" data-detail="td-33">vague<span class="term-card" role="tooltip">含糊的、不明确的、模糊不清的。</span></span> as a Tilean’s wedding <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-34" data-detail="td-34">vows<span class="term-card" role="tooltip">誓言、誓约、庄严宣告。</span></span>, if you take my meaning? But I do have my <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-35" data-detail="td-35">suspicions<span class="term-card" role="tooltip">怀疑、疑心、猜忌。</span></span>. Olesya says the Winds of Magic blow strong around here, and that can’t be <span class="term" tabindex="0" role="button" aria-expanded="false" aria-controls="td-36" data-detail="td-36">coincidence<span class="term-card" role="tooltip">巧合、巧事、同时发生。</span></span>, can it?</p><div class="term-detail" id="td-32" hidden><p class="td-term">nicked <span class="td-ipa">/nɪk/</span> <button type="button" class="td-speak" data-speak="nicked" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>偷、顺手牵羊、顺走。</dd><dt>中文里</dt><dd>顺走、偷摸扒走、摸走</dd><dt>背景</dt><dd>英国极为通行的非正式俚语，日常多用来指小偷小摸（如 someone nicked my wallet），口语里也可指被警察抓捕归案。</dd></dl></div><div class="term-detail" id="td-33" hidden><p class="td-term">vague <span class="td-ipa">/veɪɡ/</span> <button type="button" class="td-speak" data-speak="vague" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>含糊的、不明确的、模糊不清的。</dd><dt>中文里</dt><dd>含糊、模糊、没准信</dd></dl></div><div class="term-detail" id="td-34" hidden><p class="td-term">vows <span class="td-ipa">/vaʊ/</span> <button type="button" class="td-speak" data-speak="vows" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>誓言、誓约、庄严宣告。</dd><dt>中文里</dt><dd>誓言、誓词</dd></dl></div><div class="term-detail" id="td-35" hidden><p class="td-term">suspicions <span class="td-ipa">/səˈspɪʃn/</span> <button type="button" class="td-speak" data-speak="suspicions" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>怀疑、疑心、猜忌。</dd><dt>中文里</dt><dd>怀疑、猜想、犯嘀咕</dd></dl></div><div class="term-detail" id="td-36" hidden><p class="td-term">coincidence <span class="td-ipa">/kəʊˈɪnsɪdəns/</span> <button type="button" class="td-speak" data-speak="coincidence" title="读一遍" aria-label="读一遍"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2h2.3L8 3.5v9L4.8 9.8H2.5z"/><path d="M10.3 5.8a3.2 3.2 0 010 4.4M12 4a5.6 5.6 0 010 8"/></svg></button></p><dl><dt>词义</dt><dd>巧合、巧事、同时发生。</dd><dt>中文里</dt><dd>巧合、偶然</dd></dl></div></div><div class="col zh" lang="zh-CN"><p>打那之后不久，两座要塞就全被废弃了。
+这也难怪，姑且不提住在被诅咒的要塞有多倒霉了，就哪怕你住在对面的那座塔尔之角，天天隔着山谷看着另一座布满黑雾和蠕动触手的要塞，不也闹心吗？
+时过境迁之后，其中一座因为年久失修彻底塌了，塌下来的石料还叫人顺走，去山谷底下修了那座漂亮的大石桥。</p><p>但麻烦的是，我压根分不清倒掉的是哪一座，留到现在的又是哪一座。虽说剩下的这一座也称不上什么好货色。
+唉，总之史料上也是个糊涂账，跟他妈提利尔人发的结婚誓词一样靠不住，懂我意思吗？
+我这心里啊，一直闹腾。因为奥蕾丝雅跟我说，咱们这儿的魔法之风刮得格外猛烈，你们说，咱们住的这破地方不会就是……</p></div></div>
+<div class="row" id="p6"><a class="pn" href="#p6">6</a><div class="col en" lang="en"><p>Still, I’m sure the others’ll let me know if they start hearing voices, won’t they?</p></div><div class="col zh" lang="zh-CN"><p>不管怎样，大伙儿要真听到了什么怪声，一定会告诉我的……吧？</p></div></div>
+<div class="full"><figure class="story-img landscape" style="--nw:480px"><img src="../assets/decoration_1.png" alt="" width="480" height="20" loading="lazy" decoding="async"></figure></div>
+    </main>
+    <section class="notes"><div class="zh"><h2 id="译者按" class="note-h">译者按</h2>
+<h3 id="塔尔的双角" class="note-h3">塔尔的双角<a class="fnback" href="#fnref-塔尔的双角" title="回到正文">↩</a></h3>
+<p>猎神塔尔早期头顶雄鹿巨角的形象，直接取材于凯尔特神话中的角神塞尔努诺斯（Cernunnos）以及欧洲古代森林荒野崇拜：</p>
+<figure class="note-img landscape" style="--nw:500px"><img src="../assets/500px-Gundestrupkedlen-_00054__cropped_.jpg" alt="" width="500" height="340" loading="lazy" decoding="async"></figure>
+<p>在中古战锤旧版设定及《战锤奇幻角色扮演》（WFRP）中，古代塔尔信徒均以巨鹿颅骨与双角为圣徽，早年画师笔下的塔尔也确实顶着两只大鹿角：</p>
+<figure class="note-img portrait" style="--nw:406px"><img src="../assets/406px-Taal2.jpg" alt="" width="406" height="599" loading="lazy" decoding="async"></figure>
+<p>随着帝国人类文明向城镇定居与开垦农耕发展，后来神话中才逐渐简化演化为猎手号角（hunting horn）。所以洛纳才说大家总以为塔尔之角是以号角名义命名是错的。</p>
+<p>你还真别说，老头子挺有见识。</p>
+<p>另外，可能到现在还有砍老鼠的家人们压根不知道塔尔之角这鬼地方在战锤地图上的哪个犄角旮旯，中古战锤玩家做的地图一大堆，但根本没标它。但总算被我找到一个在赫姆加特隘口旁边把它的位置给薅了出来，看见图里那个绿色小圈没有？那就是塔尔之角。它就死死卡在灰色山脉通往帝国瑞克领的隘口崖壁上。</p>
+<figure class="note-img landscape" style="--nw:1320px"><img src="../assets/局部截取_20261115_213721.png" alt="" width="1320" height="776" loading="lazy" decoding="async"></figure>
+<h3 id="野法师" class="note-h3">野法师<a class="fnback" href="#fnref-野法师" title="回到正文">↩</a></h3>
+<p>「野法师」（Hedge Wizard）是在官方跑团规则《战锤奇幻角色扮演》（WFRP）里的基础职业。</p>
+<p>英语里的 <code>hedge-</code> 原本指路边的灌木树篱，历史上专门用来加在职业前头，嘲弄那些没有公会资质、无门无派、只能睡在路边草丛里的江湖游民。战锤世界里的野法师也是这个路数：他们完全没进过阿尔特多夫正规的帝国魔法学院，全凭天赋和野路子在民间私自施法，日常不仅被官方视为非法，更是猎巫人火刑架上的头号目标。</p>
+<p>更要命的是，正规法师懂得严格过滤、一次只引导单一色风；野法师没这门手艺，情急之下瞎引一气，往往会把多种风混在一起抽成致命的黑魔法。也难怪洛纳嘴里的这位老头一出手，绿皮是退了，整个要塞却直接被不可名状的触手和疯癫给掀翻了。</p>
+</div></section>
+    <footer class="foot">
+      Franz Lohner's Chronicle &middot; 同人翻译，原文版权归 Fatshark 所有
+      &nbsp;|&nbsp; <a href="../../../../index.html">返回目录</a><br>
+      页面由 <a href="https://github.com/Alexu0317-FATHER/translation-workbench" target="_blank" rel="noopener">Translation Workbench</a> 生成
+    </footer>
+  </div>
+
+<script>
+  (function(){
+    var root=document.documentElement;
+    var btnTheme=document.getElementById("btn-theme");
+
+    function store(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+
+    function currentTheme(){
+      var set=root.getAttribute("data-theme");
+      if(set) return set;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+    }
+    function paintTheme(){
+      var dark=currentTheme()==="dark";
+      btnTheme.textContent=dark?"日间":"夜间";
+      btnTheme.setAttribute("aria-pressed",String(dark));
+    }
+
+    btnTheme.addEventListener("click",function(){
+      var next=currentTheme()==="dark"?"light":"dark";
+      root.setAttribute("data-theme",next);
+      store("flc-theme",next);
+      paintTheme();
+    });
+
+    paintTheme();
+  })();
+</script>
+<script>
+  (function(){
+    var terms=[].slice.call(document.querySelectorAll(".term"));
+    if(!terms.length) return;
+    var canHover=!!(window.matchMedia&&window.matchMedia("(hover: hover)").matches);
+
+    // 朗读：浏览器自带的语音，原文是英式英语，优先英音；浏览器不支持就把按钮藏起来
+    var speakers=[].slice.call(document.querySelectorAll(".td-speak"));
+    if(!window.speechSynthesis) speakers.forEach(function(b){b.hidden=true;});
+    speakers.forEach(function(b){
+      b.addEventListener("click",function(){
+        var u=new SpeechSynthesisUtterance(b.getAttribute("data-speak"));
+        u.lang="en-GB"; u.rate=.9;
+        var vs=speechSynthesis.getVoices();
+        var v=vs.filter(function(x){return x.lang==="en-GB";})[0]||vs.filter(function(x){return x.lang.indexOf("en")===0;})[0];
+        if(v) u.voice=v;
+        speechSynthesis.cancel(); speechSynthesis.speak(u);
+      });
+    });
+
+    function isOpen(t){return t.getAttribute("aria-expanded")==="true";}
+    function place(t){
+      var c=t.querySelector(".term-card"), w=document.documentElement.clientWidth;
+      // 词折行时，卡片的左边默认对齐第一段，要挪到最后一段（卡片贴在最后一行下面）
+      var rects=t.getClientRects();
+      c.style.left=(rects[rects.length-1].left-rects[0].left)+"px";
+      var r=c.getBoundingClientRect();
+      if(r.right>w-10) c.style.left=(w-10-r.right)+"px";
+      r=c.getBoundingClientRect();
+      if(r.left<10) c.style.left=(parseFloat(c.style.left)+10-r.left)+"px";
+    }
+    function hideCard(t){t.classList.remove("show-card");}
+    function closeCards(except){terms.forEach(function(o){if(o!==except) hideCard(o);});}
+    function showCard(t){closeCards(t); t.classList.add("show-card"); place(t);}
+    function setOpen(t,open){
+      document.getElementById(t.getAttribute("data-detail")).hidden=!open;
+      t.setAttribute("aria-expanded",String(open));
+      if(open) hideCard(t);
+    }
+
+    terms.forEach(function(t){
+      if(canHover){
+        t.addEventListener("mouseenter",function(){if(!isOpen(t)) showCard(t);});
+        t.addEventListener("mouseleave",function(){hideCard(t);});
+      }
+      // 点一下：没有卡片就出卡片；有卡片就展开；已展开就收起
+      t.addEventListener("click",function(e){
+        e.stopPropagation();
+        if(isOpen(t)){setOpen(t,false); if(canHover) showCard(t);}
+        else if(t.classList.contains("show-card")) setOpen(t,true);
+        else showCard(t);
+      });
+      t.addEventListener("focus",function(){
+        if(t.matches(":focus-visible")&&!isOpen(t)) showCard(t);
+      });
+      t.addEventListener("blur",function(){hideCard(t);});
+      t.addEventListener("keydown",function(e){
+        if(e.key==="Enter"||e.key===" "){e.preventDefault(); setOpen(t,!isOpen(t));}
+        else if(e.key==="Escape"){setOpen(t,false); hideCard(t);}
+      });
+    });
+    document.addEventListener("click",function(){closeCards();});
+  })();
+</script>
+</body></html>
